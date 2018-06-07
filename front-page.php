@@ -1,58 +1,90 @@
 <?php get_header(); ?>
 
 <?php $query = new WP_Query( array(
-	'post_type' => array( 'resource' )
+	'post_type' => array('resource')
 ) ); ?>
 
-<section class="testResources">
+<?php
+while ( $query->have_posts() ): $query->the_post();
+	$resource_format = get_field_object('resource_format');
+	$resource_category = get_field_object('resource_category');
+endwhile;
+
+?>
+
+
+<div class="resourcesFilter" id="resources-filters" style="background: #eee; padding: 10px;">
 	<div class="container">
-		<div class="row is__flex">	
+
+		<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
+
+			<?php  if($resource_format): ?>
+				<select name="resource_format">
+					<option value="">Format</option>
+					<?php foreach( $resource_format['choices'] as $key => $value ) {
+							echo '<option value="' . $key . '">' . $value . '</option>';
+					} ?>
+				</select>
+			<?php endif; 	?>
+
+			<?php if($resource_category): ?>
+				<select name="resource_category">
+					<option value="">Category</option>
+					<?php foreach( $resource_category['choices'] as $key => $value ) {
+									echo '<option value="' . $key . '">' . $value . '</option>';
+					} ?>
+				</select>
+			<?php endif;	?>
+
+			<label>
+				<input type="radio" name="date" value="ASC" /> ASC
+			</label>
+			<label>
+				<input type="radio" name="date" value="DESC" selected="selected" /> DESC
+			</label>
+			<button>Apply filter</button>
+			<input type="hidden" name="action" value="myfilter">
+		</form>
+
+	</div>
+</div>
+
+<script type="text/javascript">
+jQuery(function($){
+	$('#filter').submit(function(){
+		var filter = $('#filter');
+		$.ajax({
+			url:filter.attr('action'),
+			data:filter.serialize(),
+			type:filter.attr('method'),
+			beforeSend:function(xhr){
+				filter.find('button').text('Processing...');
+			},
+			success:function(data){
+				filter.find('button').text('Apply filter');
+				$('#response .container .row.is__flex').html(data);
+			}
+		});
+		return false;
+	});
+});
+</script>
+
+
+<div  style="background: #eee; padding: 10px; margin-bottom: 30px;">
+	<div class="container">
+
+	</div>
+</div>
+
+
+<section class="resourcesGrid" id="response">
+	<div class="container">
+		<div class="row is__flex">
 		<?php while ( $query->have_posts() ): $query->the_post(); ?>
-			<div class="col-sm-4">
-				<div class="resourceCard">
-					<div class="resourceCard-header category-<?php the_field('resource_category'); ?>">
-						<img class="resourceCard-header-logo" src="<?php echo get_template_directory_uri() . '/images/' . get_field('resource_category') . '.png'; ?>">
-						<h4><?php the_field('resource_format'); ?></h4>
-						<h2 class="resourceCard-title"><?php the_title(); ?> <?php edit_post_link('*'); ?></h2>
-					</div>
-					
-					<div class="resourceCard-content">
-						<?php if (get_field('resource_format') == 'tool'): ?>	
-							<img src="<?php the_field('resource_image'); ?>">
-						<?php elseif (get_field('resource_format') == 'video'): ?>	
-							<?php $video = get_field('resource_video'); ?>
-							<?php $video = apply_filters('the_content', $video); ?>
-							<div class="resourceCard-video"><div class="offset"><?php echo $video; ?></div></div>
-						<?php endif; ?>
-						
-						<div class="resourceCard-authors">
-							<?php while (have_rows('resource_authors')): the_row(); ?>
-								<p><?php the_sub_field('gender'); ?> <?php the_sub_field('name'); ?> <?php the_sub_field('position'); ?></p>
-							<?php endwhile; ?>
-						</div>
-						
-						<div class="resourceCard-description">
-							<?php the_field('resource_description'); ?>
-						</div>
-						
-						<div class="resourceCard-files">
-							<ul>
-							<?php while (have_rows('resource_files')): the_row(); ?>
-								<?php $file = get_sub_field('file'); ?>
-								<li><a href="<?php echo $file[url] ; ?>"><?php echo $file[title];  ?></a><?php  //print_r($file); ?></li>
-							<?php endwhile; ?>
-							</ul>	
-						</div>
-						
-						<div class="resourceCard-keywords">
-							
-						</div>
-						
-					</div>
-				</div>	
-			</div>
+			<?php get_template_part('parts/resource','card'); ?>
 		<?php endwhile; ?>
-		<?php wp_reset_postdata(); ?>	
+		<?php wp_reset_postdata(); ?>
 		</div><!-- row -->
 	</div><!-- container -->
 </section>

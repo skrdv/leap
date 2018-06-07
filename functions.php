@@ -4,7 +4,7 @@
  *
  * @package _tk
  */
- 
+
  /**
   * Store the theme's directory path and uri in constants
   */
@@ -58,7 +58,7 @@ function _tk_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 		) ) );
-	
+
 	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
@@ -158,6 +158,11 @@ require THEME_DIR_PATH . '/includes/jetpack.php';
  * Load custom WordPress nav walker.
  */
 require THEME_DIR_PATH . '/includes/bootstrap-wp-navwalker.php';
+
+/**
+ * Update search options
+ */
+require THEME_DIR_PATH . '/includes/filter.php';
 
 /**
  * Adds WooCommerce support
