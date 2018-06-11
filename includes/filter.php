@@ -8,25 +8,19 @@ function leap_filter_function(){
 		'order'	=> $_POST['date']
 	);
 
-	if( isset($_POST['resource_format']) ) {
+	if( isset($_POST['resource_format']) OR isset($_POST['resource_category'])) {
 		$args['meta_query'] = array(
       'relation'		=> 'AND',
 		  array(
 			 'key'		=> 'resource_format',
        'value'  => $_POST['resource_format'],
        'compare'	=> 'LIKE'
-     )
-		);
-  }
-
-	if( isset($_POST['resource_category']) ) {
-		$args['meta_query'] = array(
-		  'relation'		=> 'AND',
-		  array(
-			 'key'		=> 'resource_category',
-       'value'  => $_POST['resource_category'],
-			 'compare'	=> 'LIKE'
-		  )
+     ),
+		 array(
+			'key'		=> 'resource_category',
+			'value'  => $_POST['resource_category'],
+			'compare'	=> 'LIKE'
+		)
 		);
   }
 
