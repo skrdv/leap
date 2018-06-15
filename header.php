@@ -62,30 +62,54 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-	
+
 						<!-- Your site title as branding in the menu -->
 						<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 					</div>
 
-					<!-- The WordPress Menu goes here -->
-					<?php wp_nav_menu(
-						array(
-							'theme_location' 	=> 'primary',
-							'depth'             => 2,
-							'container'         => 'nav',
-							'container_id'      => 'navbar-collapse',
-							'container_class'   => 'collapse navbar-collapse',
-							'menu_class' 		=> 'nav navbar-nav',
-							'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
-							'menu_id'			=> 'main-menu',
-							'walker' 			=> new wp_bootstrap_navwalker()
-						)
-					); ?>
+					<nav class="collapse navbar-collapse" id="navbar-collapse">
+						<?php wp_nav_menu(
+							array(
+								'theme_location' 	=> 'primary',
+								'depth'             => 2,
+								// 'container'         => 'nav',
+								'menu_class' 		=> 'nav navbar-nav',
+								'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
+								'menu_id'			=> 'main-menu',
+								'walker' 			=> new wp_bootstrap_navwalker()
+							)
+						); ?>
+
+						<ul class="nav navbar-nav pull-right">
+							<li class="nav-item">
+								<a class="nav-link" href="/account/">Account</a>
+							</li>
+							<?php if ( is_user_logged_in() ) { ?>
+								<li class="nav-item">
+									<a class="nav-link" href="<?php echo wp_logout_url( home_url() ); ?>">Logout</a>
+								</li>
+							<?php } ?>
+						</ul>
+
+						<?php wp_nav_menu(
+							array(
+								'theme_location' 	=> 'account',
+								'depth'             => 2,
+								// 'container'         => 'nav',
+								'menu_class' 		=> 'nav navbar-nav pull-right',
+								'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
+								'menu_id'			=> 'account-menu',
+								'walker' 			=> new wp_bootstrap_navwalker()
+							)
+						); ?>
+
+
+
+					</nav>
+
 
 				</div><!-- .navbar -->
 			</div>
 		</div>
 	</div><!-- .container -->
 </nav><!-- .site-navigation -->
-
-

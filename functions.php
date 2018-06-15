@@ -71,7 +71,8 @@ function _tk_setup() {
 	 * This theme uses wp_nav_menu() in one location.
 	*/
 	register_nav_menus( array(
-		'primary'  => __( 'Header bottom menu', '_tk' ),
+		'primary'  => __( 'Header menu', '_tk' ),
+		'account'  => __( 'Account menu', '_tk' ),
 		) );
 
 }
@@ -109,6 +110,14 @@ function _tk_scripts() {
 
 	// load _tk styles
 	wp_enqueue_style( '_tk-style', get_stylesheet_uri() );
+
+	// load custom styles
+  if(is_admin()){
+    wp_enqueue_style( '_tk-admin', THEME_DIR_URI . '/includes/css/admin.css' );
+  } else {
+    wp_enqueue_style( '_tk-custom', THEME_DIR_URI . '/includes/css/custom.css' );
+  }
+
 
 	// load bootstrap js
 	wp_enqueue_script('_tk-bootstrapjs', THEME_DIR_URI . '/includes/resources/bootstrap/js/bootstrap.min.js', array('jquery') );
