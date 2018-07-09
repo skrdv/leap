@@ -24,6 +24,19 @@
 <body <?php body_class(); ?>>
 	<?php do_action( 'before' ); ?>
 
+<?php if (($post->ID == 116) or ($post->ID == 131)): ?>
+<header class="siteHeader">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+			</div>
+		</div>
+	</div>
+</header>
+
+
+
+<?php else: ?>
 <header id="masthead" class="site-header" role="banner">
 <?php // substitute the class "container-fluid" below if you want a wider content area ?>
 	<div class="container">
@@ -113,3 +126,4 @@
 		</div>
 	</div><!-- .container -->
 </nav><!-- .site-navigation -->
+<?php endif; ?>

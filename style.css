@@ -348,3 +348,422 @@ nav .form-control {
 	font-weight: bold;
 	margin-bottom: 5px;
 }
+
+
+
+/*===================================*/
+
+.getstartedBanner {
+	height: calc(100vh - 74px);
+	min-height: 800px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	background-position: top center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 0 0 137px 0;
+	margin: 0;
+}
+
+.getstartedBanner-title {
+	font-family: Avenir Next;
+	line-height: 90px;
+	font-size: 54px;
+	color: #FFFFFF;
+	text-shadow: 0px 4px 100px rgba(0, 0, 0, 0.5), 1px 1px 0px rgba(0, 0, 0, 0.15);
+}	
+
+
+.pageSection-banner {
+	background: #00B3E6;
+	box-shadow: 4px 4px 0px rgba(0, 179, 230, 0.25);
+	padding: 32px 64px;
+}
+
+.pageSection-title {
+	font-family: Avenir Next;
+	line-height: 48px;
+	font-size: 36px;
+	color: #23313B;
+}
+
+.pageSection-title:after {
+	content: '';
+	display: block;
+	width: 64px;
+	height: 8px;
+	background: #23313B;
+	margin: 30px 0;
+}
+
+.pageSection-title.centered {
+	text-align: center;
+}
+
+.pageSection-title.centered:after {
+	margin: 30px auto;
+}
+
+.pageSection-text {
+	font-family: Avenir Next;
+	line-height: 36px;
+	font-size: 28px;
+	color: #FFFFFF;
+}
+
+.pageSection-1{
+	background-color: #00B3E6;
+	padding: 80px 0;
+}
+
+.pageSection-2 {
+	height: 885px;
+	background-position: top center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.pageSection-3 {
+	margin-top: -64px;
+	margin-bottom: -0px;
+}
+
+.pageSection-3 .container{
+	padding-bottom: 0;
+}
+
+.pageSection-4 {
+	height: 1150px;
+	background-position: top center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(images/fake-slider.png);
+}
+
+.pageSection-5 {
+	background-position: top center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(images/slider-placeholder.jpg);
+}
+
+.pageSection-6 {
+
+}
+
+.pageSection-7 {
+	background-color: #eaeaea;
+}
+
+.sectionSlider {
+	position: relative;
+	padding: 40px 0;
+	height: 900px;
+}
+
+.sectionSlider-prev {
+	height:64px;
+	width: 64px;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -32px;
+	background-position: top center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(images/slider-left.png;);
+}
+
+.sectionSlider-next {
+	height:64px;
+	width: 64px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-top: -32px;
+	background-position: top center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(images/slider-right.png;);
+}
+
+.sectionSlider-caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	
+	padding: 0 80px;
+	
+	font-family: Avenir Next;
+	line-height: 40px;
+	font-size: 36px;
+	text-align: center;
+	
+	color: #fff;
+}
+
+/*== Start your journey ==*/
+
+.row.flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+.sectionCard {
+
+}	
+
+.sectionCard-inner {
+	background: #00B3E6;
+	box-shadow: 4px 4px 0px rgba(0, 179, 230, 0.25);
+	min-height: 512px;
+	display: flex;
+	flex-direction: column;
+	padding: 48px;
+}
+
+.sectionCard-title {
+	font-family: Avenir Next;
+	line-height: 32px;
+	font-size: 20px;
+	color: #fff;
+}
+
+.sectionCard-title:after {
+	display: block;
+	width: 64px;
+	height: 8px;
+	background: #FFFFFF;
+	margin: 20px 0;
+	content: '';
+}
+
+.sectionCard-text {
+	flex-grow: 1;
+	font-family: Avenir Next;
+	line-height: 28px;
+	font-size: 18px;
+	color: #fff;
+}
+
+.sectionCard-button {
+	box-sizing: border-box;
+	background: #F5C400;
+	padding: 12px 20px;
+	border-radius: 0;
+	font-family: Avenir Next;
+	line-height: 20px;
+	font-size: 17px;
+	text-align: center;
+	color: #23313B;
+	border: 2px solid #F5C400;
+}
+
+.sectionCard-button:hover {
+	background: #fff;
+	border: 2px solid #23313B;
+}
+
+
+/* ====== Get Started Card ============*/
+
+
+.getstartedCard {
+	margin-bottom: 30px;
+}
+
+
+.getstartedCard-inner {
+	background: #FFFFFF;	
+	box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+	height:255px;
+	display: flex;
+	flex-direction: row;
+	padding: 0;
+	margin: 0;
+}
+
+.getstartedCard-photo {
+	width: 50%;
+	background: #e6e6e6;
+}
+
+.getstartedCard-content {
+	width: 50%;
+	box-sizing: border-box;
+	padding: 20px;
+}
+
+
+
+/*=============================================== Main Page ===============================================*/
+
+.mainBanner {
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+
+.mainBanner-cloack {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url(images/main-cloack.png);
+	height: 937px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 0 0 137px 0;
+	margin: 0;
+}
+
+.mainBanner-title {
+	font-family: Avenir Next;
+	line-height: 120px;
+	font-size: 75px;
+	color: #FFFFFF;
+	text-shadow: 0px 4px 100px rgba(0, 0, 0, 0.5), 1px 1px 0px rgba(0, 0, 0, 0.15);
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+.pageSection-10 {
+	background-color: #2E89CB;
+	padding: 151px 0 200px 0;
+}
+
+.pageSection-10 .pageSection-text {
+	line-height: 72px;
+	font-size: 54px;
+	color: #FFFFFF;
+}
+
+.pageSection-10 .pageSection-text strong{
+	color: #23313B;		
+}
+
+
+.pageSection-11 {
+	margin: -151px 0 0 0;
+	padding: 0;
+}
+
+
+.pageSection-photo {
+	height: 544px;
+	background-size: cover;
+}
+
+.pageSection-12 {
+	padding: 0 0 80px 0;
+}
+
+.pageSection-12 .pageSection-title{
+	font-size: 54px;
+	line-height: 72px;
+	margin: 60px 0 40px 0;
+}
+
+.pageSection-12 .pageSection-title:after{
+	background-color: #F5C400;
+	margin: 40px 0;
+}
+
+.pageSection-12 .pageSection-text{
+	color: #23313B;
+}
+
+
+
+.pageSection-13 {
+	padding: 80px 0;
+
+}
+
+
+.mainCard {
+	margin-bottom: 30px;
+}	
+
+.mainCard-inner {
+	background: #00B3E6;
+	box-shadow: 4px 4px 0px rgba(0, 179, 230, 0.25);
+	min-height: 512px;
+	display: flex;
+	flex-direction: column;
+	padding: 48px;
+}
+
+.mainCard-title {
+	font-family: Avenir Next;
+	line-height: 32px;
+	font-size: 20px;
+	color: #fff;
+}
+
+.mainCard-title:after {
+	display: block;
+	width: 64px;
+	height: 8px;
+	background: #FFFFFF;
+	margin: 20px 0;
+	content: '';
+}
+
+.mainCard-text {
+	flex-grow: 1;
+	font-family: Avenir Next;
+	line-height: 28px;
+	font-size: 18px;
+	color: #fff;
+}
+
+.mainCard-button {
+	box-sizing: border-box;
+	background: #F5C400;
+	padding: 12px 20px;
+	border-radius: 0;
+	font-family: Avenir Next;
+	line-height: 20px;
+	font-size: 17px;
+	text-align: center;
+	color: #23313B;
+	border: 2px solid #F5C400;
+}
+
+.mainCard-button:hover {
+	background: #fff;
+	border: 2px solid #23313B;
+}
+
+
+
+.pageSection-14 {
+	padding: 80px 0 0 0;
+
+}
+
+.pageSection-square {
+	height: 640px;
+	background-size: cover;
+}
+
+.pageSection-small {
+	font-family: Avenir Next;
+	line-height: 32px;
+	font-size: 18px;
+	margin-top: 240px;
+}
+
+.pageSection-small strong{
+	color: #00B3E6;
+}
+
+.pageSection-15 {
+	margin: -15px 0 0 0;
+	position:relative;
+	top: -40px;
+}
