@@ -71,8 +71,12 @@ function _tk_setup() {
 	 * This theme uses wp_nav_menu() in one location.
 	*/
 	register_nav_menus( array(
-		'primary'  => __( 'Header menu', '_tk' ),
-		'account'  => __( 'Account menu', '_tk' ),
+		'main'  => __( 'Main menu', '_tk' ),
+		'more'  => __( 'More menu', '_tk' ),
+		'footer-1'  => __( 'Footer 1', '_tk' ),
+		'footer-2'  => __( 'Footer 2', '_tk' ),
+		'footer-3'  => __( 'Footer 3', '_tk' ),
+		'footer-4'  => __( 'Footer 4', '_tk' ),
 		) );
 
 }

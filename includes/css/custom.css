@@ -135,6 +135,102 @@
 }
 
 
+
+/* Site Footer */
+.site-footer {
+  padding-top: 90px;
+  padding-bottom: 110px;
+  color: #fff;
+  background: #23313B;
+}
+
+.site-footer-title {
+  font-family: 'Avenir Next';
+  line-height: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.site-footer-title span {
+  display: block;
+  width: 64px;
+  height: 8px;
+  margin: 35px auto;
+  background: #fff;
+}
+
+.site-footer-subtitle {
+  margin-bottom: 30px;
+  font-family: 'Avenir Next';
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.site-footer-socials {
+  text-align: center;
+}
+
+.site-footer .navbar-footer {
+
+}
+
+.site-footer .navbar-footer .menu-item {
+  float: none;
+
+}
+
+.site-footer .navbar-footer .menu-item a {
+  padding: 0;
+  font-family: 'Avenir Next';
+  line-height: 28px;
+  font-size: 15px;
+  text-decoration-line: underline;
+  color: #fff;
+}
+
+.site-footer .navbar-footer .menu-item a:hover {
+  background-color: transparent;
+  text-decoration: none;
+  color: #fff;
+}
+
+.site-footer-socials {
+  margin-bottom: 60px;
+}
+
+.site-footer-copy {
+  margin-top: 90px;
+  margin-bottom: 30px;
+  font-family: 'Avenir Next';
+  line-height: normal;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.site-footer-link {
+  display: block;
+  font-family: 'Avenir Next';
+  line-height: normal;
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.site-footer-link:hover {
+  background-color: transparent;
+  text-decoration: none;
+  color: #fff;
+}
+
+
+
+
 /* Login Form */
 .login form {
     margin-top: 20px;

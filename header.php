@@ -83,12 +83,11 @@
 					<nav class="collapse navbar-collapse" id="navbar-collapse">
 						<?php wp_nav_menu(
 							array(
-								'theme_location' 	=> 'primary',
-								'depth'             => 2,
-								'menu_class' 		=> 'nav navbar-nav navbar-header',
+								'depth'           => 2,
+								'theme_location' 	=> 'main',
+								'menu_class' 			=> 'nav navbar-nav navbar-header',
 								'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
-								// 'menu_id'			=> 'main-header',
-								'walker' 			=> new wp_bootstrap_navwalker()
+								'walker' 					=> new wp_bootstrap_navwalker()
 							)
 						); ?>
 
@@ -105,12 +104,11 @@
 
 						<?php wp_nav_menu(
 							array(
-								'theme_location' 	=> 'account',
-								'depth'             => 2,
-								'menu_class' 		=> 'nav navbar-nav navbar-account pull-right',
+								'depth'           => 2,
+								'theme_location' 	=> 'more',
+								'menu_class' 			=> 'nav navbar-nav navbar-account pull-right',
 								'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
-								// 'menu_id'			=> 'second-menu',
-								'walker' 			=> new wp_bootstrap_navwalker()
+								'walker' 					=> new wp_bootstrap_navwalker()
 							)
 						); ?>
 					</nav>
