@@ -24,7 +24,9 @@
 <body <?php body_class(); ?>>
 	<?php do_action( 'before' ); ?>
 
-<?php if (($post->ID == 116) or ($post->ID == 131)): ?>
+<?php // if (($post->ID == 116) or ($post->ID == 131)): ?>
+
+<?php /*
 <header class="siteHeader">
 	<div class="container">
 		<div class="row">
@@ -33,10 +35,11 @@
 		</div>
 	</div>
 </header>
+*/ ?>
 
+<?php // else: ?>
 
-
-<?php else: ?>
+<?php /*
 <header id="masthead" class="site-header" role="banner">
 <?php // substitute the class "container-fluid" below if you want a wider content area ?>
 	<div class="container">
@@ -49,35 +52,32 @@
 						<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
 					</a>
 				<?php } // end if ( ! empty( $header_image ) ) ?>
-
-
 				<div class="site-branding">
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<p class="site-description lead"><?php bloginfo( 'description' ); ?></p>
 				</div>
-
 			</div>
 		</div>
 	</div><!-- .container -->
 </header><!-- #masthead -->
+*/ ?>
 
-<nav class="site-navigation">
-<?php // substitute the class "container-fluid" below if you want a wider content area ?>
-	<div class="container">
+<div class="site-navigation">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="site-navigation-inner col-sm-12">
-				<div class="navbar navbar-default">
+				<div class="navbar">
+
 					<div class="navbar-header">
-						<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
 							<span class="sr-only"><?php _e('Toggle navigation','_tk') ?> </span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-
-						<!-- Your site title as branding in the menu -->
-						<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+						<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+							<?php bloginfo( 'name' ); ?>
+						</a>
 					</div>
 
 					<nav class="collapse navbar-collapse" id="navbar-collapse">
@@ -85,21 +85,20 @@
 							array(
 								'theme_location' 	=> 'primary',
 								'depth'             => 2,
-								// 'container'         => 'nav',
-								'menu_class' 		=> 'nav navbar-nav',
+								'menu_class' 		=> 'nav navbar-nav navbar-header',
 								'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
-								'menu_id'			=> 'main-menu',
+								// 'menu_id'			=> 'main-header',
 								'walker' 			=> new wp_bootstrap_navwalker()
 							)
 						); ?>
 
-						<ul class="nav navbar-nav pull-right">
-							<li class="nav-item">
-								<a class="nav-link" href="/account/">Account</a>
+						<ul class="nav navbar-nav navbar-account pull-right">
+							<li class="menu-item">
+								<a href="/account/">Account</a>
 							</li>
 							<?php if ( is_user_logged_in() ) { ?>
-								<li class="nav-item">
-									<a class="nav-link" href="<?php echo wp_logout_url( home_url() ); ?>">Logout</a>
+								<li class="menu-item">
+									<a href="<?php echo wp_logout_url( home_url() ); ?>">Logout</a>
 								</li>
 							<?php } ?>
 						</ul>
@@ -108,22 +107,18 @@
 							array(
 								'theme_location' 	=> 'account',
 								'depth'             => 2,
-								// 'container'         => 'nav',
-								'menu_class' 		=> 'nav navbar-nav pull-right',
+								'menu_class' 		=> 'nav navbar-nav navbar-account pull-right',
 								'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
-								'menu_id'			=> 'account-menu',
+								// 'menu_id'			=> 'second-menu',
 								'walker' 			=> new wp_bootstrap_navwalker()
 							)
 						); ?>
-
-
-
 					</nav>
-
 
 				</div><!-- .navbar -->
 			</div>
 		</div>
 	</div><!-- .container -->
-</nav><!-- .site-navigation -->
-<?php endif; ?>
+</div><!-- .site-navigation -->
+
+<?php // endif; ?>
