@@ -1,9 +1,14 @@
 <div class="col-sm-4">
 <div class="resourceCard">
+
   <div class="resourceCard-header category-<?php the_field('resource_category'); ?>">
     <img class="resourceCard-header-logo" src="<?php echo get_template_directory_uri() . '/images/' . get_field('resource_category') . '.png'; ?>">
     <h4><?php the_field('resource_format'); ?></h4>
-    <h2 class="resourceCard-title"><?php the_title(); ?> <?php edit_post_link('*'); ?></h2>
+    <h2 class="resourceCard-title">
+      <a href="<?php echo get_permalink(); ?>">
+        <?php the_title(); ?> <?php edit_post_link('*'); ?>
+      </a>
+    </h2>
   </div>
 
   <div class="resourceCard-content">

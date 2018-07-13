@@ -18,9 +18,9 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class('is-fixed'); ?>>
 <?php do_action( 'before' ); ?>
-<header class="site-navigation navbar navbar-expand-xl navbar-fixed-top">
+<header class="site-header navbar navbar-expand-xl navbar-fixed-top">
 	<div class="container">
 		<div class="navbar-header">
 			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">

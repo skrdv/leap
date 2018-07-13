@@ -362,16 +362,21 @@ nav .form-control {
 	background-position: top center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	padding: 0 0 137px 0;
+	padding: 0 0 30px 0;
 	margin: 0;
 }
 
 .getstartedBanner-title {
+	padding: 40px 20px;
 	font-family: Avenir Next;
-	line-height: 90px;
+	line-height: 90px;	
 	font-size: 54px;
+	font-weight: 700;
 	color: #FFFFFF;
 	text-shadow: 0px 4px 100px rgba(0, 0, 0, 0.5), 1px 1px 0px rgba(0, 0, 0, 0.15);
+	background: rgba(0,0,0,0.4);
+	border-top: 8px solid #00b3e6;
+	border-bottom: 8px solid #00b3e6;
 }	
 
 
@@ -386,6 +391,17 @@ nav .form-control {
 	line-height: 48px;
 	font-size: 36px;
 	color: #23313B;
+}
+
+.pageSection-quote {
+	line-height: 60px;
+	font-size: 36px;
+	color: #FFFFFF;
+	font-weight: 700;
+}
+
+.pageSection-quote strong{
+	color: #23313b;
 }
 
 .pageSection-title:after {
@@ -414,31 +430,35 @@ nav .form-control {
 
 .pageSection-1{
 	background-color: #00B3E6;
-	padding: 80px 0;
+	padding: 80px 0 370px 0;
+	position: relative;
 }
 
 .pageSection-2 {
-	height: 885px;
-	background-position: top center;
-	background-size: cover;
-	background-repeat: no-repeat;
+	margin-top: -282px;
 }
 
 .pageSection-3 {
-	margin-top: -64px;
-	margin-bottom: -0px;
+	padding: 90px 0;
 }
 
-.pageSection-3 .container{
-	padding-bottom: 0;
+.pageSection-3 .pageSection-title{
+	color: #23313B;
+	font-weight: 700;
 }
+
+.pageSection-3 .pageSection-title:after{
+	background-color: #F5C400;
+	font-weight: 700;
+}
+
+.pageSection-3 .pageSection-text{
+	color: #23313B;
+}
+
 
 .pageSection-4 {
-	height: 1150px;
-	background-position: top center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-image: url(images/fake-slider.png);
+	padding: 0 0 60px 0;
 }
 
 .pageSection-5 {
@@ -449,12 +469,46 @@ nav .form-control {
 }
 
 .pageSection-6 {
+	position: relative;
+	padding: 90px 0;
+}
 
+
+.pageSection-6 .pageSection-title{
+	font-weight: 700;
+	padding-bottom: 60px;
+}
+
+
+.pageSection-6 .pageSection-title:after{
+	background-color: #F5C400;
+	margin-bottom: 80px;
+}
+
+.pageSection-6 .leap-stripe{
+	top: -600px;
 }
 
 .pageSection-7 {
+	padding: 90px 0;
 	background-color: #eaeaea;
 }
+
+
+.pageSection-7 .pageSection-title{
+	font-weight: 700;
+	padding-bottom: 60px;
+}
+
+
+.pageSection-7 .pageSection-title:after{
+	background-color: #F5C400;
+	margin-bottom: 60px;
+}
+
+
+
+
 
 .sectionSlider {
 	position: relative;
@@ -766,4 +820,101 @@ nav .form-control {
 	margin: -15px 0 0 0;
 	position:relative;
 	top: -40px;
+}
+
+
+/*=========================================*/
+
+.content-wrapper {
+	width: 100%;
+	overflow: hidden;
+}
+
+.leap-stripe {
+	top: 0;
+	right: -400px;
+	background: #2E89CB;
+	opacity: 0.1;
+	transform: rotate(-45deg);
+	transform-origin: 100% 0;
+	width: 5000px;
+	height: 394px;
+	position: absolute;
+	z-index: 5;
+}	
+
+.container {
+	position: relative;
+	z-index: 50;
+}
+
+/*==== getSlider --------------- */
+
+.getSlider {
+	width: 544px;
+	margin: 0px auto;
+}
+
+.getSlider-photo {
+	position: relative;
+	height: 352px;
+	background-image: url(/wp-content/uploads/2018/07/001.jpg);
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+}
+
+.getSlider-icon {
+	position: absolute;
+	width: 98px;
+	height: 98px;
+	background-color: #fff;
+	background-image: url(images/icon-learner-connected.png);
+	background-position: center;
+	right: -18px;
+	bottom: -18px;
+	box-shadow: 4px 4px 0px rgba(0, 179, 230, 0.25);
+}
+
+.getSlider-title {
+	margin: 40px 0 20px 0;
+	line-height: 48px;
+	font-size: 24px;
+	text-align: center;
+	color: #00B3E6;
+	font-weight: bold;
+	text-align: center;
+}
+
+.getSlider-text {
+	margin: 0 0 40px 0;
+	line-height: 38px;
+	font-size: 18px;
+	text-align: center;
+	color: #23313B;
+	text-align: center;
+}
+
+.getSlider-button {
+	background: #00B3E6;
+	line-height: 42px;
+	font-size: 24px;
+	text-align: center;
+	color: #FFFFFF;
+	font-weight: 700;
+	padding: 20px 0;
+	text-align: center;
+}
+
+.left.carousel-control, 
+.right.carousel-control  {
+	background: transparent;
+	width: 239px;
+	opacity: 1;
+	padding-top: 120px;
+}
+
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+background: transparent !important;
 }

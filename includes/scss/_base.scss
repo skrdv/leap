@@ -1,0 +1,43 @@
+
+// Colors
+$primary: #00B3E6;
+$secondary: #F5C400;
+$demonstrated: #FF6C0C;
+$focused: #B34FC5;
+$led: #84BE41;
+$text: #23313B;
+$gray: #77777A;
+$white: #FFFFFF;
+
+
+
+// Base
+html {
+
+}
+
+body {
+  font-family: 'Avenir Next', sans-serif;
+  background-color: $white;
+  color: $text;
+}
+
+body.is-fixed {
+  padding-top: 72px;
+}
+
+.is-center {
+  text-align: center;
+}
+
+.is-white {
+  color: $white;
+}
+
+.bg-primary {
+  background: $primary;
+}
+
+.bg-second {
+  background: $secondary;
+}

@@ -5,87 +5,62 @@
  * @package _tk
  */
 
- /**
-  * Store the theme's directory path and uri in constants
-  */
- define('THEME_DIR_PATH', get_template_directory());
- define('THEME_DIR_URI', get_template_directory_uri());
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
+
+// Set constants
+ define( 'THEME_PATH', get_template_directory() );
+ define( 'THEME_DIR_PATH', get_template_directory() );
+ define( 'THEME_DIR_URI', get_template_directory_uri() );
+ define( 'THEME_CSS', get_template_directory_uri().'/includes/css/' );
+ define( 'THEME_JS', get_template_directory_uri().'/includes/js/' );
+
+
+
+// Set content width
 if ( ! isset( $content_width ) )
 	$content_width = 750; /* pixels */
 
-if ( ! function_exists( '_tk_setup' ) ) :
-/**
- * Set up theme defaults and register support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which runs
- * before the init hook. The init hook is too late for some features, such as indicating
- * support post thumbnails.
- */
-function _tk_setup() {
-	global $cap, $content_width;
 
-	// Add html5 behavior for some theme elements
-	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 
-    // This theme styles the visual editor with editor-style.css to match the theme style.
-	add_editor_style();
+// Set up theme defaults
+if ( ! function_exists('_tk_setup') ) :
+  function _tk_setup() {
+  	global $cap, $content_width;
 
-	/**
-	 * Add default posts and comments RSS feed links to head
-	*/
-	add_theme_support( 'automatic-feed-links' );
+  	add_editor_style();
+    add_theme_support( 'post-thumbnails' );
+  	add_theme_support( 'automatic-feed-links' );
+    add_theme_support('html5', array(
+      'comment-list',
+      'comment-form',
+      'search-form',
+      'gallery',
+      'caption'
+    ));
 
-	/**
-	 * Enable support for Post Thumbnails on posts and pages
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	*/
-	add_theme_support( 'post-thumbnails' );
+  	load_theme_textdomain( '_tk', THEME_DIR_PATH . '/languages' );
+  	register_nav_menus( array(
+  		'main'      => __( 'Main', '_tk' ),
+  		'more'      => __( 'More', '_tk' ),
+  		'footer-1'  => __( 'Footer 1', '_tk' ),
+  		'footer-2'  => __( 'Footer 2', '_tk' ),
+  		'footer-3'  => __( 'Footer 3', '_tk' ),
+  		'footer-4'  => __( 'Footer 4', '_tk' ),
+  	));
 
-	/**
-	 * Enable support for Post Formats
-	*/
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+    // add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+  	// add_theme_support( 'custom-background', apply_filters( '_tk_custom_background_args', array(
+  	// 	'default-color' => 'ffffff',
+  	// 	'default-image' => '',
+  	// )));
 
-	/**
-	 * Setup the WordPress core custom background feature.
-	*/
-	add_theme_support( 'custom-background', apply_filters( '_tk_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-		) ) );
-
-	/**
-	 * Make theme available for translation
-	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on _tk, use a find and replace
-	 * to change '_tk' to the name of your theme in all the template files
-	*/
-	load_theme_textdomain( '_tk', THEME_DIR_PATH . '/languages' );
-
-	/**
-	 * This theme uses wp_nav_menu() in one location.
-	*/
-	register_nav_menus( array(
-		'main'  => __( 'Main menu', '_tk' ),
-		'more'  => __( 'More menu', '_tk' ),
-		'footer-1'  => __( 'Footer 1', '_tk' ),
-		'footer-2'  => __( 'Footer 2', '_tk' ),
-		'footer-3'  => __( 'Footer 3', '_tk' ),
-		'footer-4'  => __( 'Footer 4', '_tk' ),
-		) );
-
-}
+  }
 endif; // _tk_setup
 add_action( 'after_setup_theme', '_tk_setup' );
 
-/**
- * Register widgetized area and update sidebar with default widgets
- */
+
+
+// Register sidebar widgets
 function _tk_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', '_tk' ),
@@ -98,89 +73,67 @@ function _tk_widgets_init() {
 }
 add_action( 'widgets_init', '_tk_widgets_init' );
 
-/**
- * Enqueue scripts and styles
- */
+
+
+// Enqueue scripts and styles
 function _tk_scripts() {
 
-	// Import the necessary TK Bootstrap WP CSS additions
-	wp_enqueue_style( '_tk-bootstrap-wp', THEME_DIR_URI . '/includes/css/bootstrap-wp.css' );
-
-	// load bootstrap css
-	//wp_enqueue_style( '_tk-bootstrap', THEME_DIR_URI . '/includes/resources/bootstrap/css/bootstrap.min.css' );
-
-	// load Font Awesome css
-	wp_enqueue_style( '_tk-font-awesome', THEME_DIR_URI . '/includes/css/font-awesome.min.css', false, '4.1.0' );
-
-	// load _tk styles
-	wp_enqueue_style( '_tk-style', get_stylesheet_uri() );
-
-	// load custom styles
-  if(is_admin()){
-    wp_enqueue_style( '_tk-admin', THEME_DIR_URI . '/includes/css/admin.css' );
-  } else {
-    wp_enqueue_style( '_tk-custom', THEME_DIR_URI . '/includes/css/custom.css' );
+  if( is_admin() ){
+    wp_enqueue_style( 'leap-admin', THEME_CSS.'/admin.css' );
   }
+  
+  wp_enqueue_style( 'bootstrap', THEME_CSS.'bootstrap.min.css' );
+	wp_enqueue_style( 'bootstrap-wp', THEME_CSS.'bootstrap-wp.css' );
+  wp_enqueue_style( 'fontawesome', THEME_CSS.'font-awesome.min.css' );
+  wp_enqueue_style( 'leap-theme', THEME_CSS.'theme.css' );
+  wp_enqueue_style( 'leap-custom', THEME_CSS.'/custom.css' );
+	wp_enqueue_style( 'leap-style', get_stylesheet_uri() );
 
-
-	// load bootstrap js
-	//wp_enqueue_script('_tk-bootstrapjs', THEME_DIR_URI . '/includes/resources/bootstrap/js/bootstrap.min.js', array('jquery') );
-
-	// load bootstrap wp js
-	wp_enqueue_script( '_tk-bootstrapwp', THEME_DIR_URI . '/includes/js/bootstrap-wp.js', array('jquery') );
-
-	wp_enqueue_script( '_tk-skip-link-focus-fix', THEME_DIR_URI . '/includes/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script('bootstrap', THEME_JS . 'bootstrap.min.js', array('jquery') );
+	wp_enqueue_script( 'bootstrap-wp', THEME_JS . 'bootstrap-wp.js', array('jquery') );
+	wp_enqueue_script( 'link-focus-fix', THEME_JS . 'skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( '_tk-keyboard-image-navigation', THEME_DIR_URI . '/includes/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+		wp_enqueue_script( '_tk-keyboard-image-navigation', THEME_JS . 'keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 
 }
 add_action( 'wp_enqueue_scripts', '_tk_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require THEME_DIR_PATH . '/includes/custom-header.php';
 
-/**
- * Custom template tags for this theme.
- */
-require THEME_DIR_PATH . '/includes/template-tags.php';
 
-/**
- * Custom functions that act independently of the theme templates.
- */
-require THEME_DIR_PATH . '/includes/extras.php';
+// Include SCSS Compiler
+include_once THEME_PATH . '/includes/wp-scss-compiler.php';
 
-/**
- * Customizer additions.
- */
-require THEME_DIR_PATH . '/includes/customizer.php';
+ // Implement the Custom Header feature.
+require THEME_PATH . '/includes/custom-header.php';
 
-/**
- * Load Jetpack compatibility file.
- */
-require THEME_DIR_PATH . '/includes/jetpack.php';
+ // Custom template tags for this theme.
+require THEME_PATH . '/includes/template-tags.php';
 
-/**
- * Load custom WordPress nav walker.
- */
-require THEME_DIR_PATH . '/includes/bootstrap-wp-navwalker.php';
+ // Custom functions that act independently of the theme templates.
+require THEME_PATH . '/includes/extras.php';
 
-/**
- * Update search options
- */
-require THEME_DIR_PATH . '/includes/filter.php';
+// Update search options
+require THEME_PATH . '/includes/filter.php';
 
-/**
- * Adds WooCommerce support
- */
-add_action( 'after_setup_theme', 'woocommerce_support' );
+ // Customizer additions.
+require THEME_PATH . '/includes/customizer.php';
+
+ // Load Jetpack compatibility file.
+require THEME_PATH . '/includes/jetpack.php';
+
+ // Load custom WordPress nav walker.
+require THEME_PATH . '/includes/bootstrap-wp-navwalker.php';
+
+
+
+// Adds WooCommerce support
 function woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 }
+add_action( 'after_setup_theme', 'woocommerce_support' );
