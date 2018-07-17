@@ -1,18 +1,22 @@
-html {
-  font-family: sans-serif;
-  line-height: 1.15;
-}
 body {
   font-family: 'Avenir Next', sans-serif;
-  font-weight: bold;
-  color: #23313b;
   background-color: #fff;
+  color: #23313b;
 }
-.text-center {
+body.is-fixed {
+  padding-top: 72px;
+}
+.is-center {
   text-align: center;
 }
-.color-white {
+.is-white {
   color: #fff;
+}
+.bg-primary {
+  background: #00b3e6;
+}
+.bg-second {
+  background: #f5c400;
 }
 /* Fonts */
 @font-face {
@@ -29,7 +33,6 @@ body {
   font-weight: bold;
   font-style: normal;
 }
-/* Navigation */
 .navbar {
   position: relative;
   height: 72px;
@@ -387,13 +390,13 @@ body {
   }
 }
 /* Site Footer */
-.siteFooter {
+.site-footer {
   /* padding-top: 90px; */
   padding-bottom: 110px;
   color: #fff;
   background: #23313b;
 }
-.siteFooter-title {
+.site-footer-title {
   margin-top: 90px;
   margin-bottom: 50px;
   font-family: 'Avenir Next';
@@ -402,34 +405,34 @@ body {
   font-weight: bold;
   text-align: center;
 }
-.siteFooter-title span {
+.site-footer-title span {
   display: block;
   width: 64px;
   height: 8px;
   margin: 40px auto 0 auto;
   background: #fff;
 }
-.siteFooter .wpcf7 {
+.site-footer .wpcf7 {
   margin-top: 25px;
 }
-.siteFooter-subtitle {
+.site-footer-subtitle {
   margin-top: 30px;
   margin-bottom: 40px;
   font-family: 'Avenir Next';
   font-size: 24px;
   font-weight: bold;
 }
-.siteFooter-socials {
+.site-footer-socials {
   margin-bottom: 60px;
   text-align: center;
 }
-.siteFooter-socials .social-icons {
+.site-footer-socials .social-icons {
   display: flex;
   justify-content: center;
   list-style: none;
   padding-left: 0;
 }
-.siteFooter-socials .social-icons a {
+.site-footer-socials .social-icons a {
   display: inline-block;
   width: 64px;
   height: 64px;
@@ -438,15 +441,15 @@ body {
   box-sizing: border-box;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.siteFooter-socials .social-icons a:hover, .siteFooter-socials .social-icons a:focus {
+.site-footer-socials .social-icons a:hover, .site-footer-socials .social-icons a:focus {
   background-color: #00b3e6;
 }
-.siteFooter-socials .social-icons a .fa {
+.site-footer-socials .social-icons a .fa {
   color: #fff;
   font-size: 40px;
   line-height: 58px;
 }
-.siteFooter-copy {
+.site-footer-copy {
   margin-top: 90px;
   margin-bottom: 30px;
   font-family: 'Avenir Next';
@@ -456,7 +459,7 @@ body {
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
-.siteFooter-link {
+.site-footer-link {
   display: block;
   font-family: 'Avenir Next';
   line-height: normal;
@@ -467,7 +470,7 @@ body {
   color: #fff;
   text-decoration: underline;
 }
-.siteFooter-link:hover {
+.site-footer-link:hover {
   background-color: transparent;
   text-decoration: none;
   color: #fff;
@@ -501,53 +504,151 @@ body {
 .page-template-default .single {
   padding-top: 72px;
 }
-.resource-section {
-  padding: 120px 0;
-}
-.resource-section .title {
-  margin: 0;
-  font-size: 36px;
+.resource-sesction {
+  padding: 100px 0;
   font-weight: bold;
+}
+.resource-one {
+  background: #00b3e6;
+}
+.resource-one .card {
+  font-size: 36px;
   line-height: 60px;
+  font-weight: bold;
 }
-.resource-hero {
-  background-color: #00b3e6;
+.resource-one .card-content {
+  color: #fff;
 }
-.resource-hero span {
-  display: block;
+.resource-one .card .line {
   width: 64px;
   height: 8px;
   margin: 30px 0;
-  background-color: #23313b;
+  background: #23313b;
 }
-.resource-hero p {
-  font-size: 36px;
-  font-weight: bold;
-  line-height: 60px;
-}
-.resource-quote p {
+.resource-two .card {
   font-size: 24px;
+  line-height: 38px;
   font-weight: bold;
+}
+.resource-two .card-content {
   line-height: 60px;
+  margin-bottom: 30px;
 }
-.resource-about {
-  background-color: #f5c400;
+.resource-two .card-subtitle {
+  font-weight: normal;
 }
-.resource-about .square {
-  margin: 60px auto;
-  min-height: 350px;
-  border: 8px solid #fff;
+.resource-three {
+  background: #f5c400;
 }
-.resource-content .title {
-  margin-bottom: 80px;
+.resource-three .card {
   line-height: 48px;
+  font-weight: bold;
+  text-align: center;
+}
+.resource-three .card-title {
   font-size: 36px;
 }
-.resource-content .step {
-  display: flex;
-  margin-bottom: 90px;
+.resource-three .card-subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
 }
-.resource-content .step strong {
-  width: 260px;
+.resource-three .card-content {
+  font-size: 24px;
+  padding-left: 120px;
+  padding-right: 120px;
+  margin-bottom: 30px;
+}
+.resource-three .card-footer {
+  font-size: 12px;
+}
+.resource-three .card .square {
+  display: flex;
+  justify-content: space-around;
+  padding: 60px 90px;
+  border: 8px solid #fff;
+  text-align: left;
+}
+.resource-three .card .square ul {
+  list-style: none;
+}
+.resource-four .card {
+  font-size: 24px;
+  line-height: 48px;
+  font-weight: bold;
+}
+.resource-four .card-title {
+  font-size: 36px;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.resource-four .card .line {
+  width: 64px;
+  height: 8px;
+  margin: 30px auto;
+  background: #f5c400;
+}
+.resource-four .card-content .step {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.resource-four .card-content .step-label {
+  display: inline-block;
+  width: 19%;
+}
+.resource-four .card-content .step-text {
+  width: 80%;
+  display: inline-block;
+  font-weight: normal;
+}
+.resource-four .card-content .step .container {
+  display: flex;
+  margin: 40px auto;
+  padding: 40px 0;
+}
+.resource-four .card-footer .form-section {
+  padding: 25px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.resource-four .card-footer .form-section .container {
+  display: flex;
+  padding-bottom: 0;
+}
+.resource-four .card-footer .form-title {
+  width: 60%;
+  font-size: 36px;
+  line-height: 48px;
+}
+.resource-four .card-footer .form-content {
+  width: 40%;
+  text-align: right;
+}
+.resource-four .card-footer .form-label {
+  display: inline-block;
+  line-height: 64px;
+  text-transform: uppercase;
+}
+.resource-four .card-footer .form-icon {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 0 16px;
+  border: 4px solid #23313b;
+  text-align: center;
+}
+.resource-four .card-footer .form-icon .fa {
+  color: #23313b;
+  font-size: 40px;
+  line-height: 58px;
+}
+@media (max-width: 1024px) {
+  .resource-three .card .square {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (max-width: 768px) {
+  .resource-three .card .square, .resource-four .card .step {
+    flex-direction: column;
+  }
 }
 /*# sourceMappingURL=theme.css.map */

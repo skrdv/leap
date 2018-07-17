@@ -81,7 +81,7 @@ function _tk_scripts() {
   if( is_admin() ){
     wp_enqueue_style( 'leap-admin', THEME_CSS.'/admin.css' );
   }
-  
+
   wp_enqueue_style( 'bootstrap', THEME_CSS.'bootstrap.min.css' );
 	wp_enqueue_style( 'bootstrap-wp', THEME_CSS.'bootstrap-wp.css' );
   wp_enqueue_style( 'fontawesome', THEME_CSS.'font-awesome.min.css' );
@@ -107,7 +107,7 @@ add_action( 'wp_enqueue_scripts', '_tk_scripts' );
 
 
 // Include SCSS Compiler
-include_once THEME_PATH . '/includes/wp-scss-compiler.php';
+// include_once THEME_PATH . '/includes/wp-scss-compiler.php';
 
  // Implement the Custom Header feature.
 require THEME_PATH . '/includes/custom-header.php';
