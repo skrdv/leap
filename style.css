@@ -272,6 +272,7 @@ nav .form-control {
 }
 
 
+/*
 .resourceCard {
 	margin-bottom: 30px;
 	border: 1px solid #e6e6e6;
@@ -348,7 +349,7 @@ nav .form-control {
 	font-weight: bold;
 	margin-bottom: 5px;
 }
-
+*/
 
 
 /*===================================*/
@@ -369,7 +370,7 @@ nav .form-control {
 .getstartedBanner-title {
 	padding: 40px 20px;
 	font-family: Avenir Next;
-	line-height: 90px;	
+	line-height: 90px;
 	font-size: 54px;
 	font-weight: 700;
 	color: #FFFFFF;
@@ -377,7 +378,7 @@ nav .form-control {
 	background: rgba(0,0,0,0.4);
 	border-top: 8px solid #00b3e6;
 	border-bottom: 8px solid #00b3e6;
-}	
+}
 
 
 .pageSection-banner {
@@ -547,14 +548,14 @@ nav .form-control {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	
+
 	padding: 0 80px;
-	
+
 	font-family: Avenir Next;
 	line-height: 40px;
 	font-size: 36px;
 	text-align: center;
-	
+
 	color: #fff;
 }
 
@@ -568,7 +569,7 @@ nav .form-control {
 
 .sectionCard {
 
-}	
+}
 
 .sectionCard-inner {
 	background: #00B3E6;
@@ -631,7 +632,7 @@ nav .form-control {
 
 
 .getstartedCard-inner {
-	background: #FFFFFF;	
+	background: #FFFFFF;
 	box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
 	height:255px;
 	display: flex;
@@ -696,7 +697,7 @@ nav .form-control {
 }
 
 .pageSection-10 .pageSection-text strong{
-	color: #23313B;		
+	color: #23313B;
 }
 
 
@@ -740,7 +741,7 @@ nav .form-control {
 
 .mainCard {
 	margin-bottom: 30px;
-}	
+}
 
 .mainCard-inner {
 	background: #00B3E6;
@@ -841,7 +842,7 @@ nav .form-control {
 	height: 394px;
 	position: absolute;
 	z-index: 5;
-}	
+}
 
 .container {
 	position: relative;
@@ -906,7 +907,7 @@ nav .form-control {
 	text-align: center;
 }
 
-.left.carousel-control, 
+.left.carousel-control,
 .right.carousel-control  {
 	background: transparent;
 	width: 239px;

@@ -1,51 +1,112 @@
 
-// Section
-.resource {
 
-  // All
-  &-sesction {
-    padding: 100px 0;
-    font-weight: bold;
-  }
 
-  // First
-  &-one {
-    background: $primary;
+
+// Resource section
+.resourceSesction {
+  font-weight: bold;
+
+  // Title
+  &-hero {
+    height: 600px;
+    padding-bottom: 0;
+
+    .container {
+      height: 100%;
+    }
+
     .card {
-      font-size: 36px;
-      line-height: 60px;
-      font-weight: bold;
-      &-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      border-top: 4px solid transparent;
+      &-meta {
+        float: right;
+        color: $white;
+        padding: 5px 10px;
+        text-transform: uppercase;
+      }
+      &-title {
+        margin-top: 40px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        line-height: 60px;
+        font-size: 45px;
         color: $white;
       }
-      .line {
-        width: 64px;
-        height: 8px;
-        margin: 30px 0;
-        background: $text;
+      &-subtitle {
+        margin-top: 0;
+        margin-bottom: 50px;
+        font-size: 45px;
+        color: $white;
       }
     }
+
+    &.is {
+      &-connected {
+        .card {border-color: $connected;}
+        .card-meta {background-color: $connected;}
+      }
+      &-focused {
+        .card {border-color: $focused;}
+        .card-meta {background-color: $focused;}
+      }
+      &-led {
+        .card {border-color: $led;}
+        .card-meta {background-color: $led;}
+      }
+      &-demonstrated {
+        .card {border-color: $demonstrated;}
+        .card-meta {background-color: $demonstrated;}
+      }
+    }
+
   }
 
-  // Second
-  &-two {
+  &-description {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    .container {
+      padding-bottom: 0;
+    }
     .card {
-      font-size: 24px;
-      line-height: 38px;
-      font-weight: bold;
       &-content {
         line-height: 60px;
-        margin-bottom: 30px;
+        font-size: 36px;
+        color: $white;
       }
-      &-subtitle {
-        font-weight: normal;
-      }
+    }
+    &.is {
+      &-connected {background-color: $connected;}
+      &-focused {background-color: $focused;}
+      &-led {background-color: $led;}
+      &-demonstrated {background-color: $demonstrated;}
     }
   }
 
-  // Third
-  &-three {
-    background: $secondary;
+  // Reviews
+  &-reviews {
+    padding: 80px 0;
+    .resourceSesction-title {
+      font-weight: bold;
+      line-height: 48px;
+      font-size: 36px;
+      text-align: center;
+    }
+    .resourceSesction-line {
+      margin: 30px auto 40px auto;
+      width: 64px;
+      height: 8px;
+      background: $secondary;
+    }
+  }
+
+  // Statistic
+  &-statistic {
+    padding-top: 75px;
+    padding-bottom: 75px;
+
     .card {
       line-height: 48px;
       font-weight: bold;
@@ -55,107 +116,148 @@
       }
       &-subtitle {
         font-size: 18px;
-        margin-bottom: 30px;
+        line-height: 40px;
+        margin-bottom: 40px;
       }
       &-content {
         font-size: 24px;
-        padding-left: 120px;
-        padding-right: 120px;
         margin-bottom: 30px;
+      }
+      &-square {
+        display: flex;
+        justify-content: space-around;
+        max-width: 740px;
+        margin: 0 auto;
+        padding: 50px 90px;
+        border: 8px solid #FFFFFF;
+        text-align: left;
+        ul {
+          padding-left: 0;
+          list-style: none;
+        }
+        ul li {
+          font-size: 28px;
+          line-height: 42px;
+        }
       }
       &-footer {
         font-size: 12px;
       }
-      .square {
-        display: flex;
-        justify-content: space-around;
-        padding: 60px 90px;
-        border: 8px solid #FFFFFF;
-        text-align: left;
-        ul { list-style: none; }
 
-      }
     }
   }
 
-  // Fourth
-  &-four {
-    .card {
-      font-size: 24px;
+  // Steps
+  &-steps {
+    padding-top: 80px;
+
+    .resourceSesction-title {
+      font-size: 36px;
       line-height: 48px;
       font-weight: bold;
-      &-title {
-        font-size: 36px;
-        text-align: center;
-        max-width: 680px;
-        margin: 0 auto;
-      }
-      .line {
-        width: 64px;
-        height: 8px;
-        margin: 30px auto;
-        background: $secondary;
-      }
-      &-content {
-        .step {
-          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-          &-label {
-            display: inline-block;
-            width: 19%;
-          }
-          &-text {
-            width: 80%;
-            display: inline-block;
-            font-weight: normal;
-          }
-          .container {
-            display: flex;
-            margin: 40px auto;
-            padding: 40px 0;
-          }
-        }
-      }
-      &-footer {
-        .form {
-          &-section {
-            padding: 25px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            .container {
-              display: flex;
-              padding-bottom: 0;
-            }
-          }
-          &-title {
-            width: 60%;
-            font-size: 36px;
-            line-height: 48px;
-          }
-          &-content {
-            width: 40%;
-            text-align: right;
-          }
-          &-label {
-            display: inline-block;
-            line-height: 64px;
-            text-transform: uppercase;
-          }
-          &-icon {
-            display: inline-block;
-            width: 64px;
-            height: 64px;
-            margin: 0 16px;
-            border: 4px solid $text;
-            text-align: center;
-            .fa {
-              color: $text;
-              font-size: 40px;
-              line-height: 58px;
-            }
-          }
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
 
+    .resourceSesction-line {
+      width: 64px;
+      height: 8px;
+      margin: 30px auto;
+      background: $secondary;
+    }
+
+    .stepItem {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 40px auto;
+        padding: 40px 0;
+      }
+      &-category {
+        width: 100%;
+        padding-left: 19%;
+        margin-bottom: 20px;
+        font-size: 12px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        &.is {
+          &-connected {color: $connected;}
+          &-focused {color: $focused;}
+          &-led {color: $led;}
+          &-demonstrated {color: $demonstrated;}
         }
+      }
+      &-label {
+        display: inline-block;
+        width: 19%;
+        font-size: 24px;
+      }
+      &-text {
+        width: 80%;
+        display: inline-block;
+        font-weight: normal;
+        line-height: 48px;
+        font-size: 24px;
       }
     }
+
+  }
+
+  &-footer {
+
+    // &-footer {
+      .form {
+        &-section {
+          padding: 25px 0;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+          .container {
+            display: flex;
+            padding-bottom: 0;
+          }
+        }
+        &-title {
+          width: 60%;
+          font-size: 36px;
+          line-height: 48px;
+        }
+        &-content {
+          width: 40%;
+          text-align: right;
+        }
+        &-label {
+          display: inline-block;
+          line-height: 64px;
+          text-transform: uppercase;
+        }
+        &-icon {
+          float: right;
+          display: block;
+          width: 64px;
+          height: 64px;
+          margin: 0 16px;
+          border: 4px solid $text;
+          text-align: center;
+          .fa {
+            color: $text;
+            font-size: 40px;
+            line-height: 58px;
+          }
+        }
+        &-download {
+          padding: 80px 0;
+          .form-title {
+            font-size: 36px;
+            line-height: 64px;
+          }
+          .form-label {
+            line-height: 64px;
+          }
+        }
+      }
+    // }
+
   }
 
 }
@@ -171,4 +273,175 @@
   .resource-four .card .step {
     flex-direction: column;
   }
+}
+
+
+
+.reviewItem {
+  display: flex;
+
+  &-image {
+    margin-right: 30px;
+    width: 160px;
+    height: 160px;
+    background: #c4c4c4;
+  }
+
+  &-text {
+    margin-bottom: 50px;
+    font-weight: normal;
+    line-height: 42px;
+    font-size: 24px;
+  }
+
+  &-author {
+    font-size: 24px;
+  }
+
+  &-position {
+    margin-bottom: 100px;
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+}
+
+
+
+
+// Resources section
+.resourcesSesction {
+
+  &-title {
+    height: 600px;
+    background-color: $focused;
+
+    .container {
+      height: 100%;
+    }
+
+    .card {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      border-top: 4px solid $primary;
+      &-title {
+        margin: 30px 0;
+        font-weight: bold;
+        line-height: 60px;
+        font-size: 45px;
+        color: $white;
+      }
+    }
+
+  }
+
+  &-filter {
+    padding: 30px 0;
+
+    .text {
+      padding-top: 30px;
+      padding-bottom: 80px;
+      font-weight: bold;
+      line-height: 60px;
+      font-size: 36px;
+      color: $text;
+    }
+
+    .title {
+      margin-bottom: 30px;
+      font-weight: bold;
+      line-height: 20px;
+      font-size: 28px;
+    }
+
+  }
+
+}
+
+
+.card-collaborate {
+  padding: 42px 48px;
+
+  .card-title {
+    font-weight: bold;
+    line-height: 32px;
+    font-size: 20px;
+    color: $white;
+  }
+
+  .card-line {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 64px;
+    height: 8px;
+    background: $white;
+  }
+
+
+}
+
+
+.resourceCard {
+  // min-height: 475px;
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+  &:first-child {
+    padding-top: 60px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .container {
+    display: flex;
+  }
+
+  &-header {
+    width: 50%;
+    padding-right: 33px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &-category {
+    margin-bottom: 40px;
+    font-weight: bold;
+    line-height: 16px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  &-title {
+    margin: 0;
+    font-weight: bold;
+    line-height: 32px;
+    font-size: 28px;
+    color: $text;
+  }
+
+  &-text {
+    line-height: 32px;
+    font-size: 16px;
+    color: $text;
+  }
+
+  &-button {
+    display: block;
+    height: 64px;
+    font-weight: bold;
+    line-height: 64px;
+    font-size: 18px;
+    text-align: center;
+    color: $text;
+    background-color: $secondary;
+  }
+
+  &-content {
+    width: 50%;
+  }
+
 }

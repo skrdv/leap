@@ -20,7 +20,7 @@
 </head>
 <body <?php body_class('is-fixed'); ?>>
 <?php do_action( 'before' ); ?>
-<header class="site-header navbar navbar-expand-xl navbar-fixed-top">
+<header class="siteHeader navbar navbar-expand-xl navbar-fixed-top">
 	<div class="container">
 		<div class="navbar-header">
 			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">

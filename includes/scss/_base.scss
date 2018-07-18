@@ -2,9 +2,12 @@
 // Colors
 $primary: #00B3E6;
 $secondary: #F5C400;
-$demonstrated: #FF6C0C;
+
+$connected: #00B3E6;
 $focused: #B34FC5;
 $led: #84BE41;
+$demonstrated: #FF6C0C;
+
 $text: #23313B;
 $gray: #77777A;
 $white: #FFFFFF;
@@ -38,6 +41,141 @@ body.is-fixed {
   background: $primary;
 }
 
-.bg-second {
+.bg-secondary {
   background: $secondary;
+}
+
+.bg-connected {
+  background: $connected;
+}
+
+.bg-focused {
+  background: $focused;
+}
+
+.bg-led {
+  background: $led;
+}
+
+.bg-demonstrated {
+  background: $demonstrated;
+}
+
+
+
+
+// Buttons
+.btn {
+  padding: 14px 32px;
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: bold;
+  color: $text;
+  border-radius: 0;
+  border: 2px solid transparent;
+}
+
+.btn-secondary {
+  border-color: $secondary;
+  background-color: $secondary;
+}
+
+.btn-connected {
+  border-color: $connected;
+  background-color: $connected;
+}
+
+.btn-focused {
+  border-color: $focused;
+  background-color: $focused;
+}
+
+.btn-led {
+  border-color: $led;
+  background-color: $led;
+}
+
+.btn-demonstrated {
+  border-color: $demonstrated;
+  background-color: $demonstrated;
+}
+
+
+.btn-default.active,
+.btn-default:active,
+.btn-default.active:hover,
+.btn-default.active:focus,
+.open > .dropdown-toggle.btn-default {
+  color: $text;
+  background-color: $white;
+  border-color: $white;
+}
+
+.btn-group {
+
+  &-connected {
+    .btn-default {
+      border-color: $connected !important;
+    }
+  }
+
+  &-focused {
+    .btn-default {
+      border-color: $focused !important;
+    }
+  }
+
+  &-led {
+    .btn-default {
+      border-color: $led !important;
+    }
+  }
+
+  &-demonstrated {
+    .btn-default {
+      border-color: $demonstrated !important;
+    }
+  }
+
+  .fa.fa-check {
+    color: $white;
+  }
+
+}
+
+
+// Forms
+.form-control {
+  margin-bottom: 15px;
+}
+
+select.form-control {
+  font-size: 18px;
+  color: $text;
+  background-color: $white ;
+  border: 2px solid #E4E4E4;
+  box-shadow: none;
+}
+
+
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;
 }

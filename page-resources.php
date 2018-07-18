@@ -1,4 +1,4 @@
-<?php //Template Name: Page Resources ?> 
+<?php //Template Name: Page Resources ?>
 <?php get_header(); ?>
 
 <?php $query = new WP_Query( array(
@@ -13,9 +13,116 @@ endwhile;
 
 ?>
 
+<section class="resourcesSesction resourcesSesction-title">
+  <div class="container">
 
-<div class="resourcesFilter" id="resources-filters" style="background: #eee; padding: 10px;">
+    <div class="card">
+      <h1 class="card-title">Tools & Resources</h1>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="resourcesSesction resourcesSesction-filter" id="resources-filters">
 	<div class="container">
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="text">
+					Our tools and resources are designed to embody the LEAP Learning Framework. Mix-and-match resources to create a personalized learning toolkit for the classroom or share your own innovations with the LEAP community.
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="title">Categories</div>
+				<div class="form-group">
+					 <input type="checkbox" name="fancy-checkbox-connected" id="fancy-checkbox-connected" autocomplete="off" />
+					 <div class="btn-group btn-group-connected">
+							 <label for="fancy-checkbox-connected" class="btn btn-connected">
+									 <span class="fa fa-check"></span>
+									 <span> </span>
+							 </label>
+							 <label for="fancy-checkbox-connected" class="btn btn-default active">
+								 Learner Connected
+							 </label>
+					 </div>
+			 </div>
+				<div class="form-group">
+					 <input type="checkbox" name="fancy-checkbox-focused" id="fancy-checkbox-focused" autocomplete="off" />
+					 <div class="btn-group btn-group-focused">
+							 <label for="fancy-checkbox-focused" class="btn btn-focused">
+									 <span class="fa fa-check"></span>
+									 <span> </span>
+							 </label>
+							 <label for="fancy-checkbox-focused" class="btn btn-default active">
+								 Learner Focused
+							 </label>
+					 </div>
+			 </div>
+				<div class="form-group">
+					 <input type="checkbox" name="fancy-checkbox-led" id="fancy-checkbox-led" autocomplete="off" />
+					 <div class="btn-group btn-group-led">
+							 <label for="fancy-checkbox-led" class="btn btn-led">
+									 <span class="fa fa-check"></span>
+									 <span> </span>
+							 </label>
+							 <label for="fancy-checkbox-led" class="btn btn-default active">
+								 Learner Led
+							 </label>
+					 </div>
+			 </div>
+				<div class="form-group">
+					 <input type="checkbox" name="fancy-checkbox-demonstrated" id="fancy-checkbox-demonstrated" autocomplete="off" />
+					 <div class="btn-group btn-group-demonstrated">
+							 <label for="fancy-checkbox-demonstrated" class="btn btn-demonstrated">
+									 <span class="fa fa-check"></span>
+									 <span> </span>
+							 </label>
+							 <label for="fancy-checkbox-demonstrated" class="btn btn-default active">
+								 Learner Demonstrated
+							 </label>
+					 </div>
+			 </div>
+
+			</div>
+			<div class="col-md-4">
+				<div class="title">Filter & Sort</div>
+				<div class="form-group">
+			    <select class="form-control custom-select">
+			      <option selected="">All Grade Levels</option>
+			      <option value="1">One</option>
+			      <option value="2">Two</option>
+			      <option value="3">Three</option>
+			    </select>
+			    <select class="form-control custom-select">
+			      <option selected="">All Subjects</option>
+			      <option value="1">One</option>
+			      <option value="2">Two</option>
+			      <option value="3">Three</option>
+			    </select>
+			    <select class="form-control custom-select">
+			      <option selected="">All Content Types</option>
+			      <option value="1">One</option>
+			      <option value="2">Two</option>
+			      <option value="3">Three</option>
+			    </select>
+			    <select class="form-control custom-select">
+			      <option selected="">Sort: Newest to Oldest</option>
+			      <option value="1">One</option>
+			      <option value="2">Two</option>
+			      <option value="3">Three</option>
+			    </select>
+			  </div>
+			</div>
+			<div class="col-md-4">
+				<div class="title">Collaborate</div>
+				<div class="card card-collaborate bg-primary">
+					<div class="card-title">Great teaching<br> is powerful.</div>
+					<div class="card-line"></div>
+					<button class="btn btn-secondary" type="button" name="button">Share a Resource</button>
+				</div>
+			</div>
+		</div>
 
 		<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
 
@@ -48,7 +155,7 @@ endwhile;
 		</form>
 
 	</div>
-</div>
+</section>
 
 <script type="text/javascript">
 jQuery(function($){
@@ -72,22 +179,13 @@ jQuery(function($){
 </script>
 
 
-<div  style="background: #eee; padding: 10px; margin-bottom: 30px;">
-	<div class="container">
-
-	</div>
-</div>
-
-
 <section class="resourcesGrid" id="response">
-	<div class="container">
-		<div class="row is__flex">
+
 		<?php while ( $query->have_posts() ): $query->the_post(); ?>
 			<?php get_template_part('parts/resource','card'); ?>
 		<?php endwhile; ?>
 		<?php wp_reset_postdata(); ?>
-		</div><!-- row -->
-	</div><!-- container -->
+
 </section>
 
 <?php get_footer(); ?>
