@@ -79,57 +79,72 @@
 			<div class="col-sm-6 col-sm-offset-3">
 				<?php $founder = get_field('founder_photo'); ?>
 				<?php $founder = $founder[sizes][medium]; ?>
-				<?php $team = get_field('founder_photo'); ?>
-				<?php $team = $team[sizes][medium]; ?>
+				<?php $team = get_field('team_photo'); ?>
+				<?php $team = $team[sizes][large]; ?>
 
 				<div class="blockCompany">
 					<div class="blockCompany-founder">
 						<div class="blockCompany-founder-photo" style="background-image:url(<?php echo  $founder; ?>);"></div>
-						<h3 class="blockCompany-founder-name"><?php the_field('founder-name'); ?></h3>
-						<h4 class="blockCompany-founder-position"><?php the_field('founder-caption'); ?></h4>
+						<h3 class="blockCompany-founder-name"><?php the_field('founder_name'); ?></h3>
+						<h4 class="blockCompany-founder-position"><?php the_field('founder_text'); ?></h4>
 					</div>
 					<div class="blockCompany-team"  style="background-image:url(<?php echo  $team; ?>);"></div>
-					<div class="blockCompany-button">
-						<a href=""></a>
-					</div>	
+					<a class="blockCompany-button" href="<?php the_field('team_link'); ?>"><?php the_field('team_button'); ?></a>
 				</div><!-- blockCompany -->	
 			</div>		
 		</div><!-- row -->
 	</div><!-- container -->
 </section><!-- pageSection -->
 
-<?php /*
+
 <section class="pageSection pageSection-14">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-4 col-sm-offset-1">
-				<div class="pageSection-small">
-					<p><strong>Right</strong><br>A student at Talcott works on an individual assignment.</p>
-				</div>
+			<div class="col-sm-10 col-sm-offset-1">
+				<h2 class="pageSection-title"><?php the_field('section5_title'); ?></h2>
+				<div class="blockFacts">
+					<?php while (have_rows('section5_facts')): the_row(); ?>
+					<div class="fact-element fact-<?php echo get_row_index(); ?>">
+						<div class="fact-number"><?php the_sub_field('number'); ?></div>
+						<div class="fact-label"><?php the_sub_field('label'); ?></div>
+					</div>	
+					<?php endwhile; ?>
+				</div>	
+			</div>		
+		</div><!-- row -->
+	</div><!-- container -->
+</section><!-- pageSection -->
+	
+
+
+<section class="pageSection pageSection-15">
+	<div class="leap-stripe"></div>
+	<div class="container">
+		<div class="row flex">
+			<div class="col-sm-5">
+				<h2 class="pageSection-title"><?php the_field('section6_title'); ?></h2>
+				<div class="pageSection-text"><?php the_field('section6_text'); ?></div>	
+				<a class="pageSection-button" href="<?php the_field('section6_link'); ?>"><?php the_field('section6_button'); ?></a>
 			</div><!-- column -->
-			<div class="col-sm-7">
-				<div class="pageSection-square"  style="background-image: url(<?php the_field('page_banner_4'); ?>);"></div>
+			<div class="col-sm-6 col-sm-offset-1">
+				<div class="pageSection-photo"  style="background-image: url(<?php $image = get_field('section6_photo'); echo $image[sizes][large]; ?>);"></div>
 			</div><!-- column -->			
 		</div><!-- row -->
 	</div><!-- container -->
 </section><!-- pageSection -->
 
-<section class="pageSection pageSection-15">
+<section class="pageSection pageSection-16 pageSection-12" >
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-7">
-				<div class="pageSection-square"  style="background-image: url(<?php the_field('page_banner_5'); ?>);"></div>
-			</div><!-- column -->	
-			<div class="col-sm-4">
-				<div class="pageSection-small">
-					<p><strong>Right</strong><br>A student at Talcott works on an individual assignment.</p>
-				</div>
-			</div><!-- column -->	
-		</div><!-- row -->
+			<div class="col-sm-12">
+				<h2 class="pageSection-title"><?php the_field('section7_title'); ?></h2>
+				<h3 class="pageSection-subtitle"><?php the_field('section7_subtitle'); ?></h3>
+				<img style="margin: 100px 0 0 0" src="<?php echo get_template_directory_uri(); ?>/images/form-placeholder.png">
+			</div><!-- col-sm -->
+		</div><!-- row  -->
 	</div><!-- container -->
 </section><!-- pageSection -->
-
-*/ ?>
+ 
 
 </div>
 

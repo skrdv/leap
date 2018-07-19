@@ -1,11 +1,15 @@
 <div class="siteFooter">
   <div class="container">
+	  
+	  <?php if (!is_front_page()): ?>
     <div class="row">
       <div class="col-md-12">
         <h3 class="siteFooter-title">Get The Latest<span></span></h3>
       </div>
       <?php echo do_shortcode('[contact-form-7 id="200" title="Subscribe"]'); ?>
     </div>
+	  <?php endif; ?>
+	  
     <div class="row">
       <div class="col-md-12">
         <h3 class="siteFooter-title">
