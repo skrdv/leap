@@ -75,6 +75,12 @@ body.is-fixed {
   border: 2px solid transparent;
 }
 
+.btn-primary {
+    color: $white;
+    border-color: $primary;
+    background-color: $primary;
+}
+
 .btn-secondary {
   border-color: $secondary;
   background-color: $secondary;
