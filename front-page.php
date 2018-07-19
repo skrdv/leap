@@ -1,14 +1,13 @@
-<?php // Template Name: Main ?>
 <?php get_header(); ?>
 
+<div class="content-wrapper">
 
-
-<section class="mainBanner" style="background-image: url(<?php the_field('page_banner'); ?>);">	
+<section class="mainBanner" style="background-image: url(<?php the_field('main_banner_image'); ?>);">	
 	<div class="mainBanner-cloack">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h1 class="mainBanner-title">One learner.<br>One future graduate.<br>One future career<br>at a time.</h1>
+					<h1 class="mainBanner-title"><?php the_field('main_banner_title'); ?></h1>
 				</div><!-- column -->
 			</div><!-- row -->
 		</div><!-- container -->
@@ -18,9 +17,9 @@
 <section class="pageSection pageSection-10">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-10 col-sm-offset-1">
+			<div class="col-sm-12">
 				<div class="pageSection-text">
-				<p><strong>LEAP is a catalyst for learning innovation.</strong>We’re fiercely committed to improving the learning experience—that’s why we work with educators, researchers and other innovators to bring a holistic, on the ground approach to unlocking the unlimited potential of every learner to have a productive, fulfilling and meaningful life, bringing their talents to the world.</p>
+				<?php the_field('section2_text'); ?>
 				</div>
 			</div><!-- column -->
 		</div><!-- row -->
@@ -28,10 +27,11 @@
 </section><!-- pageSection -->
 
 <section class="pageSection pageSection-11" >
+	<div class="leap-stripe leap-stripe-11"></div>	
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<div class="pageSection-photo" style="background-image: url(<?php the_field('page_banner_2'); ?>);">
+				<div class="pageSection-photo" style="background-image: url(<?php the_field('section2_image'); ?>);">
 				</div>	
 			</div><!-- column -->
 		</div><!-- row -->
@@ -103,7 +103,7 @@
 	</div><!-- container -->
 </section><!-- pageSection -->
 
-
+</div>
 
 <?php get_footer(); ?>
 

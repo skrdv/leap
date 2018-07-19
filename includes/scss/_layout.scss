@@ -33,24 +33,19 @@
 .navbar-header {
   padding-left: 16px;
   padding-right: 16px;
-  border-right: 1px solid rgba(119, 119, 122, 0.2);
+
 }
+
 .navbar-brand {
     display: inline-block;
     white-space: nowrap;
-    width: 82px;
+    width: 95px;
     height: 42px;
-    margin: 0 !important;
+    margin: -3px 0 0 4px !important;
     padding: 0;
-    font-family: 'Avenir Next';
-    line-height: normal;
-    font-size: 14px;
-    line-height: 42px;
     font-weight: bold;
     text-align: center;
     letter-spacing: 0.3em;
-    color: #00B3E6;
-    background: rgba(196, 196, 196, 0.2);
 }
 .navbar-brand:focus,
 .navbar-brand:hover {
@@ -161,8 +156,8 @@
   padding-right: 50px;
 }
 .navbar-main .menu-item {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 .navbar-main > .menu-item > a {
   padding: 0 5px;

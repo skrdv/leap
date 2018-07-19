@@ -429,6 +429,11 @@ nav .form-control {
 	color: #FFFFFF;
 }
 
+.pageSection {
+	position: relative;
+}
+
+
 .pageSection-1{
 	background-color: #00B3E6;
 	padding: 80px 0 370px 0;
@@ -687,17 +692,19 @@ nav .form-control {
 
 .pageSection-10 {
 	background-color: #2E89CB;
-	padding: 151px 0 200px 0;
+	padding: 80px 0 200px 0;
 }
 
 .pageSection-10 .pageSection-text {
-	line-height: 72px;
-	font-size: 54px;
+	font-size: 36px;
+	line-height: 60px;
 	color: #FFFFFF;
+	font-weight: 700;
 }
 
 .pageSection-10 .pageSection-text strong{
 	color: #23313B;
+	font-weight: 700;
 }
 
 
@@ -843,6 +850,11 @@ nav .form-control {
 	position: absolute;
 	z-index: 5;
 }
+
+.leap-stripe-11 {
+	right: 0;
+}
+
 
 .container {
 	position: relative;

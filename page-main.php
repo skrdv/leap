@@ -3,12 +3,12 @@
 
 
 
-<section class="mainBanner" style="background-image: url(<?php the_field('page_banner'); ?>);">	
+<section class="mainBanner" style="background-image: url(<?php the_field('main_banner_image'); ?>);">	
 	<div class="mainBanner-cloack">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h1 class="mainBanner-title">One learner.<br>One future graduate.<br>One future career<br>at a time.</h1>
+					<h1 class="mainBanner-title"><?php the_field('main_banner_title'); ?></h1>
 				</div><!-- column -->
 			</div><!-- row -->
 		</div><!-- container -->
