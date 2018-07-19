@@ -8,7 +8,7 @@
 
   // Title
   &-hero {
-    height: 600px;
+    height: 827px;
     padding-bottom: 0;
 
     .container {
@@ -167,41 +167,7 @@
       background: $secondary;
     }
 
-    .stepItem {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      .container {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 40px auto;
-        padding: 40px 0;
-      }
-      &-category {
-        width: 100%;
-        padding-left: 19%;
-        margin-bottom: 20px;
-        font-size: 12px;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        &.is {
-          &-connected {color: $connected;}
-          &-focused {color: $focused;}
-          &-led {color: $led;}
-          &-demonstrated {color: $demonstrated;}
-        }
-      }
-      &-label {
-        display: inline-block;
-        width: 19%;
-        font-size: 24px;
-      }
-      &-text {
-        width: 80%;
-        display: inline-block;
-        font-weight: normal;
-        line-height: 48px;
-        font-size: 24px;
-      }
-    }
+
 
   }
 
@@ -284,10 +250,14 @@
     margin-right: 30px;
     width: 160px;
     height: 160px;
-    background: #c4c4c4;
+    background-size: cover;
+    .blank {
+      height: 100%;
+      background: #c4c4c4;
+    }
   }
 
-  &-text {
+  &-content {
     margin-bottom: 50px;
     font-weight: normal;
     line-height: 42px;
@@ -306,6 +276,42 @@
 
 }
 
+
+.stepItem {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    padding: 40px 0;
+  }
+  &-category {
+    width: 100%;
+    padding-left: 19%;
+    margin-bottom: 20px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    &.is {
+      &-connected {color: $connected;}
+      &-focused {color: $focused;}
+      &-led {color: $led;}
+      &-demonstrated {color: $demonstrated;}
+    }
+  }
+  &-label {
+    display: inline-block;
+    width: 19%;
+    font-size: 24px;
+  }
+  &-content {
+    width: 80%;
+    display: inline-block;
+    font-weight: normal;
+    line-height: 48px;
+    font-size: 24px;
+  }
+}
 
 
 

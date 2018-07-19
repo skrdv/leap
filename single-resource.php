@@ -4,7 +4,6 @@
 
   <section class="resourceSesction resourceSesction-hero is-<?php the_field('resource_category'); ?>" style="background-image: url(<?php the_field('resource_image'); ?>);">
     <div class="container">
-
       <div class="card">
         <div class="card-meta">
           Learner <?php the_field('resource_category'); ?>
@@ -16,143 +15,111 @@
           <?php the_field('resource_subtitle'); ?>
         </h2>
       </div>
-
     </div>
   </section>
 
   <section class="resourceSesction resourceSesction-description is-<?php the_field('resource_category'); ?>">
     <div class="container">
-
       <div class="card">
         <div class="card-content">
           <?php the_field('resource_description'); ?>
         </div>
       </div>
-
     </div>
   </section>
 
-
-<section class="resourceSesction resourceSesction-reviews">
-  <div class="container">
-
-    <div class="resourceSesction-title">Created for educators. By Educators.</div>
-    <div class="resourceSesction-line"></div>
-
-
-      <div class="reviewItem">
-        <div class="reviewItem-left">
-          <div class="reviewItem-image"></div>
-        </div>
-        <div class="reviewItem-right">
-          <div class="reviewItem-text">
-            We thought personalized learning was simply using technology, that we would get really great software and some data and that would be it… But I found out that this is much more than technology… We started seeing that personalized learning happens anytime, anywhere. We started learning that this is all about the kids—it’s about the kids being learner led and learner focused.
+  <?php if( have_rows('resource_reviews') ): ?>
+    <section class="resourceSesction resourceSesction-reviews">
+      <div class="container">
+        <div class="resourceSesction-title"><?php the_field('resource_reviews_title'); ?></div>
+        <div class="resourceSesction-line"></div>
+	      <?php while( have_rows('resource_reviews') ): the_row();
+		      $image = get_sub_field('image');
+		      $content = get_sub_field('content');
+		      $author = get_sub_field('author');
+		      $position = get_sub_field('position'); ?>
+          <div class="reviewItem">
+            <div class="reviewItem-left">
+              <?php if($image): ?>
+                <div class="reviewItem-image" style="background-image: url('<?php echo $image; ?>');">
+                </div>
+              <?php else: ?>
+                <div class="reviewItem-image">
+                  <div class="blank"></div>
+                </div>
+              <?php endif; ?>
+            </div>
+            <div class="reviewItem-right">
+              <div class="reviewItem-content">
+                <?php echo $content; ?>
+              </div>
+              <div class="reviewItem-author">
+                <?php echo $author; ?>
+              </div>
+              <div class="reviewItem-position">
+                <?php echo $position; ?>
+              </div>
+            </div>
           </div>
-          <div class="reviewItem-author">
-            Samantha Rapson
-          </div>
-          <div class="reviewItem-position">
-            Assistant Principal
-          </div>
-        </div>
+	      <?php endwhile; ?>
       </div>
+    </section>
+  <?php endif; ?>
 
-      <div class="reviewItem">
-        <div class="reviewItem-left">
-          <div class="reviewItem-image"></div>
-        </div>
-        <div class="reviewItem-right">
-          <div class="reviewItem-text">
-            We thought personalized learning was simply using technology, that we would get really great software and some data and that would be it… But I found out that this is much more than technology… We started seeing that personalized learning happens anytime, anywhere. We started learning that this is all about the kids—it’s about the kids being learner led and learner focused.
+  <?php if( have_rows('resource_statistic') ): ?>
+    <section class="resourceSesction resourceSesction-statistic bg-secondary">
+      <div class="container">
+        <div class="card">
+          <div class="card-title">
+            <?php the_field('resource_statistic_title'); ?>
           </div>
-          <div class="reviewItem-author">
-            Steve McWade
+          <div class="card-subtitle">
+            <?php the_field('resource_statistic_subtitle'); ?>
           </div>
-          <div class="reviewItem-position">
-            Teacher
+          <div class="card-content">
+            <div class="card-square">
+              <ul>
+        <?php while( have_rows('resource_statistic') ): the_row();
+          $item = get_sub_field('item'); ?>
+                <li><?php echo $item; ?></li>
+        <?php endwhile; ?>
+              </ul>
+            </div>
           </div>
-        </div>
-      </div>
-
-  </div>
-</section>
-
-<section class="resourceSesction resourceSesction-statistic bg-secondary">
-  <div class="container">
-
-    <div class="card">
-      <div class="card-title">
-        About Joseph Lovett Elementary
-      </div>
-      <div class="card-subtitle">
-        A Chicago Public Schools Neighborhood School
-      </div>
-      <div class="card-content">
-        <div class="card-square">
-          <ul>
-            <li>372 Total K-8 Students</li>
-            <li>82% African American</li>
-            <li>16% Hispanic</li>
-            <li>0.3% White</li>
-            <li>1% Other</li>
-            <li>94% Low Income</li>
-            <li>13% Diverse Learners</li>
-            <li>6% English Learners</li>
-            <li>20% Mobility*</li>
-          </ul>
+          <div class="card-footer">
+            <?php the_field('resource_statistic_comment'); ?>
+          </div>
         </div>
       </div>
-      <div class="card-footer">
-        *Reflects any enrollment change between the first school day in October and the last day of the school year.
+    </section>
+  <?php endif; ?>
+
+  <?php if( have_rows('resource_steps') ): ?>
+    <section class="resourceSesction resourceSesction-steps">
+      <div class="container">
+        <div class="resourceSesction-title"><?php the_field('resource_steps_title'); ?></div>
+        <div class="resourceSesction-line"></div>
+	      <?php while( have_rows('resource_steps') ): the_row();
+		      $step = get_sub_field('step');
+		      $category = get_sub_field('category');
+		      $content = get_sub_field('content'); ?>
+          <div class="stepItem">
+            <div class="container">
+              <div class="stepItem-category is-<?php echo $category; ?>">
+                Learner <?php echo $category; ?>
+              </div>
+              <div class="stepItem-label">
+                <?php echo $step; ?>
+              </div>
+              <div class="stepItem-content">
+                <?php echo $content; ?>
+              </div>
+            </div>
+          </div>
+	      <?php endwhile; ?>
       </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="resourceSesction resourceSesction-steps">
-
-  <div class="resourceSesction-title">How Flex Fridays Work in Mr. McWade’s Class</div>
-  <div class="resourceSesction-line"></div>
-
-  <div class="stepItem">
-    <div class="container">
-      <div class="stepItem-category is-focused">Learner Focused</div>
-      <div class="stepItem-label">Step 1.</div>
-      <div class="stepItem-text">Consider individual student interests and the needs of the class community. Determine skills that will meet class needs and incorporate those skills into experiences focused on student interests. For example, if the class needs practice with collaboration or team skills, design activities focused on student interests that require teamwork to create and problem solve.
-      </div>
-    </div>
-  </div>
-  <div class="stepItem">
-    <div class="container">
-      <div class="stepItem-category is-led">Learner Led</div>
-      <div class="stepItem-label">Step 2.</div>
-      <div class="stepItem-text">Provide opportunities for students to take ownership of creating content and learning experiences for their peers. Teachers then shift their roles to mentor and coach students as they develop their own lessons. Ask if there are students interested in teaching topics that interest them. Encourage reluctant learners to showcase their strengths and passions.</div>
-    </div>
-  </div>
-  <div class="stepItem">
-    <div class="container">
-      <div class="stepItem-category is-focused">Learner Focused</div>
-      <div class="stepItem-label">Step 3.</div>
-      <div class="stepItem-text">Many activities change each Friday, giving students a variety of experiences from which to choose. To keep up with the varied student interests, regularly ask students what they would like to learn. Also, pay attention to what students are reading and talking about with each other. Use this information to create interactive learning experiences based on those interests.</div>
-    </div>
-  </div>
-  <div class="stepItem">
-    <div class="container">
-      <div class="stepItem-category is-focused">Learner Focused</div>
-      <div class="stepItem-label">Step 4.</div>
-      <div class="stepItem-text">Partner with learners to continuously align learning opportunities with learners’ interests, strengths and needs. When many of his students expressed interest in learning a second language, Mr. McWade strategically encouraged and involved two students who were commonly reluctant to engage in class discussion. The opportunity to teach their peers revealed a more confident side of these students who thrived when sharing their strengths.</div>
-    </div>
-  </div>
-  <div class="stepItem">
-    <div class="container">
-      <div class="stepItem-category is-led">Learner Led</div>
-      <div class="stepItem-label">Step 5.</div>
-      <div class="stepItem-text">Partner with learners to reflect upon and document their own learning needs and progress. After Flex Friday, teachers provide an opportunity for students to reflect on their learning and share it with their peers. Consider a variety of ways that students can show what they’ve learned: Google Classroom posts, slide presentations, videos, graffiti boards, learning journals, portfolios and so much more!</div>
-    </div>
-  </div>
-
-</section>
+    </section>
+  <?php endif; ?>
 
 <section class="resourceSesction resourceSesction-footer">
 
@@ -161,7 +128,7 @@
     <div class="form-title">Download the Flex Fridays Resource</div>
     <div class="form-content">
       <div class="form-label">PDF</div>
-      <a class="form-icon" href="#"><i class="fa fa-findsome"></i></a>
+      <a class="form-icon" href="#"><i class="fa fa-file-pdf"></i></a>
     </div>
     </div>
   </div>
@@ -169,7 +136,7 @@
     <div class="container">
     <div class="form-title">Upvote and Say “Thanks” (10)</div>
     <div class="form-content">
-      <div class="form-label">Update</div>
+      <div class="form-label">Upvote</div>
       <a class="form-icon" href="#"><i class="fa fa-findsome"></i></a>
     </div>
     </div>

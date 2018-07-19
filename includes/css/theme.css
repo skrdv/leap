@@ -590,7 +590,7 @@ select.form-control {
   font-weight: bold;
 }
 .resourceSesction-hero {
-  height: 600px;
+  height: 827px;
   padding-bottom: 0;
 }
 .resourceSesction-hero .container {
@@ -744,47 +744,6 @@ select.form-control {
   margin: 30px auto;
   background: #f5c400;
 }
-.resourceSesction-steps .stepItem {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-.resourceSesction-steps .stepItem .container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 40px auto;
-  padding: 40px 0;
-}
-.resourceSesction-steps .stepItem-category {
-  width: 100%;
-  padding-left: 19%;
-  margin-bottom: 20px;
-  font-size: 12px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-.resourceSesction-steps .stepItem-category.is-connected {
-  color: #00b3e6;
-}
-.resourceSesction-steps .stepItem-category.is-focused {
-  color: #b34fc5;
-}
-.resourceSesction-steps .stepItem-category.is-led {
-  color: #84be41;
-}
-.resourceSesction-steps .stepItem-category.is-demonstrated {
-  color: #ff6c0c;
-}
-.resourceSesction-steps .stepItem-label {
-  display: inline-block;
-  width: 19%;
-  font-size: 24px;
-}
-.resourceSesction-steps .stepItem-text {
-  width: 80%;
-  display: inline-block;
-  font-weight: normal;
-  line-height: 48px;
-  font-size: 24px;
-}
 .resourceSesction-footer .form-section {
   padding: 25px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -849,9 +808,13 @@ select.form-control {
   margin-right: 30px;
   width: 160px;
   height: 160px;
+  background-size: cover;
+}
+.reviewItem-image .blank {
+  height: 100%;
   background: #c4c4c4;
 }
-.reviewItem-text {
+.reviewItem-content {
   margin-bottom: 50px;
   font-weight: normal;
   line-height: 42px;
@@ -864,6 +827,47 @@ select.form-control {
   margin-bottom: 100px;
   font-size: 24px;
   font-weight: normal;
+}
+.stepItem {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.stepItem .container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px auto;
+  padding: 40px 0;
+}
+.stepItem-category {
+  width: 100%;
+  padding-left: 19%;
+  margin-bottom: 20px;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.stepItem-category.is-connected {
+  color: #00b3e6;
+}
+.stepItem-category.is-focused {
+  color: #b34fc5;
+}
+.stepItem-category.is-led {
+  color: #84be41;
+}
+.stepItem-category.is-demonstrated {
+  color: #ff6c0c;
+}
+.stepItem-label {
+  display: inline-block;
+  width: 19%;
+  font-size: 24px;
+}
+.stepItem-content {
+  width: 80%;
+  display: inline-block;
+  font-weight: normal;
+  line-height: 48px;
+  font-size: 24px;
 }
 .resourcesSesction-hero {
   position: relative;
