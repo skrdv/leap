@@ -1,28 +1,23 @@
 <?php //Template Name: Page Resources ?>
-<?php get_header(); ?>
-
-<?php $query = new WP_Query( array(
-	'post_type' => array('resource')
-) ); ?>
 
 <?php
-while ( $query->have_posts() ): $query->the_post();
-	$resource_format = get_field_object('resource_format');
-	$resource_category = get_field_object('resource_category');
-endwhile;
-
+global $post;
 ?>
 
-<section class="resourcesSesction resourcesSesction-title">
+
+
+<?php get_header(); ?>
+
+<section class="resourcesSesction resourcesSesction-hero" style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID); ?>');">
   <div class="container">
 
     <div class="card">
-      <h1 class="card-title">Tools & Resources</h1>
+      <h1 class="card-title"><?php the_title(); ?></h1>
     </div>
 
   </div>
+	<div class="bg-overlay"></div>
 </section>
-
 
 <section class="resourcesSesction resourcesSesction-filter" id="resources-filters">
 	<div class="container">
@@ -30,6 +25,7 @@ endwhile;
 		<div class="row">
 			<div class="col-md-12">
 				<div class="text">
+
 					Our tools and resources are designed to embody the LEAP Learning Framework. Mix-and-match resources to create a personalized learning toolkit for the classroom or share your own innovations with the LEAP community.
 				</div>
 			</div>
@@ -119,11 +115,12 @@ endwhile;
 				<div class="card card-collaborate bg-primary">
 					<div class="card-title">Great teaching<br> is powerful.</div>
 					<div class="card-line"></div>
-					<button class="btn btn-secondary" type="button" name="button">Share a Resource</button>
+					<a class="btn btn-secondary" href="/share-a-resource-or-story/">Share a Resource</a>
 				</div>
 			</div>
 		</div>
 
+		<?php /*
 		<form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
 
 			<?php  if($resource_format): ?>
@@ -153,6 +150,7 @@ endwhile;
 			<button>Apply filter</button>
 			<input type="hidden" name="action" value="myfilter">
 		</form>
+		*/ ?>
 
 	</div>
 </section>
@@ -178,6 +176,16 @@ jQuery(function($){
 });
 </script>
 
+<?php
+$query = new WP_Query( array(
+	'post_type' => array('resource')
+) );
+
+while ( $query->have_posts() ): $query->the_post();
+	$resource_format = get_field_object('resource_format');
+	$resource_category = get_field_object('resource_category');
+endwhile;
+?>
 
 <section class="resourcesGrid" id="response">
 

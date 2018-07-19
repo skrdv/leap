@@ -4,8 +4,8 @@
 
 
   <div class="resourceCard-header category-<?php the_field('resource_category'); ?>">
-    <div class="resourceCard-category">
-      <?php the_field('resource_category'); ?>
+    <div class="resourceCard-category is-<?php the_field('resource_category'); ?>">
+      Learner <?php the_field('resource_category'); ?>
     </div>
     <h3 class="resourceCard-title">
       <?php the_title(); ?> <?php edit_post_link('*'); ?>
