@@ -564,68 +564,6 @@ nav .form-control {
 	color: #fff;
 }
 
-/*== Start your journey ==*/
-
-.row.flex {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-
-.sectionCard {
-
-}
-
-.sectionCard-inner {
-	background: #00B3E6;
-	box-shadow: 4px 4px 0px rgba(0, 179, 230, 0.25);
-	min-height: 512px;
-	display: flex;
-	flex-direction: column;
-	padding: 48px;
-}
-
-.sectionCard-title {
-	font-family: Avenir Next;
-	line-height: 32px;
-	font-size: 20px;
-	color: #fff;
-}
-
-.sectionCard-title:after {
-	display: block;
-	width: 64px;
-	height: 8px;
-	background: #FFFFFF;
-	margin: 20px 0;
-	content: '';
-}
-
-.sectionCard-text {
-	flex-grow: 1;
-	font-family: Avenir Next;
-	line-height: 28px;
-	font-size: 18px;
-	color: #fff;
-}
-
-.sectionCard-button {
-	box-sizing: border-box;
-	background: #F5C400;
-	padding: 12px 20px;
-	border-radius: 0;
-	font-family: Avenir Next;
-	line-height: 20px;
-	font-size: 17px;
-	text-align: center;
-	color: #23313B;
-	border: 2px solid #F5C400;
-}
-
-.sectionCard-button:hover {
-	background: #fff;
-	border: 2px solid #23313B;
-}
 
 
 /* ====== Get Started Card ============*/
@@ -720,10 +658,12 @@ nav .form-control {
 }
 
 .pageSection-12 {
-	padding: 0 0 80px 0;
+	padding: 0 0 100px 0;
+	border-bottom: 1px solid #e6e6e6;
 }
 
 .pageSection-12 .pageSection-title{
+	text-align: center;
 	font-size: 54px;
 	line-height: 72px;
 	margin: 60px 0 40px 0;
@@ -731,21 +671,108 @@ nav .form-control {
 
 .pageSection-12 .pageSection-title:after{
 	background-color: #F5C400;
-	margin: 40px 0;
+	margin: 40px auto;
 }
+
+.pageSection-12 .pageSection-subtitle{
+	line-height: 60px;
+	font-size: 24px;
+	text-align: center;
+	color: #23313B;
+	margin: 0;
+	padding: 0 10vw;
+}
+
 
 .pageSection-12 .pageSection-text{
 	color: #23313B;
 }
 
 
+.row.sectionCards {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 90px;
+}
+
+.sectionCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.sectionCard-photo {
+	height: 160px;
+	background: #C4C4C4;	
+}
+
+.sectionCard-content {
+	flex-grow: 1;
+	padding-bottom: 32px;
+}
+
+.sectionCard-title {
+	line-height: 32px;
+	font-size: 24px;
+	color: #23313B;
+	font-weight: bold;
+}
+
+.sectionCard-text {
+	line-height: 28px;
+	font-size: 16px;
+	color: #23313B;
+}	
+
+
+
+.sectionCard-button {
+	box-sizing: border-box;
+	background: #F5C400;
+	padding: 12px 20px;
+	border-radius: 0;
+	font-family: Avenir Next;
+	line-height: 20px;
+	font-size: 17px;
+	text-align: center;
+	color: #23313B;
+	border: 2px solid #F5C400;
+	font-weight: 700;
+}
+
+.sectionCard-button:hover {
+	background: #fff;
+	border: 2px solid #23313B;
+}
+
+
+/* =========================== Section 13 ======================*/
 
 .pageSection-13 {
 	padding: 80px 0;
 
 }
 
+.blockCompany {
 
+}
+
+.blockCompany-founder {
+	height: 160px;
+	text-align: center;
+	position: relative;
+}	
+
+.blockCompany-founder-photo {
+	height: 160px;
+	width: 160px;
+	right: 100%;
+	background-position: center;
+	background-size: cover;
+}	
+
+
+/*
 .mainCard {
 	margin-bottom: 30px;
 }
@@ -800,6 +827,18 @@ nav .form-control {
 	background: #fff;
 	border: 2px solid #23313B;
 }
+
+*/
+
+/*== Start your journey ==*/
+
+.row.flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+
 
 
 
