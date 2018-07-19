@@ -106,8 +106,6 @@ add_action( 'wp_enqueue_scripts', '_tk_scripts' );
 
 
 
-// Include SCSS Compiler
-// include_once THEME_PATH . '/includes/wp-scss-compiler.php';
 
  // Implement the Custom Header feature.
 require THEME_PATH . '/includes/custom-header.php';
