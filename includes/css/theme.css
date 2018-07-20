@@ -39,6 +39,11 @@ body.is-fixed {
   border-radius: 0;
   border: 2px solid transparent;
 }
+.btn-primary {
+  color: #fff;
+  border-color: #00b3e6;
+  background-color: #00b3e6;
+}
 .btn-secondary {
   border-color: #f5c400;
   background-color: #f5c400;
@@ -147,6 +152,9 @@ select.form-control {
   left: 0;
   top: 0;
   z-index: 1030;
+}
+.logged-in .navbar-fixed-top {
+  top: 33px;
 }
 .navbar-header {
   padding-left: 16px;

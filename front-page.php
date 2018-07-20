@@ -50,7 +50,7 @@
 		<div class="row sectionCards">
 					<?php while (have_rows('section3_cards')): the_row(); ?>
 						<div class="col-sm-3 sectionCard">
-								<div class="sectionCard-photo"></div>
+								<div class="sectionCard-photo" style="background-image: url(<?php $bg = get_sub_field('image'); echo $bg[sizes][medium]; ?>);"></div>
 								<div class="sectionCard-content">
 									<h3 class="sectionCard-title"><?php the_sub_field('title'); ?></h3>
 									<div class="sectionCard-text"><?php the_sub_field('text'); ?></div>	

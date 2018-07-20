@@ -446,16 +446,19 @@ nav .form-control {
 
 .pageSection-3 {
 	padding: 90px 0;
+	text-align: center;
 }
 
 .pageSection-3 .pageSection-title{
 	color: #23313B;
 	font-weight: 700;
+	
 }
 
 .pageSection-3 .pageSection-title:after{
 	background-color: #F5C400;
 	font-weight: 700;
+	margin: 40px auto;
 }
 
 .pageSection-3 .pageSection-text{
@@ -477,6 +480,7 @@ nav .form-control {
 .pageSection-6 {
 	position: relative;
 	padding: 90px 0;
+	border-bottom: 1px solid #e6e6e6;
 }
 
 
@@ -497,7 +501,6 @@ nav .form-control {
 
 .pageSection-7 {
 	padding: 90px 0;
-	background-color: #eaeaea;
 }
 
 
@@ -619,12 +622,14 @@ nav .form-control {
 
 .mainBanner-title {
 	font-family: Avenir Next;
-	line-height: 120px;
-	font-size: 75px;
+	line-height: 60px;
+	font-size: 45px;
+	text-align: center;
 	color: #FFFFFF;
 	text-shadow: 0px 4px 100px rgba(0, 0, 0, 0.5), 1px 1px 0px rgba(0, 0, 0, 0.15);
-	text-align: center;
 	margin: 0 auto;
+	font-weight: bold;
+	max-width: 520px;
 }
 
 
@@ -1054,9 +1059,26 @@ nav .form-control {
 	background-color: #fff;
 	background-image: url(images/icon-learner-connected.png);
 	background-position: center;
+	background-repeat: no-repeat;
 	right: -18px;
 	bottom: -18px;
 	box-shadow: 4px 4px 0px rgba(0, 179, 230, 0.25);
+}
+
+.getSlider-icon.focused {
+	background-image: url(images/focused.png);
+}
+
+.getSlider-icon.demonstrated {
+	background-image: url(images/demonstrated.png);
+}
+
+.getSlider-icon.connected {
+	background-image: url(images/connected.png);
+}
+
+.getSlider-icon.led {
+	background-image: url(images/led.png);
 }
 
 .getSlider-title {
@@ -1079,6 +1101,7 @@ nav .form-control {
 }
 
 .getSlider-button {
+	display: block;
 	background: #00B3E6;
 	line-height: 42px;
 	font-size: 24px;
@@ -1101,3 +1124,133 @@ nav .form-control {
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
 background: transparent !important;
 }
+
+
+
+/* ===========================================================================================================*/
+
+.heroBanner {
+	position: relative;
+	height: 827px;
+	background-position: center top;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.heroBanner-shadow {
+	position: absolute;
+	bottom: 0;
+	background: linear-gradient(180deg, rgba(35, 49, 59, 0) 0%, #23313B 100%);
+	opacity: 0.9;
+	min-height: 300px;
+	left:0;
+	right: 0;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+}
+
+.heroBanner-title {
+	border-top: 4px solid #00B3E6;
+	padding: 40px 0;
+	line-height: 68px;
+	font-size: 45px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-shadow: 0px 4px 100px rgba(0, 0, 0, 0.5), 1px 1px 0px rgba(0, 0, 0, 0.15);		
+}
+
+
+/*=================================================================================================*/
+
+
+.readyCard {
+
+}
+
+.readyCard-inner {
+	background: #00B3E6;
+	box-shadow: 4px 4px 0px rgba(0, 179, 230, 0.25);
+	min-height: 512px;
+	display: flex;
+	flex-direction: column;
+	padding: 48px;
+}
+
+.readyCard-title {
+	font-family: Avenir Next;
+	line-height: 32px;
+	font-size: 20px;
+	color: #fff;
+	font-weight: bold;
+}
+
+.readyCard-title:after {
+	display: block;
+	width: 64px;
+	height: 8px;
+	background: #FFFFFF;
+	margin: 20px 0;
+	content: '';
+}
+
+.readyCard-text {
+	flex-grow: 1;
+	font-family: Avenir Next;
+	line-height: 28px;
+	font-size: 18px;
+	color: #fff;
+}
+
+.readyCard-button {
+	display: block;
+	box-sizing: border-box;
+	background: #F5C400;
+	padding: 12px 20px;
+	border-radius: 0;
+	font-family: Avenir Next;
+	line-height: 20px;
+	font-size: 17px;
+	text-align: center;
+	font-weight: 700;
+	color: #23313B;
+	border: 2px solid #F5C400;
+}
+
+.readyCard-button:hover {
+	background: #fff;
+	border: 2px solid #23313B;
+}
+
+
+
+/*=======================================================*/
+
+
+.getstartedCard-content {
+	background: #00B3E6;
+	color: #fff;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.getstartedCard-photo {
+	background-size: cover;
+}
+
+.getstartedCard-title {
+	font-weight: bold;
+}	
+
+.getstartedCard-link {
+	line-height: 32px;
+	font-size: 20px;
+	text-align: center;
+	text-decoration-line: underline;
+	color: #23313B;
+	font-weight: bold;
+	margin-bottom: 10px;
+}	
+	
