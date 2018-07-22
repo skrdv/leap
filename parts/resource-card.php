@@ -1,34 +1,61 @@
-<div class="resourceCard">
-<div class="container">
+<?php
+  $category     = get_field('resource_category');
+  $description  = get_field('resource_description');
+  $permalink    = get_permalink();
+  $video        = get_field('resource_video');
+  $videoContent = apply_filters('the_content', $video);
+  $image        = get_the_post_thumbnail_url($post->ID);
+?>
 
+<div class="resourceCard is-<?php echo $category; ?>">
+  <div class="container">
 
-
-  <div class="resourceCard-header category-<?php the_field('resource_category'); ?>">
-    <div class="resourceCard-category is-<?php the_field('resource_category'); ?>">
-      Learner <?php the_field('resource_category'); ?>
+    <div class="resourceCard-content">
+      <div class="card">
+        <div class="card-meta">
+          Learner <?php echo $category; ?>
+        </div>
+        <div class="card-title">
+          <?php the_title(); ?>
+          <?php edit_post_link('*'); ?>
+        </div>
+        <div class="card-desc">
+          <?php echo $description; ?>
+        </div>
+        <a class="card-btn" href="<?php echo $permalink; ?>">
+          Check It Out
+        </a>
+      </div>
     </div>
-    <h3 class="resourceCard-title">
-      <?php the_title(); ?> <?php edit_post_link('*'); ?>
-    </h3>
-    <div class="resourceCard-text">
-      <?php the_field('resource_description'); ?>
+
+    <div class="resourceCard-media">
+      <div class="card">
+
+        <?php if($video): ?>
+          <div class="card-video">
+            <?php echo $videoContent; ?>
+          </div>
+        <?php elseif($image): ?>
+          <div class="card-image" style="background-image: url('<?php echo $image; ?>');">
+          </div>
+        <?php else: ?>
+          <div class="card-bgcolor"></div>
+        <?php endif; ?>
+
+        <div class="card-footer
+             <?php if( $video OR $image ){ /* do nothing */ } else { echo 'is-fullheight'; } ?> ">
+          <a href="#">
+            <i class="fa fa-thumbs-up"></i>
+             <span>10 Upvotes</span>
+          </a>
+          <a href="#">
+            <i class="fa fa-comment"></i>
+             <span>2 Comments</span>
+          </a>
+        </div>
+
+      </div>
     </div>
-    <a class="resourceCard-button" href="<?php echo get_permalink(); ?>">Check It Out</a>
-  </div>
-
-  <div class="resourceCard-content">
-    <img src="<?php the_field('resource_image'); ?>">
-    <?php if (get_field('resource_format') == 'tool'): ?>
-
-    <?php elseif (get_field('resource_format') == 'video'): ?>
-      <?php $video = get_field('resource_video'); ?>
-      <?php $video = apply_filters('the_content', $video); ?>
-      <div class="resourceCard-video"><div class="offset"><?php echo $video; ?></div></div>
-    <?php endif; ?>
-
-
 
   </div>
-
-</div>
 </div>

@@ -119,6 +119,9 @@ require THEME_PATH . '/includes/extras.php';
 // Update search options
 require THEME_PATH . '/includes/filter.php';
 
+// Custom functions
+require THEME_PATH . '/includes/custom-functions.php';
+
  // Customizer additions.
 require THEME_PATH . '/includes/customizer.php';
 

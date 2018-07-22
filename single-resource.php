@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
+<?php // while ( have_posts() ) : the_post(); ?>
 
 <?php
   $category = get_field('resource_category');
@@ -10,16 +10,14 @@
 ?>
 
   <section class="resourceSesction resourceSesction-hero is-<?php echo $category; ?>">
-    <!-- <div class="card" id="videoWrap"> -->
-      <div class="card-video">
-        <video id="videoResource" poster="<?php echo $image; ?>" >
-          <source src="<?php echo $video; ?>" type="video/mp4">
-        </video>
-      </div>
-      <button class="card-btn btn-play is-<?php echo $category; ?>" id="videoPlay" onclick="videoPlay()">
-        <i class="fa fa-play"></i>
-      </button>
-    <!-- </div> -->
+    <div class="card-video">
+      <video id="videoResource" poster="<?php echo $image; ?>" >
+        <source src="<?php echo $video; ?>" type="video/mp4">
+      </video>
+    </div>
+    <button class="card-btn btn-play is-<?php echo $category; ?>" id="videoPlay" onclick="videoPlay()">
+      <i class="fa fa-play"></i>
+    </button>
   </section>
 
   <section class="resourceSesction resourceSesction-description is-<?php echo $category ?>">
@@ -172,13 +170,20 @@
   </div>
   <div class="form-section form-navigation">
     <div class="container">
-    <div class="form-title">
-      Post navigation
+      <div class="nav-single">
+        <div class="nav-arrow nav-left">
+          <?php // previous_post_link(); ?>
+          <?php previous_post_link( $format = '%link', $link = '<strong>Previous:</strong> %title <div></div>', false, '306' ); ?>
+        </div>
+        <div class="nav-title">
+          <?php the_title(); ?>
+        </div>
+        <div class="nav-arrow nav-right">
+          <?php next_post_link( $format = '%link', $link = '<strong>Next Up:</strong> %title <div></div>', false, '306' ); ?>
+        </div>
+      </div>
     </div>
-    <div class="form-content">
-      Arrows
-    </div>
-    </div>
+
   </div>
 
 </section>
@@ -218,6 +223,6 @@ function videoPlay() {
 
 
 
-<?php endwhile; ?>
+<?php // endwhile; ?>
 
 <?php get_footer(); ?>

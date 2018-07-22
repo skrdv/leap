@@ -18,16 +18,38 @@ global $post;
 </section>
 
 
-
+<?php
+// $query = new WP_Query( array(
+// 	'post_type' => array('resource')
+// ) );
+//
+// while ( $query->have_posts() ): $query->the_post();
+// 	$resource_category = get_field_object('resource_category');
+// endwhile;
+?>
 
 <?php
-$query = new WP_Query( array(
-	'post_type' => array('resource')
-) );
+// WP_Query arguments
+$args = array(
+	'post_type'              => array('resource'),
+	'posts_per_page'         => '4',
+	'order'                  => 'DESC',
+	'orderby'                => 'date',
+);
 
-while ( $query->have_posts() ): $query->the_post();
-	$resource_category = get_field_object('resource_category');
-endwhile;
+// The Query
+$query = new WP_Query( $args );
+
+// The Loop
+if ( $query->have_posts() ) {
+	while ( $query->have_posts() ) {
+		$query->the_post();
+    $resourceCat = get_field_object('resource_category');
+	}
+}
+
+// Restore Post Data
+wp_reset_postdata();
 ?>
 
 <section class="resourcesSesction resourcesSesction-filter" id="resources-filters">
@@ -145,10 +167,10 @@ endwhile;
   <div class="container">
     <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
 
-      <?php if($resource_category): ?>
+      <?php if($resourceCat): ?>
         <select name="resource_category"  class="form-control custom-select">
           <option value="">Category</option>
-          <?php foreach( $resource_category['choices'] as $key => $value ) {
+          <?php foreach( $resourceCat['choices'] as $key => $value ) {
                   echo '<option value="' . $key . '">' . $value . '</option>';
           } ?>
         </select>
