@@ -26,12 +26,21 @@ body {
 }
 
 body.is-fixed {
-  padding-top: 72px;
+  // padding-top: 72px;
+  margin-top: 60px;
 }
 
 .is-center {
   text-align: center;
 }
+
+.is-hidden {
+  display: none;
+}
+
+
+
+
 
 .is-white {
   color: $white;

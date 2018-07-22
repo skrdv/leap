@@ -788,6 +788,12 @@ select.form-control {
   font-size: 40px;
   line-height: 58px;
 }
+.resourceSesction-footer .form-icon:hover, .resourceSesction-footer .form-icon:focus {
+  background: #00b3e6;
+}
+.resourceSesction-footer .form-icon:hover .fa, .resourceSesction-footer .form-icon:focus .fa {
+  color: #fff;
+}
 .resourceSesction-footer .form-download {
   padding: 80px 0;
 }

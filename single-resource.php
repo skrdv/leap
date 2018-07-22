@@ -2,25 +2,34 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-  <section class="resourceSesction resourceSesction-hero is-<?php the_field('resource_category'); ?>" style="background-image: url(<?php the_field('resource_image'); ?>);">
-    <div class="container">
-      <div class="card">
-        <div class="card-meta">
-          Learner <?php the_field('resource_category'); ?>
-        </div>
-        <h1 class="card-title">
-          <?php the_title(); ?>
-        </h1>
-        <h2 class="card-subtitle">
-          <?php the_field('resource_subtitle'); ?>
-        </h2>
+<?php
+  $category = get_field('resource_category');
+  $subtitle = get_field('resource_subtitle');
+  $video    = get_field('resource_video');
+  $image    = get_the_post_thumbnail_url($post->ID);
+?>
+
+  <section class="resourceSesction resourceSesction-hero is-<?php echo $category; ?>">
+    <!-- <div class="card" id="videoWrap"> -->
+      <div class="card-video">
+        <video id="videoResource" poster="<?php echo $image; ?>" >
+          <source src="<?php echo $video; ?>" type="video/mp4">
+        </video>
       </div>
-    </div>
+      <button class="card-btn btn-play is-<?php echo $category; ?>" id="videoPlay" onclick="videoPlay()">
+        <i class="fa fa-play"></i>
+      </button>
+    <!-- </div> -->
   </section>
 
-  <section class="resourceSesction resourceSesction-description is-<?php the_field('resource_category'); ?>">
+  <section class="resourceSesction resourceSesction-description is-<?php echo $category ?>">
     <div class="container">
-      <div class="card">
+      <div class="card card-head">
+        <div class="card-meta">Learner <?php echo $category; ?></div>
+        <h1 class="card-title"><?php the_title(); ?></h1>
+        <h3 class="card-subtitle"><?php echo $subtitle; ?></h3>
+      </div>
+      <div class="card card-desc">
         <div class="card-content">
           <?php the_field('resource_description'); ?>
         </div>
@@ -109,7 +118,7 @@
                 Learner <?php echo $category; ?>
               </div>
               <div class="stepItem-label">
-                <?php echo $step; ?>
+                Step <?php echo get_row_index(); ?>.
               </div>
               <div class="stepItem-content">
                 <?php echo $content; ?>
@@ -128,7 +137,7 @@
     <div class="form-title">Download the Flex Fridays Resource</div>
     <div class="form-content">
       <div class="form-label">PDF</div>
-      <a class="form-icon" href="#"><i class="fa fa-file-pdf"></i></a>
+      <a class="form-icon" href="#"><i class="fa fa-download"></i></a>
     </div>
     </div>
   </div>
@@ -137,7 +146,7 @@
     <div class="form-title">Upvote and Say “Thanks” (10)</div>
     <div class="form-content">
       <div class="form-label">Upvote</div>
-      <a class="form-icon" href="#"><i class="fa fa-findsome"></i></a>
+      <a class="form-icon" href="#"><i class="fa fa-thumbs-up"></i></a>
     </div>
     </div>
   </div>
@@ -146,7 +155,7 @@
     <div class="form-title">Comments (10)</div>
     <div class="form-content">
       <div class="form-label">Show comments</div>
-      <a class="form-icon" href="#"><i class="fa fa-findsome"></i></a>
+      <a class="form-icon" href="#"><i class="fa fa-comment"></i></a>
     </div>
     </div>
   </div>
@@ -173,6 +182,41 @@
   </div>
 
 </section>
+
+
+
+<script>
+var video = document.getElementById("videoResource"),
+    videoBtn = document.querySelector("#videoPlay"),
+    videoIcon = document.querySelector("#videoPlay .fa");
+
+function videoPlay() {
+    if (video.paused) {
+        video.play();
+        $(videoIcon).removeClass('fa-pause');
+        $(videoIcon).addClass('fa-play');
+        setTimeout(function(){
+          $(videoBtn).addClass('is-hidden');
+        }, 0);
+        setTimeout(function(){
+          $(videoBtn).addClass('is-fullscreen');
+        }, 1000);
+    } else {
+        video.pause();
+        $(videoIcon).removeClass('fa-play');
+        $(videoIcon).addClass('fa-pause');
+        setTimeout(function(){
+          $(videoBtn).removeClass('is-fullscreen');
+        }, 500);
+        setTimeout(function(){
+          $(videoBtn).removeClass('is-hidden');
+        }, 1000);
+    }
+}
+</script>
+
+
+
 
 <?php endwhile; ?>
 

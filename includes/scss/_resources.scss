@@ -2,32 +2,152 @@
 
 
 
-// Resource section
+#videoPlay.is-led {
+background-color: #84be41;
+}
+
+
+
+
+
+.fullsize-video-bg {
+height: 100%;
+overflow: hidden;
+}
+.fullsize-video-bg:before {
+content: "";
+background: rgba(114,45,0,.35);
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 0;
+}
+.fullsize-video-bg:after {
+background-size: 3px 3px;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+}
+.fullsize-video-bg .inner {
+display: table;
+width: 100%;
+max-width: 24em;
+height: 100%;
+margin: 0 auto;
+padding: 0;
+position: relative;
+z-index: 2;
+text-shadow: 0 1px 5px rgba(0,0,0,.5);
+}
+.fullsize-video-bg .inner > div {
+text-align: center;
+display: table-cell;
+vertical-align: middle;
+padding: 0 2em;
+}
+
+
+
+
+
+
+
+// Resource Single
 .resourceSesction {
   font-weight: bold;
 
-  // Title
-  &-hero {
-    height: 827px;
-    padding-bottom: 0;
 
-    .container {
-      height: 100%;
+  // Video Section
+  &-hero {
+    position: relative;
+
+    .card-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .card-btn {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 160px;
+      height: 160px;
+      margin-top: -80px;
+      margin-left: -80px;
+      border-radius: 80px;
+      border: none;
+      outline: none;
+      transition: all 1s ease;
+      cursor: pointer;
+      z-index: 100;
+      &:hover,
+      &:focus {opacity: 1;}
+      &.is-hidden {opacity: 0;}
+      &.fullscreen {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .fa {
+        color: #fff;
+        font-size: 88px;
+        text-align: center;
+        &-play {margin-left: 20px;}
+      }
+      &.is {
+        &-connected {
+          .card-btn {background-color: $connected;}
+        }
+        &-focused {
+          .card-btn {background-color: $focused;}
+        }
+        &-led {
+          .card-btn {background-color: $led;}
+        }
+        &-demonstrated {
+          .card-btn {background-color: $demonstrated;}
+        }
+      }
     }
 
-    .card {
+  }
+
+  // Description Section
+  &-description {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    .container {
+      padding-bottom: 0;
+    }
+
+    .card-head {
       position: absolute;
-      bottom: 0;
+      top: -300px;
       left: 0;
       width: 100%;
       border-top: 4px solid transparent;
-      &-meta {
+      .card-meta {
         float: right;
         color: $white;
         padding: 5px 10px;
         text-transform: uppercase;
       }
-      &-title {
+      .card-title {
         margin-top: 40px;
         margin-bottom: 15px;
         font-weight: bold;
@@ -35,7 +155,7 @@
         font-size: 45px;
         color: $white;
       }
-      &-subtitle {
+      .card-subtitle {
         margin-top: 0;
         margin-bottom: 50px;
         font-size: 45px;
@@ -43,49 +163,39 @@
       }
     }
 
-    &.is {
-      &-connected {
-        .card {border-color: $connected;}
-        .card-meta {background-color: $connected;}
-      }
-      &-focused {
-        .card {border-color: $focused;}
-        .card-meta {background-color: $focused;}
-      }
-      &-led {
-        .card {border-color: $led;}
-        .card-meta {background-color: $led;}
-      }
-      &-demonstrated {
-        .card {border-color: $demonstrated;}
-        .card-meta {background-color: $demonstrated;}
-      }
-    }
-
-  }
-
-  &-description {
-    padding-top: 80px;
-    padding-bottom: 100px;
-    .container {
-      padding-bottom: 0;
-    }
-    .card {
-      &-content {
+    .card-desc {
+      .card-content {
         line-height: 60px;
         font-size: 36px;
         color: $white;
       }
     }
+
     &.is {
-      &-connected {background-color: $connected;}
-      &-focused {background-color: $focused;}
-      &-led {background-color: $led;}
-      &-demonstrated {background-color: $demonstrated;}
+      &-connected {
+        background-color: $connected;
+        .card {border-color: $connected;}
+        .card-meta {background-color: $connected;}
+      }
+      &-focused {
+        background-color: $focused;
+        .card {border-color: $focused;}
+        .card-meta {background-color: $focused;}
+      }
+      &-led {
+        background-color: $led;
+        .card {border-color: $led;}
+        .card-meta {background-color: $led;}
+      }
+      &-demonstrated {
+        background-color: $demonstrated;
+        .card {border-color: $demonstrated;}
+        .card-meta {background-color: $demonstrated;}
+      }
     }
   }
 
-  // Reviews
+  // Reviews Section
   &-reviews {
     padding: 80px 0;
     .resourceSesction-title {
@@ -102,7 +212,7 @@
     }
   }
 
-  // Statistic
+  // Statistic Section
   &-statistic {
     padding-top: 75px;
     padding-bottom: 75px;
@@ -147,7 +257,7 @@
     }
   }
 
-  // Steps
+  // Steps Section
   &-steps {
     padding-top: 80px;
 
@@ -167,10 +277,10 @@
       background: $secondary;
     }
 
-
-
   }
 
+
+  // Footer Section
   &-footer {
 
     // &-footer {
@@ -210,6 +320,13 @@
             font-size: 40px;
             line-height: 58px;
           }
+          &:hover,
+          &:focus {
+            background: $primary;
+            .fa {
+              color: $white;
+            }
+          }
         }
         &-download {
           padding: 80px 0;
@@ -228,7 +345,42 @@
 
 }
 
+
+
+@media (min-width: 1600px) {
+  .resourceSesction-hero {
+    min-height: 827px;
+  }
+}
+@media (min-width: 1280px) {
+  .resourceSesction-hero {
+    min-height: 827px;
+  }
+}
+@media (min-width: 1024px) {
+  .resourceSesction-hero {
+    min-height: 627px;
+  }
+  .card-video video {
+    width: 100%;
+    height: 100%;
+  }
+}
 @media (max-width: 1024px) {
+  .resourceSesction-hero {
+    min-height: 44vw;
+  }
+  .card-video video {
+    width: 100%;
+    height: 100%;
+  }
+  .resourceSesction-description .card-head {
+    position: relative;
+    top: 0;
+  }
+  .resourceSesction-description .card-category {
+    float: left;
+  }
   .resource-three .card .square {
     padding-left: 0;
     padding-right: 0;
