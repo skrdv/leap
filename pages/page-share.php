@@ -32,11 +32,26 @@
 <section class="shareSesction shareSesction-buttons">
   <div class="container">
 
-    <a class="btn btn-secondary" href="#">Share a Resource</a>
+    <div class="shareSesction-resource">
+      <a class="btn btn-secondary" href="#">Share a Resource</a>
+
+      <?php acf_form(array(
+        'post_id'		=> 'new_post',
+        'new_post'		=> array(
+          'post_type'		=> 'resource',
+          'post_status'		=> 'draft'
+        ),
+        'submit_value'		=> 'Add new resource'
+      )); ?>
+
+    </div>
     <div class="shareSesction-or">
       <span></span> OR <span></span>
     </div>
-    <a class="btn btn-secondary" href="#">Share a Resource</a>
+    <div class="shareSesction-resource">
+      <a class="btn btn-secondary" href="#">Share a Story</a>
+
+    </div>
 
   </div>
 </section>
@@ -51,26 +66,26 @@
         $position = get_sub_field('position'); ?>
 
         <div class="card">
-          <div class="card-left">
-            <div class="card-content">
-              "<?php echo $content; ?>"
-            </div>
-            <div class="card-author">
-              <?php echo $author; ?>
-            </div>
-            <div class="card-position">
-              <?php echo $position; ?>
-            </div>
-          </div>
-          <div class="card-right">
-            <?php if($image): ?>
-              <div class="card-image">
-                <?php echo $image; ?>
+          <?php if($image): ?>
+            <div class="card-left">
+          <?PHP else: ?>
+            <div class="card-full">
+          <?php endif; ?>
+              <div class="card-content">
+                "<?php echo $content; ?>"
               </div>
-            <?php else: ?>
-              <div class="card-noimage"></div>
-            <?php endif; ?>
-          </div>
+              <div class="card-author">
+                <?php echo $author; ?>
+              </div>
+              <div class="card-position">
+                <?php echo $position; ?>
+              </div>
+            </div>
+          <?php if($image): ?>
+            <div class="card-right">
+              <div class="card-image" style="background-image: url('<?php echo $image; ?>');"></div>
+            </div>
+          <?php endif; ?>
         </div>
 
       <?php endwhile; ?>
