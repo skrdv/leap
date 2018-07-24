@@ -1,8 +1,14 @@
 
 // Common
-@import 'base';
 @import 'fonts';
+@import 'base';
 @import 'layout';
+@import 'elements';
 
-// Pages styles
+// Pages
+@import 'account';
 @import 'resources';
+
+// Other
+@import 'admin';
+@import 'custom';

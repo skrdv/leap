@@ -1,0 +1,179 @@
+
+
+
+// Buttons
+.btn {
+  padding: 14px 32px;
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: bold;
+  color: $text;
+  border-radius: 0;
+  border: 2px solid transparent;
+  &-primary {
+    color: $white;
+    border-color: $primary;
+    background-color: $primary;
+  }
+  &-secondary {
+    border-color: $secondary;
+    background-color: $secondary;
+  }
+  &-connected {
+    border-color: $connected;
+    background-color: $connected;
+  }
+  &-focused {
+    border-color: $focused;
+    background-color: $focused;
+  }
+  &-led {
+    border-color: $led;
+    background-color: $led;
+  }
+  &-demonstrated {
+    border-color: $demonstrated;
+    background-color: $demonstrated;
+  }
+}
+
+
+
+
+.btn-default.active,
+.btn-default:active,
+.btn-default.active:hover,
+.btn-default.active:focus,
+.open > .dropdown-toggle.btn-default {
+  color: $text;
+  background-color: $white;
+  border-color: $white;
+}
+
+.btn-group {
+
+  &-connected {
+    .btn-default {
+      border-color: $connected !important;
+    }
+  }
+
+  &-focused {
+    .btn-default {
+      border-color: $focused !important;
+    }
+  }
+
+  &-led {
+    .btn-default {
+      border-color: $led !important;
+    }
+  }
+
+  &-demonstrated {
+    .btn-default {
+      border-color: $demonstrated !important;
+    }
+  }
+
+  .fa.fa-check {
+    color: $white;
+  }
+
+}
+
+
+// Forms
+.form-control {
+  margin-bottom: 15px;
+}
+
+select.form-control {
+  font-size: 18px;
+  color: $text;
+  background-color: $white ;
+  border: 2px solid #E4E4E4;
+  box-shadow: none;
+}
+
+
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;
+}
+
+
+
+
+
+// Form Elements
+.form-control {
+  height: 64px;
+  line-height: 64px;
+  background-color: transparent;
+  border: 2px solid #E4E4E4;
+  border-radius: 0px;
+  font-family: 'Avenir Next';
+  line-height: 42px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  // box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.form-control.btn-primary {
+  font-size: 24px;
+  border-color: #00B3E6;
+  background-color: #00B3E6;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+
+
+
+// Boxes
+.box {
+  padding: 42px 48px;
+  .box-title {
+    font-weight: bold;
+    line-height: 32px;
+    font-size: 20px;
+    color: $white;
+  }
+  .box-line {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 64px;
+    height: 8px;
+    background: $white;
+  }
+  &.is {
+    &-primary {
+      background: $primary;
+    }
+    &-dark {
+      background: $text;
+    }
+  }
+}

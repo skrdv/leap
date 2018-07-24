@@ -1,0 +1,159 @@
+
+
+
+// Account Dashboard
+.accountSection {
+
+  // Top Section
+  &-hero {
+    position: relative;
+    height: 600px;
+    background-size: cover;
+
+    .bg-overlay {
+      width: 100%;
+      height: 600px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: radial-gradient(444.87px at 50% 25.85%, rgba(35, 49, 59, 0) 0%, rgba(35, 49, 59, 0.4) 100%);
+      mix-blend-mode: multiply;
+      opacity: 0.6;
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+
+    .container {
+      height: 100%;
+      padding-bottom: 0;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .avatar {
+      width: 256px;
+      height: 256px;
+      margin-bottom: 10px;
+      border-radius: 128px;
+      background-size: cover;
+      text-align: center;
+      position: relative;
+      a {
+        position: absolute;
+        left: 0;
+        bottom: 24px;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        color: $white;
+        text-decoration: underline;
+      }
+    }
+
+    .card {
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      border-top: 4px solid $primary;
+      &-title {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-weight: bold;
+        font-size: 45px;
+        color: $white;
+      }
+      &-button {
+        height: 64px;
+        margin: 30px 0;
+      }
+    }
+
+  }
+
+  &-dashboard {
+    padding-bottom: 120px;
+
+    .nav {
+      &-tabs {
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid #E4E4E4;
+      }
+      &-item {
+        max-width: 256px;
+        text-align: center;
+        &.active {
+          margin-bottom: 0;
+        }
+        &.active a {
+          color: $text;
+          text-decoration: none;
+        }
+      }
+      &-link {
+        height: 120px;
+        padding: 40px 30px 30px 30px;
+        background: none !important;
+        border: none !important;
+        border-radius: 0;
+        color: $primary;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+
+    .tab {
+      &-title {
+        margin-top: 40px;
+        margin-bottom: 30px;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      &-boxes {
+        display: flex;
+        flex-wrap: wrap;
+        .item {
+          width: 33%;
+          padding-right: 32px;
+          margin-bottom: 32px;
+          &:nth-child(3),
+          &:nth-child(6)
+          &:nth-child(9) {
+            padding-right: 0;
+          }
+        }
+      }
+      &-pane {
+        .card {
+          &-title {
+            margin-top: 60px;
+            margin-bottom: 40px;
+            font-weight: bold;
+            line-height: 60px;
+            font-size: 36px;
+            text-align: center;
+          }
+          &-content {
+            max-width: 544px;
+            margin: 0 auto;
+            font-weight: normal;
+            font-size: 24px;
+          }
+          &-button {
+            margin-top: 60px;
+            margin-bottom: 120px;
+            text-align: center;
+            a {
+              width: 544px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+}
