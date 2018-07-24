@@ -142,11 +142,11 @@ wp_reset_postdata();
 				<div class="title">
           <?php the_field('filter_title_3'); ?>
         </div>
-				<div class="card card-collaborate bg-primary">
-					<div class="card-title">
+				<div class="box is-primary">
+					<div class="box-title">
             <?php the_field('collaborate_text'); ?>
           </div>
-					<div class="card-line"></div>
+					<div class="box-line"></div>
 					<a class="btn btn-secondary" href="/share-a-resource-or-story/">Share a Resource</a>
 				</div>
 			</div>
