@@ -748,6 +748,36 @@ select.form-control {
 .accountSection-dashboard .tab-pane .card-button a {
   width: 544px;
 }
+.accountSection-dashboard .form-group {
+  display: flex;
+}
+.accountSection-dashboard .form-title {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.accountSection-dashboard .form-label {
+  width: 25%;
+  margin-bottom: 15px;
+  line-height: 64px;
+  color: #00b3e6;
+}
+.accountSection-dashboard .form-control {
+  width: 544px;
+  color: #23313b;
+  font-size: 18px;
+  text-align: left;
+}
+.accountSection-dashboard .form .btn-group {
+  width: 544px;
+  display: flex;
+}
+.accountSection-dashboard .form .btn-group label:last-child {
+  flex: 1;
+}
 .resourceSesction {
   font-weight: bold;
 }

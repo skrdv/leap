@@ -5,15 +5,23 @@
  ?>
 
 <?php
+// User Data
+$user_id            = get_current_user_id();
+$user               = get_userdata($user_id);
+$user_login         = $user->user_login;
+$user_pass          = $user->user_pass;
+$user_email         = $user->user_email;
+$user_url           = $user->user_url;
+$user_registered    = $user->user_registered;
+$user_status        = $user->user_status;
+$user_nicename      = $user->user_nicename;
+$display_name       = $user->display_name;
 
-$user_id = get_current_user_id();
-
-$name = get_field('account_name', 'user_'. $user_id);
-$avatar = get_field('account_avatar', 'user_'. $user_id);
-$background = get_field('account_background', 'user_'. $user_id);
-
-
-
+// User ACF Fiels
+$account_name       = get_field('account_fullname', 'user_'. $user_id);
+$account_pic        = get_field('account_userpic', 'user_'. $user_id);
+$account_bg         = get_field('account_userbg', 'user_'. $user_id);
+$account_org        = get_field('account_organisation', 'user_'. $user_id);
 ?>
 
 <?php get_header(); ?>
@@ -25,7 +33,7 @@ $background = get_field('account_background', 'user_'. $user_id);
     </div>
     <div class="card">
       <h1 class="card-title">
-        <?php echo $name; ?>
+        <?php echo $account_name; ?>
       </h1>
       <button class="card-button btn btn-secondary" type="button" name="button">Sign Out</button>
     </div>
@@ -39,13 +47,13 @@ $background = get_field('account_background', 'user_'. $user_id);
     <li class="nav-item">
       <a class="nav-link active" data-toggle="tab" href="#leapapps">LEAP Apps (2)</a>
     </li>
-    <li class="nav-item active">
+    <li class="nav-item">
       <a class="nav-link" data-toggle="tab" href="#submitted">Submitted Resources & Stories (6)</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" data-toggle="tab" href="#upvoted">Upvoted Resources & Stories (5)</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item active">
       <a class="nav-link" data-toggle="tab" href="#profile">Profile and Settings</a>
     </li>
   </ul>
@@ -91,7 +99,7 @@ $background = get_field('account_background', 'user_'. $user_id);
         </div>
 		  </div>
 
-		  <div class="tab-pane active" id="submitted">
+		  <div class="tab-pane fade" id="submitted">
         <div class="tab-title">Submitted Resources</div>
         <div class="tab-boxes">
           <div class="item">
@@ -156,38 +164,76 @@ $background = get_field('account_background', 'user_'. $user_id);
 				?>
 		  </div>
 
-		  <div class="tab-pane fade" id="profile">
-		    <div class="tab-title">Personal Info</div>
+		  <div class="tab-pane active" id="profile">
 
-        <form class="" action="#" method="post">
+        <form class="form form-profile" action="#" method="post">
+
+          <div class="form-title">Personal Info</div>
           <div class="form-group">
-            <label for="accountName" class="col-form-label">Your Name*</label>
-            <input type="text" class="form-control" id="accountName">
+            <label class="form-label" for="accountName">Your Name*</label>
+            <input class="form-control" type="text" id="accountName" value="Name">
           </div>
           <div class="form-group">
-            <label for="accountOrganization" class="col-form-label">Your Organization*</label>
-            <input type="text" class="form-control" id="accountOrganization">
+            <label class="form-label" for="accountOrganization">Your Organization*</label>
+            <input class="form-control" type="text" id="accountOrganization" value="<?php echo $account_org; ?>">
           </div>
           <div class="form-group">
-            <label for="accountRole" class="col-form-label">Your Role*</label>
+            <label class="form-label" for="accountRole">Your Role*</label>
             <select class="form-control" id="accountRole">
 			        <option selected="">Teacher</option>
 			        <option value="1">One</option>
 			        <option value="2">Two</option>
 			        <option value="3">Three</option>
 			      </select>
-          <div class="form-group">
-            <label for="accountEmail" class="col-form-label">Your Email Address*</label>
-            <input type="text" class="form-control" id="accountEmail">
           </div>
           <div class="form-group">
-            <label for="accountPassword" class="col-form-label">Password</label>
-            <button type="button" class="form-control" id="accountPassword">Change Password</button>
+            <label class="form-label" for="accountEmail">Your Email Address*</label>
+            <input class="form-control" type="text" id="accountEmail" value="<?php echo $user_email; ?>">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="accountPassword">Password</label>
+            <button class="btn btn-secondary" type="button" id="accountPassword">Change Password</button>
+          </div>
+
+          <div class="form-title">Notification Preferences</div>
+          <div class="form-group">
+            <label class="form-label" for="fancy-checkbox-connected">Montly Newsletter</label>
+  					 <input type="checkbox" name="fancy-checkbox-connected" id="fancy-checkbox-connected" autocomplete="off" />
+  					 <div class="btn-group btn-group-connected">
+  							 <label for="fancy-checkbox-connected" class="btn btn-connected">
+  									 <span class="fa fa-check"></span>
+  									 <span> </span>
+  							 </label>
+  							 <label for="fancy-checkbox-connected" class="btn btn-default active">Email Me</label>
+  					 </div>
+  			 </div>
+          <div class="form-group">
+            <label class="form-label" for="fancy-checkbox-connected">Submission Status Changes</label>
+  					 <input type="checkbox" name="fancy-checkbox-connected" id="fancy-checkbox-connected" autocomplete="off" />
+  					 <div class="btn-group btn-group-connected">
+  							 <label for="fancy-checkbox-connected" class="btn btn-connected">
+  									 <span class="fa fa-check"></span>
+  									 <span> </span>
+  							 </label>
+  							 <label for="fancy-checkbox-connected" class="btn btn-default active">Email Me</label>
+  					 </div>
+  			 </div>
+          <div class="form-group">
+            <label class="form-label" for="fancy-checkbox-connected">New Survey Is Available</label>
+  					 <input type="checkbox" name="fancy-checkbox-connected" id="fancy-checkbox-connected" autocomplete="off" />
+  					 <div class="btn-group btn-group-connected">
+  							 <label for="fancy-checkbox-connected" class="btn btn-connected">
+  									 <span class="fa fa-check"></span>
+  									 <span> </span>
+  							 </label>
+  							 <label for="fancy-checkbox-connected" class="btn btn-default active">Email Me</label>
+  					 </div>
+  			 </div>
+          <div class="form-group">
+            <div class="form-label"></div>
+            <button class="btn btn-primary" type="submit" id="saveChanges">Change Password</button>
           </div>
         </form>
-
-        <div class="tab-title">Notification Preferences</div>
-
 
 		  </div>
 		</div>
