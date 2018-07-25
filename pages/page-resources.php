@@ -49,165 +49,102 @@ wp_reset_postdata();
 ?>
 
 <section class="resourcesSesction resourcesSesction-filter" id="resources-filters">
-	<div class="container">
-
-		<div class="row">
-			<div class="col-md-12">
-				<div class="text">
-					<?php the_field('filter_description'); ?>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="title">
-          <?php the_field('filter_title_1'); ?>
-        </div>
-				<div class="form-group">
-					 <input type="checkbox" name="fancy-checkbox-connected" id="fancy-checkbox-connected" autocomplete="off" />
-					 <div class="btn-group btn-group-connected">
-							 <label for="fancy-checkbox-connected" class="btn btn-connected">
-									 <span class="fa fa-check"></span>
-									 <span> </span>
-							 </label>
-							 <label for="fancy-checkbox-connected" class="btn btn-default active">
-								 Learner Connected
-							 </label>
-					 </div>
-			 </div>
-				<div class="form-group">
-					 <input type="checkbox" name="fancy-checkbox-focused" id="fancy-checkbox-focused" autocomplete="off" />
-					 <div class="btn-group btn-group-focused">
-							 <label for="fancy-checkbox-focused" class="btn btn-focused">
-									 <span class="fa fa-check"></span>
-									 <span> </span>
-							 </label>
-							 <label for="fancy-checkbox-focused" class="btn btn-default active">
-								 Learner Focused
-							 </label>
-					 </div>
-			 </div>
-				<div class="form-group">
-					 <input type="checkbox" name="fancy-checkbox-led" id="fancy-checkbox-led" autocomplete="off" />
-					 <div class="btn-group btn-group-led">
-							 <label for="fancy-checkbox-led" class="btn btn-led">
-									 <span class="fa fa-check"></span>
-									 <span> </span>
-							 </label>
-							 <label for="fancy-checkbox-led" class="btn btn-default active">
-								 Learner Led
-							 </label>
-					 </div>
-			 </div>
-				<div class="form-group">
-					 <input type="checkbox" name="fancy-checkbox-demonstrated" id="fancy-checkbox-demonstrated" autocomplete="off" />
-					 <div class="btn-group btn-group-demonstrated">
-							 <label for="fancy-checkbox-demonstrated" class="btn btn-demonstrated">
-									 <span class="fa fa-check"></span>
-									 <span> </span>
-							 </label>
-							 <label for="fancy-checkbox-demonstrated" class="btn btn-default active">
-								 Learner Demonstrated
-							 </label>
-					 </div>
-			 </div>
-
-			</div>
-			<div class="col-md-4">
-				<div class="title">
-          <?php the_field('filter_title_2'); ?>
-        </div>
-				<div class="form-group">
-			    <select class="form-control custom-select">
-			      <option selected="">All Grade Levels</option>
-			      <option value="1">One</option>
-			      <option value="2">Two</option>
-			      <option value="3">Three</option>
-			    </select>
-			    <select class="form-control custom-select">
-			      <option selected="">All Subjects</option>
-			      <option value="1">One</option>
-			      <option value="2">Two</option>
-			      <option value="3">Three</option>
-			    </select>
-			    <select class="form-control custom-select">
-			      <option selected="">All Content Types</option>
-			      <option value="1">One</option>
-			      <option value="2">Two</option>
-			      <option value="3">Three</option>
-			    </select>
-			    <select name="date" class="form-control custom-select">
-			      <option selected="">Sort: Newest to Oldest</option>
-			      <option value="ASC">Newest to Oldest</option>
-			      <option value="DESC">Oldest to Newest</option>
-			    </select>
-			  </div>
-			</div>
-			<div class="col-md-4">
-				<div class="title">
-          <?php the_field('filter_title_3'); ?>
-        </div>
-				<div class="box is-primary">
-					<div class="box-title">
-            <?php the_field('collaborate_text'); ?>
-          </div>
-					<div class="box-line"></div>
-					<a class="btn btn-secondary" href="/share-a-resource-or-story/">Share a Resource</a>
-				</div>
-			</div>
-		</div>
-
-	</div>
-</section>
-
-<?php // if(is_user_logged_in()): ?>
-
   <div class="container">
+    <div class="filter-text">
+      <?php the_field('filter_description'); ?>
+    </div>
     <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
-
-      <?php if($resourceCat): ?>
-        <select name="resource_category"  class="form-control custom-select">
-          <option value="">Category</option>
-          <?php foreach( $resourceCat['choices'] as $key => $value ) {
-                  echo '<option value="' . $key . '">' . $value . '</option>';
-          } ?>
-        </select>
-      <?php endif;	?>
-
-      <select name="date" class="form-control custom-select">
-        <option selected="">Sort: Newest to Oldest</option>
-        <option value="ASC">Newest to Oldest</option>
-        <option value="DESC">Oldest to Newest</option>
-      </select>
-
-      <?php /*
-      <label>
-        <input type="radio" name="resource_category" value="connected" /> CONNECTED
-      </label>
-      <label>
-        <input type="radio" name="resource_category" value="focused" /> FOCUSED
-      </label>
-      <label>
-        <input type="radio" name="resource_category" value="led" /> LED
-      </label>
-      <label>
-        <input type="radio" name="resource_category" value="demonstrated" /> DEMONSTRATED
-      </label>
-      <br>
-      */ ?>
-
-      <button class="btn btn-primary">Apply</button>
+      <div class="flex-grid">
+        <div class="flex-col-33">
+          <div class="filter-title">
+            <?php the_field('filter_title_1'); ?>
+          </div>
+          <div class="form-group">
+            <input type="radio" name="resource_category" value="connected" id="resource-category-connected" />
+            <div class="btn-group btn-group-connected">
+              <label for="resource-category-connected" class="btn btn-connected">
+                <span class="fa fa-check"></span><span> </span>
+              </label>
+              <label for="resource-category-connected" class="btn btn-default active">Learner Connected</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="radio" name="resource_category" value="focused" id="resource-category-focused" />
+            <div class="btn-group btn-group-focused">
+              <label for="resource-category-focused" class="btn btn-focused">
+                <span class="fa fa-check"></span><span> </span>
+              </label>
+              <label for="resource-category-focused" class="btn btn-default active">Learner Focused</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="radio" name="resource_category" value="led" id="resource-category-led" />
+            <div class="btn-group btn-group-led">
+              <label for="resource-category-led" class="btn btn-led">
+                <span class="fa fa-check"></span><span> </span>
+              </label>
+              <label for="resource-category-led" class="btn btn-default active">Learner Led</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="radio" name="resource_category" value="demonstrated" id="resource-category-demonstrated" />
+            <div class="btn-group btn-group-demonstrated">
+              <label for="resource-category-demonstrated" class="btn btn-demonstrated">
+                <span class="fa fa-check"></span><span> </span>
+              </label>
+              <label for="resource-category-demonstrated" class="btn btn-default active">Learner Connected</label>
+            </div>
+          </div>
+        </div>
+        <div class="flex-col-33">
+          <div class="filter-title">
+            <?php the_field('filter_title_2'); ?>
+          </div>
+          <select class="form-control filter-select" disabled>
+			      <option selected="">All Grade Levels</option>
+			    </select>
+			    <select class="form-control filter-select" disabled>
+			      <option selected="">All Subjects</option>
+			    </select>
+			    <select class="form-control filter-select" disabled>
+			      <option selected="">All Content Types</option>
+			    </select>
+          <select class="form-control filter-select" name="date">
+            <option value="ASC">Newest to Oldest</option>
+            <option value="DESC">Oldest to Newest</option>
+          </select>
+        </div>
+        <div class="flex-col-33">
+          <div class="filter-title">
+            <?php the_field('filter_title_3'); ?>
+          </div>
+          <div class="box is-primary">
+  					<div class="box-title">
+              <?php the_field('collaborate_text'); ?>
+            </div>
+  					<div class="box-line"></div>
+  					<a class="btn btn-secondary" href="/share-a-resource-or-story/">Share a Resource</a>
+  				</div>
+        </div>
+      </div>
+      <button class="btn btn-primary is-off">Apply</button>
       <input type="hidden" name="action" value="myfilter">
     </form>
   </div>
-
-<?php // endif; ?>
+</section>
 
 
 <script type="text/javascript">
 jQuery(function($){
 
-  $('#filter input').on('change', function(){
-    console.log('input');
+  $('form input').change(function() {
+    $(this).closest('form').submit();
+    console.log('submit on input change');
+  });
 
+  $('form select').change(function() {
+    $(this).closest('form').submit();
+    console.log('submit on select change');
   });
 
   $('#filter').submit(function(){

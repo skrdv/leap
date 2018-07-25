@@ -47,33 +47,31 @@
   border-color: $white;
 }
 
-.btn-group {
 
+// Buttons Group
+.btn-group {
   &-connected {
     .btn-default {
       border-color: $connected !important;
     }
   }
-
   &-focused {
     .btn-default {
       border-color: $focused !important;
     }
   }
-
   &-led {
     .btn-default {
       border-color: $led !important;
     }
   }
-
   &-demonstrated {
     .btn-default {
       border-color: $demonstrated !important;
     }
   }
 
-  .fa.fa-check {
+  .fa {
     color: $white;
   }
 
@@ -81,56 +79,14 @@
 
 
 // Forms
-
-
-
-
-
 .form-control {
   margin-bottom: 15px;
 }
-
-select.form-control {
-  font-size: 18px;
-  color: $text;
-  background-color: $white ;
-  border: 2px solid #E4E4E4;
-  box-shadow: none;
-}
-
-
-.form-group input[type="checkbox"] {
-    display: none;
-}
-
-.form-group input[type="checkbox"] + .btn-group > label span {
-    width: 20px;
-}
-
-.form-group input[type="checkbox"] + .btn-group > label span:first-child {
-    display: none;
-}
-.form-group input[type="checkbox"] + .btn-group > label span:last-child {
-    display: inline-block;
-}
-
-.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
-    display: inline-block;
-}
-.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
-    display: none;
-}
-
-
-
-
-
-// Form Elements
 .form-control {
   height: 64px;
   line-height: 64px;
   background-color: transparent;
-  border: 2px solid #E4E4E4;
+  border: 2px solid $grey;
   border-radius: 0px;
   font-family: 'Avenir Next';
   line-height: 42px;
@@ -141,14 +97,61 @@ select.form-control {
   // box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.form-control.btn-primary {
-  font-size: 24px;
-  border-color: #00B3E6;
-  background-color: #00B3E6;
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+select.form-control {
+  font-size: 18px;
+  color: $text;
+  background-color: $white ;
+  border: 2px solid #E4E4E4;
+  box-shadow: none;
+}
+
+// .form-control.btn-primary {
+//   font-size: 24px;
+//   border-color: #00B3E6;
+//   background-color: #00B3E6;
+//   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+// }
+
+
+.form-group input[type="checkbox"] {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;
 }
 
 
+
+.form-group input[type="radio"] {
+    display: none;
+}
+.form-group input[type="radio"] + .btn-group > label span {
+    width: 20px;
+}
+.form-group input[type="radio"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="radio"] + .btn-group > label span:last-child {
+    display: inline-block;
+}
+.form-group input[type="radio"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="radio"]:checked + .btn-group > label span:last-child {
+    display: none;
+}
 
 
 

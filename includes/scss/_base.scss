@@ -9,6 +9,7 @@ $led: #84BE41;
 $demonstrated: #FF6C0C;
 
 $text: #23313B;
+$grey: #E4E4E4;
 $gray: #77777A;
 $white: #FFFFFF;
 
@@ -69,10 +70,26 @@ body {
 
 /* Page */
 .page-template-default .page {
-  padding-top: 72px;
+  // padding-top: 72px;
 }
 
 /* Single */
 .page-template-default .single {
-  padding-top: 72px;
+  // padding-top: 72px;
+}
+
+
+
+
+
+
+
+// Flex Grid
+.flex {
+  &-grid {
+    display: flex;
+  }
+  &-col-33 {
+    width: 33%;
+  }
 }

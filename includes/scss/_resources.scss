@@ -338,51 +338,7 @@
 
 }
 
-@media (min-width: 1600px) {
-  .resourceSesction-hero {
-    min-height: 827px;
-  }
-}
-@media (min-width: 1280px) {
-  .resourceSesction-hero {
-    min-height: 827px;
-  }
-}
-@media (min-width: 1024px) {
-  .resourceSesction-hero {
-    min-height: 627px;
-  }
-  .card-video video {
-    width: 100%;
-    height: 100%;
-  }
-}
-@media (max-width: 1024px) {
-  .resourceSesction-hero {
-    min-height: 44vw;
-  }
-  .card-video video {
-    width: 100%;
-    height: 100%;
-  }
-  .resourceSesction-description .card-head {
-    position: relative;
-    top: 0;
-  }
-  .resourceSesction-description .card-category {
-    float: left;
-  }
-  .resource-three .card .square {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-@media (max-width: 768px) {
-  .resource-three .card .square,
-  .resource-four .card .step {
-    flex-direction: column;
-  }
-}
+
 
 
 // Review Item (Resource Single)
@@ -574,7 +530,7 @@
   &-filter {
     padding: 30px 0;
 
-    .text {
+    .filter-text {
       padding-top: 30px;
       padding-bottom: 80px;
       font-weight: bold;
@@ -583,11 +539,24 @@
       color: $text;
     }
 
-    .title {
+    .filter-title {
       margin-bottom: 30px;
       font-weight: bold;
       line-height: 20px;
       font-size: 28px;
+    }
+
+    .btn-group {
+      label:first-child {
+        width: 64px;
+      }
+      label:last-child {
+        width: 283px;
+      }
+    }
+
+    .filter-select {
+      width: 350px;
     }
 
   }
@@ -1000,4 +969,55 @@
   }
 
 
+}
+
+
+
+
+
+// Media Queries
+@media (min-width: 1600px) {
+  .resourceSesction-hero {
+    min-height: 827px;
+  }
+}
+@media (min-width: 1280px) {
+  .resourceSesction-hero {
+    min-height: 827px;
+  }
+}
+@media (min-width: 1024px) {
+  .resourceSesction-hero {
+    min-height: 627px;
+  }
+  .card-video video {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .resourceSesction-hero {
+    min-height: 44vw;
+  }
+  .card-video video {
+    width: 100%;
+    height: 100%;
+  }
+  .resourceSesction-description .card-head {
+    position: relative;
+    top: 0;
+  }
+  .resourceSesction-description .card-category {
+    float: left;
+  }
+  .resource-three .card .square {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (max-width: 768px) {
+  .resource-three .card .square,
+  .resource-four .card .step {
+    flex-direction: column;
+  }
 }
