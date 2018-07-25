@@ -1,17 +1,15 @@
 <?php get_header(); ?>
 
-<?php // while ( have_posts() ) : the_post(); ?>
-
 <?php
   $category = get_field('resource_category');
   $subtitle = get_field('resource_subtitle');
   $video    = get_field('resource_video');
-  $image    = get_the_post_thumbnail_url($post->ID);
+  $poster   = get_the_post_thumbnail_url($post->ID, 'poster');
 ?>
 
-  <section class="resourceSesction resourceSesction-hero is-<?php echo $category; ?>">
+  <section class="resourceSesction resourceSesction-hero is-<?php echo $category; ?>" id="videoBg" style="background-image: url(<?php echo $poster; ?>);">
     <div class="card-video">
-      <video id="videoResource" poster="<?php echo $image; ?>" >
+      <video id="videoResource">
         <source src="<?php echo $video; ?>" type="video/mp4">
       </video>
     </div>
@@ -22,7 +20,7 @@
 
   <section class="resourceSesction resourceSesction-description is-<?php echo $category ?>">
     <div class="container">
-      <div class="card card-head">
+      <div class="card card-head" id="videoDesc">
         <div class="card-meta">Learner <?php echo $category; ?></div>
         <h1 class="card-title"><?php the_title(); ?></h1>
         <h3 class="card-subtitle"><?php echo $subtitle; ?></h3>
@@ -193,7 +191,9 @@
 <script>
 var video = document.getElementById("videoResource"),
     videoBtn = document.querySelector("#videoPlay"),
-    videoIcon = document.querySelector("#videoPlay .fa");
+    videoIcon = document.querySelector("#videoPlay .fa"),
+    videoDesc = document.getElementById("videoDesc"),
+    videoBg = document.getElementById("videoBg");
 
 function videoPlay() {
     if (video.paused) {
@@ -201,7 +201,9 @@ function videoPlay() {
         $(videoIcon).removeClass('fa-pause');
         $(videoIcon).addClass('fa-play');
         setTimeout(function(){
+          $(videoBg).addClass('is-transparent');
           $(videoBtn).addClass('is-hidden');
+          $(videoDesc).addClass('is-hidden');
         }, 0);
         setTimeout(function(){
           $(videoBtn).addClass('is-fullscreen');
@@ -214,15 +216,12 @@ function videoPlay() {
           $(videoBtn).removeClass('is-fullscreen');
         }, 500);
         setTimeout(function(){
+          $(videoBg).removeClass('is-transparent');
           $(videoBtn).removeClass('is-hidden');
+          $(videoDesc).removeClass('is-hidden');
         }, 1000);
     }
 }
 </script>
-
-
-
-
-<?php // endwhile; ?>
 
 <?php get_footer(); ?>

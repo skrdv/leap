@@ -1,5 +1,9 @@
 <?php
 
+// Add image sizes
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'poster', 1800, 1200 );
+}
 
 // Add the target attribute to edit post link
 add_filter( 'edit_post_link', function( $link, $post_id, $text )
