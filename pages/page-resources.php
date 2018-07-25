@@ -1,4 +1,8 @@
-<?php //Template Name: Page Resources ?>
+<?php
+/**
+ * Template Name: Page Resources
+ */
+?>
 
 <?php
 global $post;
@@ -17,9 +21,8 @@ global $post;
 
 <?php
 // global $post;
-
-$id   = intval($_GET['cat']);
-$paged     = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$id    = intval($_GET['cat']);
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 // WP_Query arguments
 $args = array(

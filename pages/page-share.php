@@ -1,4 +1,8 @@
-<?php //Template Name: Share Resource ?>
+<?php
+/**
+ * Template Name: Share Resource
+ */
+?>
 
 <?php global $post; ?>
 
@@ -42,11 +46,11 @@
       			<span></span> OR <span></span>
     		</div>
 		</div><!-- col-sm -->
-		 <div class=col-sm-5>		 
+		 <div class=col-sm-5>
     		<div class="shareSesction-resource">
       			<a id="btn-story" class="btn btn-secondary" >Share a Story</a>
 			</div>
-		 </div><!-- col-sm -->	 
+		 </div><!-- col-sm -->
 	</div><!-- row -->
   </div><!-- container -->
 </section><!-- shareSesction-buttons -->
@@ -77,28 +81,28 @@
         ),
         'submit_value'		=> 'Add new resource'
       ));  */ ?>
-				</div>			 
-			 
-	  
-		 </div><!-- col-sm -->	 
+				</div>
+
+
+		 </div><!-- col-sm -->
 	</div><!-- row -->
   </div><!-- container -->
 </section><!-- shareSesction-buttons -->
 
 <script>
-jQuery(document).on('click', '#btn-resource', function() { 
+jQuery(document).on('click', '#btn-resource', function() {
 		jQuery('#form-resource').toggleClass('in');
 		jQuery('#form-story').removeClass('in');
 		console.log('dfdsf');
-	} ); 
-	
-jQuery(document).on('click', '#btn-story', function() { 
+	} );
+
+jQuery(document).on('click', '#btn-story', function() {
 		jQuery('#form-story').toggleClass('in');
 		jQuery('#form-resource').removeClass('in');
-} ); 
-</script>	
+} );
+</script>
 
-	  
+
 
 <?php if( have_rows('share_reviews') ): ?>
   <section class="shareSesction shareSesction-review">

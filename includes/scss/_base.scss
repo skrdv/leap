@@ -15,9 +15,7 @@ $white: #FFFFFF;
 
 
 // Base
-html {
-
-}
+html {}
 
 body {
   font-family: 'Avenir Next', sans-serif;
@@ -25,11 +23,9 @@ body {
   color: $text;
 }
 
-body.is-fixed {
-  // padding-top: 72px;
-  margin-top: 60px;
-}
 
+
+// Helpers
 .is-center {
   text-align: center;
 }
@@ -37,10 +33,6 @@ body.is-fixed {
 .is-off {
   display: none !important;
 }
-
-
-
-
 
 .is-white {
   color: $white;

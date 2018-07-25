@@ -2,10 +2,12 @@
 /**
  * Template Name: Account Dashboard
  */
- ?>
+?>
 
 <?php
+
 // User Data
+$current_user 			= wp_get_current_user();
 $user_id            = get_current_user_id();
 $user               = get_userdata($user_id);
 $user_login         = $user->user_login;
@@ -26,9 +28,9 @@ $account_org        = get_field('account_organisation', 'user_'. $user_id);
 
 <?php get_header(); ?>
 
-<section class="accountSection accountSection-hero" style="background-image: url('<?php echo $background; ?>');">
+<section class="accountSection accountSection-hero" style="background-image: url('<?php echo $account_bg; ?>');">
   <div class="container">
-    <div class="avatar" style="background-image: url('<?php echo $avatar; ?>');">
+    <div class="avatar" style="background-image: url('<?php echo $account_pic; ?>');">
       <a href="">Change Avatar</a>
     </div>
     <div class="card">

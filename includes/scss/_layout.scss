@@ -1,4 +1,21 @@
 
+
+// Admin Bar
+body.admin-bar {
+  .navbar-fixed-top {
+    top: 32px;
+  }
+  .accountSection-hero,
+  .resourceSesction-hero,
+  .resourcesSesction-hero {
+    margin-top: 72px;
+  }
+}
+
+
+
+
+// Header
 .navbar {
   position: relative;
   height: 72px;
@@ -8,39 +25,35 @@
   background: #FFFFFF;
   border-radius: 0;
   box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.05), 0px 0px 4px rgba(0, 0, 0, 0.25);
-}
-.navbar,
-.navbar > .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.navbar > .container {
-  width: 100%;
-  padding: 0;
-}
 
-.navbar-fixed-top {
-    position: fixed !important;
-    right: 0;
-    left: 0;
-    top: 0;
-    z-index: 1030;
-}
+  & > .container {
+    width: 100%;
+    padding: 0;
+  }
 
-.logged-in .navbar-fixed-top {
-    top: 33px;
-}
+  // Sticky
+  &-fixed-top {
+      position: fixed !important;
+      right: 0;
+      left: 0;
+      top: 0;
+      z-index: 1030;
+      .navbar-collapse {
+        max-height: 500px;
+      }
+  }
 
+  // Header
+  &-header {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 
-
-.navbar-header {
-  padding-left: 16px;
-  padding-right: 16px;
-
-}
-
-.navbar-brand {
+  // Logo
+  &-brand {
     display: inline-block;
     white-space: nowrap;
     width: 95px;
@@ -50,224 +63,380 @@
     font-weight: bold;
     text-align: center;
     letter-spacing: 0.3em;
-}
-.navbar-brand:focus,
-.navbar-brand:hover {
-    text-decoration: none
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  // Toggle
+  &-toggle {
+    float: left;
+    font-size: 1.0625rem;
+    line-height: 1;
+    padding: .25rem .75rem;
+    border: 1px solid transparent;
+    background-color: transparent;
+    &:focus,
+    &:hover {
+        text-decoration: none
+    }
+    &:not(:disabled):not(.disabled) {
+        cursor: pointer
+    }
+    .icon {
+      &-group {
+        display: inline-block;
+        margin-right: 12px;
+      }
+      &-bar {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background-color: #008AE3;
+      }
+      &-bar + .icon-bar {
+          margin-top: 2px;
+      }
+      &-text {
+        font-family: 'Avenir Next';
+        line-height: normal;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0.02em;
+        color: #00B3E6;
+      }
+    }
+  }
+
+  // Collapse
+  &-collapse {
+    padding: 0;
+    flex-basis: auto;
+    flex-grow: 1;
+    align-items: center;
+    background-color: #fff;
+    overflow: visible;
+  }
+
+  // Navigation
+  &-nav {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+
+    .menu-item a {
+      font-family: 'Avenir Next';
+      font-size: 14px;
+      line-height: 32px;
+      font-weight: bold;
+      text-transform: none;
+      white-space: nowrap;
+    }
+
+    & > .menu-item > a {
+      padding: 20px 5px;
+      border-bottom: 4px solid transparent;
+    }
+
+    & > .menu-item > .dropdown-menu {
+      float: none;
+      margin-top: 18px;
+      padding: 25px 0;
+      border-top: 0px solid transparent;
+      min-width: 270px;
+      text-align: center;
+      border-radius: 0;
+      background-color: #fff;
+      box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .open .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu {
+      .menu-item {
+        padding: 5px 0;
+        & > a {
+          display: inline-block;
+          padding: 5px 5px;
+          color: #00B3E6;
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: bold;
+          text-align: center;
+          text-transform: none;
+          border-bottom: 2px solid transparent;
+          &:hover,
+          &:focus {
+            color: #00B3E6;
+            background-color: transparent;
+            background-image: none;
+            border-bottom: 2px solid rgba(0, 179, 230, 0.5);
+          }
+        }
+      }
+    }
+
+  }
+
+  // Menu Main
+  &-main {
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    .menu-item {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    & > .menu-item > a {
+      padding: 0 5px;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      color: #00B3E6;
+      &:hover,
+      &:focus {
+        color: #00B3E6;
+        background-color: transparent;
+        border-bottom: 4px solid rgba(0, 179, 230, 0.5);
+      }
+    }
+
+    .open > a,
+    .open > a:hover,
+    .open > a:focus {
+      color: #00B3E6;
+      background-color: transparent;
+      border-bottom: 4px solid rgba(0, 179, 230, 0.5);
+    }
+
+    .dropdown-menu {
+      left: 50%;
+      margin-left: -135px;
+    }
+
+  }
+
+  // Menu More
+  &-more {
+    float: right;
+    padding: 0 25px;
+    border-left: 1px solid rgba(119, 119, 122, 0.2);
+
+    & > .menu-item {
+      padding-left: 25px;
+      padding-right: 25px;
+      & > a {
+        padding-top: 0;
+        padding-bottom: 0;
+        color: #77777A;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        white-space: nowrap;
+        &:hover,
+        &:focus {
+          color: #77777A;
+          background-color: transparent;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      left: auto;
+      right: -25px;
+    }
+
+    .open > a,
+    .open > a:hover,
+    .open > a:focus {
+      color: #00B3E6;
+      background-color: transparent;
+      border-bottom: 4px solid rgba(0, 179, 230, 0.5);
+    }
+
+  }
+
+  // Menu Account
+  &-account {
+    float: right;
+
+    & > .menu-item {
+      padding-left: 25px;
+      padding-right: 25px;
+      & > a {
+        // padding-top: 0;
+        // padding-bottom: 0;
+        color: #77777A;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        &:hover,
+        &:focus {
+          color: #77777A;
+          background-color: transparent;
+        }
+      }
+    }
+
+    .userpic {
+      width: 42px;
+      height: 42px;
+      margin-right: 10px;
+      border-radius: 21px;
+      background-size: cover;
+    }
+
+    .username {
+
+    }
+
+  }
+
+  // Menu Footer
+  &-footer {
+    flex-direction: column;
+
+    .menu-item {
+      float: none;
+      text-align: left;
+      a {
+        padding: 0;
+        font-family: 'Avenir Next';
+        line-height: 28px;
+        font-size: 15px;
+        font-weight: normal;
+        text-decoration-line: underline;
+        color: #fff;
+        &:hover {
+          background-color: transparent;
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+      .caret {
+        display: none;
+      }
+    }
+  }
+
 }
 
 
 
-.navbar-toggle {
-  float: left;
-  font-size: 1.0625rem;
-  line-height: 1;
-  padding: .25rem .75rem;
-  border: 1px solid transparent;
-  background-color: transparent
-}
-.navbar-toggle .icon-group {
-  display: inline-block;
-  margin-right: 12px;
-}
-.navbar-toggle .icon-bar {
-  display: block;
-  width: 18px;
-  height: 2px;
-  background-color: #008AE3;
-}
-.navbar-toggle .icon-bar + .icon-bar {
-    margin-top: 2px;
-}
-.navbar-toggle .icon-text {
-  font-family: 'Avenir Next';
-  line-height: normal;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 0.02em;
-  color: #00B3E6;
-}
-.navbar-toggle:focus,
-.navbar-toggle:hover {
-    text-decoration: none
-}
-.navbar-toggle:not(:disabled):not(.disabled) {
-    cursor: pointer
-}
 
 
+/* Site Footer */
+.siteFooter {
+  padding-bottom: 110px;
+  color: #fff;
+  background: #23313B;
 
-.navbar-nav {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none
-}
-.navbar-nav .menu-item a {
-  font-family: 'Avenir Next';
-  font-size: 14px;
-  line-height: 32px;
-  font-weight: bold;
-  text-transform: none;
-  white-space: nowrap;
-}
-.navbar-nav > .menu-item > a {
-  padding: 20px 5px;
-  border-bottom: 4px solid transparent;
-}
-.navbar-nav > .menu-item > .dropdown-menu {
-  float: none;
-  margin-top: 18px;
-  padding: 25px 0;
-  border-top: 0px solid transparent;
-  min-width: 270px;
-  text-align: center;
-  border-radius: 0;
-  background-color: #fff;
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.15);
-}
-.navbar-nav .open .dropdown-menu {
+  &-title {
+    margin-top: 90px;
+    margin-bottom: 50px;
+    font-family: 'Avenir Next';
+    line-height: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    span {
+      display: block;
+      width: 64px;
+      height: 8px;
+      margin: 40px auto 0 auto;
+      background: #fff;
+    }
+  }
+
+  &-subtitle {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-family: 'Avenir Next';
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  &-socials {
+    margin-bottom: 60px;
+    text-align: center;
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding-left: 0;
+      a {
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+        margin: 0 16px;
+        border: 4px solid #FFFFFF;
+        box-sizing: border-box;
+        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+        &:hover,
+        &:focus {
+          background-color: #00B3E6;
+        }
+        .fa {
+          color: #fff;
+          font-size: 40px;
+          line-height: 58px;
+        }
+      }
+    }
+  }
+
+  &-copy {
+    margin-top: 90px;
+    margin-bottom: 30px;
+    font-family: 'Avenir Next';
+    line-height: normal;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  &-link {
     display: block;
-}
-.navbar-nav .dropdown-menu .menu-item {
-  padding: 5px 0;
-}
-.navbar-nav .dropdown-menu .menu-item > a {
-  display: inline-block;
-  padding: 5px 5px;
-  color: #00B3E6;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: bold;
-  text-align: center;
-  text-transform: none;
-  border-bottom: 2px solid transparent;
-}
-.navbar-nav .dropdown-menu .menu-item a:hover,
-.navbar-nav .dropdown-menu .menu-item a:focus {
-  color: #00B3E6;
-  background-color: transparent;
-  background-image: none;
-  border-bottom: 2px solid rgba(0, 179, 230, 0.5);
+    font-family: 'Avenir Next';
+    line-height: normal;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: normal;
+    letter-spacing: 0.15em;
+    color: #fff;
+    text-decoration: underline;
+    &:hover {
+      background-color: transparent;
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+
+  .wpcf7 {
+    margin-top: 25px;
+  }
+
 }
 
 
 
-.navbar-main {
-  text-align: center;
-  padding-left: 50px;
-  padding-right: 50px;
-}
-.navbar-main .menu-item {
-  padding-left: 25px;
-  padding-right: 25px;
-}
-.navbar-main > .menu-item > a {
-  padding: 0 5px;
-  font-size: 15px;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-  color: #00B3E6;
-}
-.navbar-main > .menu-item > a:hover,
-.navbar-main > .menu-item > a:focus {
-  color: #00B3E6;
-  background-color: transparent;
-  border-bottom: 4px solid rgba(0, 179, 230, 0.5);
-}
-.navbar-main .open > a,
-.navbar-main .open > a:hover,
-.navbar-main .open > a:focus {
-  color: #00B3E6;
-  background-color: transparent;
-  border-bottom: 4px solid rgba(0, 179, 230, 0.5);
-}
-.navbar-main .dropdown-menu {
-  left: 50%;
-  margin-left: -135px;
-}
-
-
-.navbar-more {
-  float: right;
-  padding: 0 25px;
-  border-left: 1px solid rgba(119, 119, 122, 0.2);
-}
-.navbar-more > .menu-item {
-  padding-left: 25px;
-  padding-right: 25px;
-}
-.navbar-more > .menu-item > a {
-  padding-top: 0;
-  padding-bottom: 0;
-  color: #77777A;
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  white-space: nowrap;
-}
-.navbar-more > .menu-item > a:hover,
-.navbar-more > .menu-item > a:focus {
-  color: #77777A;
-  background-color: transparent;
-}
-.navbar-more .dropdown-menu {
-  left: auto;
-  right: -25px;
-}
-.navbar-more .open > a,
-.navbar-more .open > a:hover,
-.navbar-more .open > a:focus {
-  color: #00B3E6;
-  background-color: transparent;
-  border-bottom: 4px solid rgba(0, 179, 230, 0.5);
-}
 
 
 
-.navbar-footer {
-  flex-direction: column;
-}
-.navbar-footer .menu-item {
-  float: none;
-  text-align: left;
-}
-.navbar-footer-2 .menu-item:last-child {
-  display: none;
-}
-.navbar-footer .menu-item a {
-  padding: 0;
-  font-family: 'Avenir Next';
-  line-height: 28px;
-  font-size: 15px;
-  font-weight: normal;
-  text-decoration-line: underline;
-  color: #fff;
-}
-.navbar-footer .menu-item a:hover {
-  background-color: transparent;
-  text-decoration: none;
-  color: #fff;
-}
-.navbar-footer .menu-item .caret {
-  display: none;
-}
-
-.navbar-collapse {
-  padding: 0;
-  flex-basis: auto;
-  flex-grow: 1;
-  align-items: center;
-  background-color: #fff;
-  overflow: visible;
-}
-
-.navbar-fixed-top .navbar-collapse {
-  max-height: 500px;
-}
 
 
+// Media Queries
 
 @media (min-width: 1440px) {
   .navbar-main {
@@ -392,118 +561,4 @@
     margin: 0 0 60px 0;
   }
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Site Footer */
-.siteFooter {
-  /* padding-top: 90px; */
-  padding-bottom: 110px;
-  color: #fff;
-  background: #23313B;
-}
-
-.siteFooter-title {
-  margin-top: 90px;
-  margin-bottom: 50px;
-  font-family: 'Avenir Next';
-  line-height: 20px;
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.siteFooter-title span {
-  display: block;
-  width: 64px;
-  height: 8px;
-  margin: 40px auto 0 auto;
-  background: #fff;
-}
-
-.siteFooter .wpcf7 {
-  margin-top: 25px;
-}
-
-.siteFooter-subtitle {
-  margin-top: 30px;
-  margin-bottom: 40px;
-  font-family: 'Avenir Next';
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.siteFooter-socials {
-  margin-bottom: 60px;
-  text-align: center;
-}
-
-.siteFooter-socials .social-icons {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding-left: 0;
-}
-
-.siteFooter-socials .social-icons a {
-  display: inline-block;
-  width: 64px;
-  height: 64px;
-  margin: 0 16px;
-  border: 4px solid #FFFFFF;
-  box-sizing: border-box;
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-.siteFooter-socials .social-icons a:hover,
-.siteFooter-socials .social-icons a:focus {
-  background-color: #00B3E6;
-}
-
-.siteFooter-socials .social-icons a .fa {
-  color: #fff;
-  font-size: 40px;
-  line-height: 58px;
-}
-
-.siteFooter-copy {
-  margin-top: 90px;
-  margin-bottom: 30px;
-  font-family: 'Avenir Next';
-  line-height: normal;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.siteFooter-link {
-  display: block;
-  font-family: 'Avenir Next';
-  line-height: normal;
-  font-size: 12px;
-  line-height: 24px;
-  font-weight: normal;
-  letter-spacing: 0.15em;
-  color: #fff;
-  text-decoration: underline;
-}
-
-.siteFooter-link:hover {
-  background-color: transparent;
-  text-decoration: none;
-  color: #fff;
 }
