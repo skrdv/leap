@@ -37,7 +37,7 @@ $account_org        = get_field('account_organisation', 'user_'. $user_id);
       <h1 class="card-title">
         <?php echo $account_name; ?>
       </h1>
-      <button class="card-button btn btn-secondary" type="button" name="button">Sign Out</button>
+      <a class="card-button btn btn-secondary" href="<?php echo wp_logout_url( home_url() ); ?>">Sign Out</a>
     </div>
   </div>
 	<div class="bg-overlay"></div>
