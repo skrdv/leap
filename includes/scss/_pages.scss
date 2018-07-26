@@ -1,0 +1,135 @@
+
+// Page Sections
+.pageSection {
+
+  // Blocks Section
+  &-blocks {
+    padding-top: 88px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid $grey;
+    .container {
+      padding-bottom: 0;
+    }
+  }
+
+  // Page Title
+  &-title {
+    padding-top: 80px;
+    color: $text;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    &:after {
+      content: '';
+      display: block;
+      width: 64px;
+      height: 8px;
+      background: $secondary !important;
+      margin: 30px auto;
+    }
+  }
+
+  // Cards section
+  &-cards {
+    padding-top: 50px;
+    padding-bottom: 120px;
+    .container {
+      padding-bottom: 0;
+      display: flex;
+    }
+  }
+
+}
+
+
+
+
+
+// Page Blocks
+.pageBlock {
+  display: flex;
+  flex-wrap: wrap;
+
+  &-content {
+    width: 50%;
+    margin-bottom: 60px;
+    text-align: left;
+  }
+  &-title {
+    margin: 0;
+    color: $text;
+    font-size: 36px;
+    font-weight: bold;
+    &:after {
+      content: '';
+      display: block;
+      width: 64px;
+      height: 8px;
+      background: $secondary;
+      margin: 30px 0;
+    }
+  }
+  &-text {
+    color: $text;
+    font-size: 24px;
+    line-height: 40px;
+  }
+  &-image {
+    width: 50%;
+    margin-bottom: 80px;
+  }
+  &-footer {
+    width: 100%;
+    .btn {
+      width: 544px;
+      font-size: 24px;
+    }
+  }
+  // Alignment
+  &-none {
+    text-align: center;
+    .pageBlock-content {width: 100%; text-align: center;}
+    .pageBlock-title:after {margin: 30px auto;}
+  }
+  &-left {
+    flex-direction: row-reverse;
+    .pageBlock-image {text-align: left;}
+  }
+  &-right {
+    flex-direction: row;
+    .pageBlock-image {text-align: right;}
+  }
+
+}
+
+
+
+
+
+
+// Page Cards
+.pageCard {
+  display: flex;
+  width: 50%;
+
+  &-image {
+
+  }
+  &-content {
+    width: 50%;;
+    padding: 30px;
+    background: $primary;
+  }
+
+  &-text {
+    color: $white;
+    font-weight: bold;
+  }
+
+  &-button {
+    color: $text;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+}

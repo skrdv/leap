@@ -3,6 +3,8 @@
 // Add image sizes
 if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'poster', 1800, 1200 );
+	add_image_size( 'block', 448, 398 );
+	add_image_size( 'card', 272, 255 );
 	add_image_size( 'avatar', 256, 256 );
 	add_image_size( 'userpic', 42, 42 );
 }
