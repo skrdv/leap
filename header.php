@@ -69,12 +69,11 @@ $account_org        = get_field('account_organisation', 'user_'. $user_id);
 				)
 			); ?>
 			<ul id="menu-account" class="nav navbar-nav navbar-account">
-				<?php // if ( current_user_can('account') OR current_user_can('administrator') ): ?>
 				<?php if ($user->caps['account'] === true OR $user->caps['administrator']): ?>
 					<li id="menu-item-0" class="menu-item">
 						<a href="/account/">
-							<div class="userpic" style="background-image: url(<?php echo $account_pic; ?>);"></div>
-							<div class="username"><?php echo $user_login; ?></div> 
+							<div class="userpic" style="background-image: url(<?php echo $account_pic[sizes][userpic]; ?>);"></div>
+							<div class="username"><?php echo $user_login; ?></div>
 						</a>
 					</li>
 				<?php else: ?>

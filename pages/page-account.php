@@ -28,9 +28,9 @@ $account_org        = get_field('account_organisation', 'user_'. $user_id);
 
 <?php get_header(); ?>
 
-<section class="accountSection accountSection-hero" style="background-image: url('<?php echo $account_bg; ?>');">
+<section class="accountSection accountSection-hero" style="background-image: url('<?php echo $account_bg[sizes][poster]; ?>');">
   <div class="container">
-    <div class="avatar" style="background-image: url('<?php echo $account_pic; ?>');">
+    <div class="avatar" style="background-image: url('<?php echo $account_pic[sizes][avatar]; ?>');">
       <a href="">Change Avatar</a>
     </div>
     <div class="card">
