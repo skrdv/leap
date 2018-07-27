@@ -7,7 +7,7 @@
   $poster   = get_the_post_thumbnail_url($post->ID, 'poster');
 ?>
 
-  <section class="resourceSesction resourceSesction-hero is-<?php echo $category; ?>" id="videoBg" style="background-image: url(<?php echo $poster; ?>);">
+  <section class="resourceSection resourceSection-video is-<?php echo $category; ?>" id="videoBg" style="background-image: url(<?php echo $poster; ?>);">
     <div class="card-video">
       <video id="videoResource">
         <source src="<?php echo $video; ?>" type="video/mp4">
@@ -18,7 +18,7 @@
     </button>
   </section>
 
-  <section class="resourceSesction resourceSesction-description is-<?php echo $category ?>">
+  <section class="resourceSection resourceSection-description is-<?php echo $category ?>">
     <div class="container">
       <div class="card card-head" id="videoDesc">
         <div class="card-meta">Learner <?php echo $category; ?></div>
@@ -34,10 +34,10 @@
   </section>
 
   <?php if( have_rows('resource_reviews') ): ?>
-    <section class="resourceSesction resourceSesction-reviews">
+    <section class="resourceSection resourceSection-reviews">
       <div class="container">
-        <div class="resourceSesction-title"><?php the_field('resource_reviews_title'); ?></div>
-        <div class="resourceSesction-line"></div>
+        <div class="resourceSection-title"><?php the_field('resource_reviews_title'); ?></div>
+        <div class="resourceSection-line"></div>
 	      <?php while( have_rows('resource_reviews') ): the_row();
 		      $image = get_sub_field('image');
 		      $content = get_sub_field('content');
@@ -72,7 +72,7 @@
   <?php endif; ?>
 
   <?php if( have_rows('resource_statistic') ): ?>
-    <section class="resourceSesction resourceSesction-statistic bg-secondary">
+    <section class="resourceSection resourceSection-statistic bg-secondary">
       <div class="container">
         <div class="card">
           <div class="card-title">
@@ -100,10 +100,10 @@
   <?php endif; ?>
 
   <?php if( have_rows('resource_steps') ): ?>
-    <section class="resourceSesction resourceSesction-steps">
+    <section class="resourceSection resourceSection-steps">
       <div class="container">
-        <div class="resourceSesction-title"><?php the_field('resource_steps_title'); ?></div>
-        <div class="resourceSesction-line"></div>
+        <div class="resourceSection-title"><?php the_field('resource_steps_title'); ?></div>
+        <div class="resourceSection-line"></div>
 	      <?php while( have_rows('resource_steps') ): the_row();
 		      $step = get_sub_field('step');
 		      $category = get_sub_field('category');
@@ -126,7 +126,7 @@
     </section>
   <?php endif; ?>
 
-<section class="resourceSesction resourceSesction-footer">
+<section class="resourceSection resourceSection-footer">
 
   <div class="form-section form-download">
     <div class="container">
@@ -139,20 +139,28 @@
   </div>
   <div class="form-section form-upvote">
     <div class="container">
+
     <div class="form-title">Upvote and Say “Thanks” (10)</div>
     <div class="form-content">
       <div class="form-label">Upvote</div>
-      <a class="form-icon" href="#"><i class="fa fa-thumbs-up"></i></a>
+
+        <?php if(function_exists('wp_ulike')) wp_ulike('get'); ?>
+
     </div>
     </div>
   </div>
   <div class="form-section form-comments">
     <div class="container">
-    <div class="form-title">Comments (10)</div>
-    <div class="form-content">
-      <div class="form-label">Show comments</div>
-      <a class="form-icon" href="#"><i class="fa fa-comment"></i></a>
+      <div class="form-title">Comments (10)</div>
+      <div class="form-content">
+        <div class="form-label">Show comments</div>
+        <a class="form-icon" href="#"><i class="fa fa-comment"></i></a>
+      </div>
     </div>
+    <div class="container">
+      <?php if ( comments_open() || get_comments_number() ) :
+        comments_template();
+        endif; ?>
     </div>
   </div>
   <div class="form-section form-share">
@@ -185,6 +193,8 @@
   </div>
 
 </section>
+
+
 
 
 

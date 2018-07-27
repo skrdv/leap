@@ -1,13 +1,12 @@
 
 
 
-// Resource Single
-.resourceSesction {
+// Sections
+.resourceSection {
   font-weight: bold;
 
-
   // Video Section
-  &-hero {
+  &-video {
     position: relative;
     background-size: cover;
     &.is-transparent {
@@ -140,13 +139,13 @@
   // Reviews Section
   &-reviews {
     padding: 80px 0;
-    .resourceSesction-title {
+    .resourceSection-title {
       font-weight: bold;
       line-height: 48px;
       font-size: 36px;
       text-align: center;
     }
-    .resourceSesction-line {
+    .resourceSection-line {
       margin: 30px auto 40px auto;
       width: 64px;
       height: 8px;
@@ -203,7 +202,7 @@
   &-steps {
     padding-top: 80px;
 
-    .resourceSesction-title {
+    .resourceSection-title {
       font-size: 36px;
       line-height: 48px;
       font-weight: bold;
@@ -212,7 +211,7 @@
       margin: 0 auto;
     }
 
-    .resourceSesction-line {
+    .resourceSection-line {
       width: 64px;
       height: 8px;
       margin: 30px auto;
@@ -220,7 +219,6 @@
     }
 
   }
-
 
   // Footer Section
   &-footer {
@@ -336,158 +334,7 @@
 
   }
 
-}
-
-
-
-
-// Review Item (Resource Single)
-.reviewItem {
-  display: flex;
-
-  &-image {
-    margin-right: 30px;
-    width: 160px;
-    height: 160px;
-    background-size: cover;
-    .blank {
-      height: 100%;
-      background: #c4c4c4;
-    }
-  }
-
-  &-content {
-    margin-bottom: 50px;
-    font-weight: normal;
-    line-height: 42px;
-    font-size: 24px;
-  }
-
-  &-author {
-    font-size: 24px;
-  }
-
-  &-position {
-    margin-bottom: 100px;
-    font-size: 24px;
-    font-weight: normal;
-  }
-
-}
-
-// Step Item (Resource Single)
-.stepItem {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 40px auto;
-    padding: 40px 0;
-  }
-  &-category {
-    width: 100%;
-    padding-left: 19%;
-    margin-bottom: 20px;
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    &.is {
-      &-connected {color: $connected;}
-      &-focused {color: $focused;}
-      &-led {color: $led;}
-      &-demonstrated {color: $demonstrated;}
-    }
-  }
-  &-label {
-    display: inline-block;
-    width: 19%;
-    font-size: 24px;
-  }
-  &-content {
-    width: 80%;
-    display: inline-block;
-    font-weight: normal;
-    line-height: 48px;
-    font-size: 24px;
-  }
-}
-
-
-
-
-#videoPlay {
-  &.is-fullscreen {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  &.is-connected {
-    background-color: $connected;
-  }
-  &.is-focused {
-    background-color: $focused;
-  }
-  &.is-led {
-    background-color: $led;
-  }
-  &.is-demonstrated {
-    background-color: $demonstrated;
-  }
-}
-
-
-
-.fullsize-video-bg {
-  height: 100%;
-  overflow: hidden;
-  &:before {
-  content: "";
-  background: rgba(114,45,0,.35);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  }
-  &:after {
-  background-size: 3px 3px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  }
-  & .inner {
-  display: table;
-  width: 100%;
-  max-width: 24em;
-  height: 100%;
-  margin: 0 auto;
-  padding: 0;
-  position: relative;
-  z-index: 2;
-  text-shadow: 0 1px 5px rgba(0,0,0,.5);
-  }
-  &.inner > div {
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-  padding: 0 2em;
-  }
-}
-
-
-
-// Resources Page
-.resourcesSesction {
-
-  // Top Section
+  // Hero Section
   &-hero {
     position: relative;
     height: 600px;
@@ -565,10 +412,83 @@
 
 
 
+// Review Item
+.reviewItem {
+  display: flex;
+
+  &-image {
+    margin-right: 30px;
+    width: 160px;
+    height: 160px;
+    background-size: cover;
+    .blank {
+      height: 100%;
+      background: #c4c4c4;
+    }
+  }
+
+  &-content {
+    margin-bottom: 50px;
+    font-weight: normal;
+    line-height: 42px;
+    font-size: 24px;
+  }
+
+  &-author {
+    font-size: 24px;
+  }
+
+  &-position {
+    margin-bottom: 100px;
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+}
 
 
 
-// Resource Card (Resources Page)
+// Step Item
+.stepItem {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    padding: 40px 0;
+  }
+  &-category {
+    width: 100%;
+    padding-left: 19%;
+    margin-bottom: 20px;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    &.is {
+      &-connected {color: $connected;}
+      &-focused {color: $focused;}
+      &-led {color: $led;}
+      &-demonstrated {color: $demonstrated;}
+    }
+  }
+  &-label {
+    display: inline-block;
+    width: 19%;
+    font-size: 24px;
+  }
+  &-content {
+    width: 80%;
+    display: inline-block;
+    font-weight: normal;
+    line-height: 48px;
+    font-size: 24px;
+  }
+}
+
+
+
+
+// Resource Item
 .resourceCard {
   padding-bottom: 60px;
   margin-bottom: 60px;
@@ -618,7 +538,7 @@
   }
 
 
-  // Resource Content
+  // Content
   .card {
     width: 100%;
     height: 100%;
@@ -671,7 +591,6 @@
     &-video {
       // position: absolute;
       // bottom: 0;
-
     }
     &-image {
       width: 100%;
@@ -688,12 +607,13 @@
       left: 0;
       bottom: 0;
       width: 100%;
+      height: 64px;
       display: flex;
       z-index: 99;
       background: linear-gradient(180deg, rgba(35, 49, 59, 0) 0%, #23313B 100%);
       opacity: 0.9;
 
-      a {
+      .item {
         position: relative;
         display: block;
         width: 50%;
@@ -749,245 +669,114 @@
   }
 
 
-  /*
-  &-category {
-    margin-bottom: 40px;
-    font-weight: bold;
-    line-height: 16px;
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    &.is {
-      &-connected {
-        color: $connected;
-      }
-      &-focused {
-        color: $focused;
-      }
-      &-led {
-        color: $led;
-      }
-      &-demonstrated {
-        color: $demonstrated;
-      }
-    }
-  }
+}
 
-  &-title {
+
+
+
+// Play Button
+#videoPlay {
+  &.is-fullscreen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     margin: 0;
-    font-weight: bold;
-    line-height: 32px;
-    font-size: 28px;
-    color: $text;
-    .post-edit-link {
-    text-decoration: none !important;
-    }
+    padding: 0;
   }
-
-  &-text {
-    line-height: 32px;
-    font-size: 16px;
-    color: $text;
+  &.is-connected {
+    background-color: $connected;
   }
-
-  &-button {
-    display: block;
-    height: 64px;
-    font-weight: bold;
-    line-height: 64px;
-    font-size: 18px;
-    text-align: center;
-    color: $text;
-    background-color: $secondary;
-    &:hover,
-    &:focus {
-      color: $text;
-      text-decoration: none;
-    }
+  &.is-focused {
+    background-color: $focused;
   }
-
-  &-content {
-    width: 50%;
+  &.is-led {
+    background-color: $led;
   }
+  &.is-demonstrated {
+    background-color: $demonstrated;
+  }
+}
 
-*/
 
 
-
+// Fullscreen video
+.fullsize-video-bg {
+  height: 100%;
+  overflow: hidden;
+  &:before {
+  content: "";
+  background: rgba(114,45,0,.35);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  }
+  &:after {
+  background-size: 3px 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  }
+  & .inner {
+  display: table;
+  width: 100%;
+  max-width: 24em;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 5px rgba(0,0,0,.5);
+  }
+  &.inner > div {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 2em;
+  }
 }
 
 
 
 // Video Player
 .mejs {
-
   &-container {
     min-height: 356px;
   }
-
   &-offscreen {
     display: none !important;
   }
-
-
-
   &-controls {
     display: none !important;
   }
-
-
 }
-
-
-
-
-
-
-
-// Share Resource or Story Page
-.shareSesction {
-
-  // Video Section
-  &-hero {
-    position: relative;
-    height: 600px;
-    background-size: cover;
-
-    .bg-overlay {
-      width: 100%;
-      height: 600px;
-      position: absolute;
-      left: 0;
-      top: 0;
-      background: radial-gradient(444.87px at 50% 25.85%, rgba(35, 49, 59, 0) 0%, rgba(35, 49, 59, 0.4) 100%);
-      mix-blend-mode: multiply;
-      opacity: 0.6;
-      transform: matrix(-1, 0, 0, 1, 0, 0);
-    }
-
-    .container {
-      height: 100%;
-    }
-
-    .card {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      border-top: 4px solid $primary;
-      &-title {
-        margin: 30px 0;
-        font-weight: bold;
-        line-height: 60px;
-        font-size: 45px;
-        color: $white;
-      }
-    }
-
-  }
-
-  // Description Section
-  &-description {
-    padding-top: 60px;
-    padding-bottom: 60px;
-
-    .card {
-      &-content {
-        font-weight: bold;
-        line-height: 60px;
-        font-size: 36px;
-      }
-    }
-
-  }
-
-  // Forms Section
-  &-buttons {
-    padding-top: 49px;
-    padding-bottom: 55px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 0;
-    }
-
-    .btn {
-      width: 448px;
-    }
-
-    .shareSesction-or {
-      font-weight: bold;
-      padding: 20px;
-    }
-
-  }
-
-  // Reviews Section
-  &-review {
-    padding-top: 80px;
-    padding-bottom: 80px;
-
-    .card {
-      display: flex;
-      margin-bottom: 50px;
-
-      &-left {
-        width: 50%;
-        padding-right: 30px;
-      }
-      &-right {
-        width: 50%;
-        padding-left: 30px;
-      }
-      &-content {
-        line-height: 40px;
-        font-size: 24px;
-        margin-bottom: 30px;
-      }
-      &-author {
-        font-weight: bold;
-        font-size: 18px;
-      }
-      &-position {
-        font-size: 18px;
-      }
-      &-image {
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-      }
-      &-noimage {
-        width: 100%;
-        height: 544px;
-        background: #C4C4C4;
-      }
-    }
-
-  }
-
-
-}
-
 
 
 
 
 // Media Queries
 @media (min-width: 1600px) {
-  .resourceSesction-hero {
+  .resourceSection-hero,
+  .resourceSection-video {
     min-height: 827px;
   }
 }
 @media (min-width: 1280px) {
-  .resourceSesction-hero {
+  .resourceSection-hero,
+  .resourceSection-video {
     min-height: 827px;
   }
 }
 @media (min-width: 1024px) {
-  .resourceSesction-hero {
+  .resourceSection-hero,
+  .resourceSection-video {
     min-height: 627px;
   }
   .card-video video {
@@ -996,18 +785,19 @@
   }
 }
 @media (max-width: 1024px) {
-  .resourceSesction-hero {
+  .resourceSection-hero,
+  .resourceSection-video {
     min-height: 44vw;
   }
   .card-video video {
     width: 100%;
     height: 100%;
   }
-  .resourceSesction-description .card-head {
+  .resourceSection-description .card-head {
     position: relative;
     top: 0;
   }
-  .resourceSesction-description .card-category {
+  .resourceSection-description .card-category {
     float: left;
   }
   .resource-three .card .square {

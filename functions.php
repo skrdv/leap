@@ -7,7 +7,7 @@
 
 
 
-// Set constants
+// Set theme constants
  define( 'THEME_PATH', get_template_directory() );
  define( 'THEME_DIR_PATH', get_template_directory() );
  define( 'THEME_DIR_URI', get_template_directory_uri() );
@@ -16,9 +16,10 @@
 
 
 
-// Set content width
+// Set content width (from _tk)
+// Not shure that we use it
 if ( ! isset( $content_width ) )
-	$content_width = 750; /* pixels */
+	$content_width = 750;
 
 
 
@@ -39,6 +40,7 @@ if ( ! function_exists('_tk_setup') ) :
     ));
 
   	load_theme_textdomain( '_tk', THEME_DIR_PATH . '/languages' );
+
   	register_nav_menus( array(
   		'main'      => __( 'Main', '_tk' ),
   		'more'      => __( 'More', '_tk' ),
@@ -55,7 +57,7 @@ if ( ! function_exists('_tk_setup') ) :
   	// )));
 
   }
-endif; // _tk_setup
+endif;
 add_action( 'after_setup_theme', '_tk_setup' );
 
 
@@ -87,10 +89,11 @@ function _tk_scripts() {
   wp_enqueue_style( 'fontawesome', THEME_CSS.'font-awesome.min.css' );
   wp_enqueue_style( 'leap-theme', THEME_CSS.'theme.css' );
   wp_enqueue_style( 'leap-custom', THEME_CSS.'/custom.css' );
-	wp_enqueue_style( 'leap-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'leap-styles', get_stylesheet_uri() );
 
-	wp_enqueue_script('bootstrap', THEME_JS . 'bootstrap.min.js', array('jquery') );
+	wp_enqueue_script( 'bootstrap', THEME_JS . 'bootstrap.min.js', array('jquery') );
 	wp_enqueue_script( 'bootstrap-wp', THEME_JS . 'bootstrap-wp.js', array('jquery') );
+  wp_enqueue_script( 'leap-scripts', THEME_JS . 'scripts.js', array(), '1.0', true );
 	wp_enqueue_script( 'link-focus-fix', THEME_JS . 'skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -116,10 +119,10 @@ require THEME_PATH . '/includes/template-tags.php';
  // Custom functions that act independently of the theme templates.
 require THEME_PATH . '/includes/extras.php';
 
-// Update search options
+// Add filter options
 require THEME_PATH . '/includes/filter.php';
 
-// Custom functions
+// Add Custom functions
 require THEME_PATH . '/includes/custom-functions.php';
 
  // Customizer additions.
@@ -130,6 +133,7 @@ require THEME_PATH . '/includes/jetpack.php';
 
  // Load custom WordPress nav walker.
 require THEME_PATH . '/includes/bootstrap-wp-navwalker.php';
+
 
 
 

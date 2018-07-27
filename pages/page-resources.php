@@ -4,13 +4,9 @@
  */
 ?>
 
-<?php
-global $post;
-?>
-
 <?php get_header(); ?>
 
-<section class="resourcesSesction resourcesSesction-hero" style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID); ?>');">
+<section class="resourceSection resourceSection-hero" style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID); ?>');">
   <div class="container">
     <div class="card">
       <h1 class="card-title"><?php the_title(); ?></h1>
@@ -21,34 +17,29 @@ global $post;
 
 <?php
 // global $post;
-$id    = intval($_GET['cat']);
-$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
-// WP_Query arguments
+$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
 $args = array(
-	'post_type'              => array('resource'),
-	'posts_per_page'         => '4',
-	'order'                  => 'DESC',
-	'orderby'                => 'date',
-  'paged'                  => $paged
+	'post_type'      => array('resource'),
+	'posts_per_page' => '5',
+	'order'          => 'DESC',
+  'paged'           => $paged,
 );
 
-// The Query
-$query = new WP_Query( $args );
+$the_query = new WP_Query( $args );
 
-// The Loop
-if ( $query->have_posts() ) {
-	while ( $query->have_posts() ) {
-		$query->the_post();
+if ( $the_query->have_posts() ) {
+	while ( $the_query->have_posts() ) {
+		$the_query->the_post();
     $resourceCat = get_field_object('resource_category');
 	}
 }
 
-// Restore Post Data
 wp_reset_postdata();
 ?>
 
-<section class="resourcesSesction resourcesSesction-filter" id="resources-filters">
+<section class="resourceSection resourceSection-filter" id="resources-filters">
   <div class="container">
     <div class="filter-text">
       <?php the_field('filter_description'); ?>
@@ -135,56 +126,57 @@ wp_reset_postdata();
 
 
 <script type="text/javascript">
-jQuery(function($){
-
-  $('form input').change(function() {
-    $(this).closest('form').submit();
-    console.log('submit on input change');
-  });
-
-  $('form select').change(function() {
-    $(this).closest('form').submit();
-    console.log('submit on select change');
-  });
-
-  $('#filter').submit(function(){
-    var filter = $('#filter');
-    $.ajax({
-      url:filter.attr('action'),
-      data:filter.serialize(),
-      type:filter.attr('method'),
-      beforeSend:function(xhr){
-        filter.find('button').text('Processing...');
-      },
-      success:function(data){
-        filter.find('button').text('Apply filter');
-        $('#response').html(data);
-      }
-    });
-    return false;
-  });
-
-
-
-});
+// jQuery(function($){
+//
+//   $('form input').change(function() {
+//     $(this).closest('form').submit();
+//     console.log('submit on input change');
+//   });
+//
+//   $('form select').change(function() {
+//     $(this).closest('form').submit();
+//     console.log('submit on select change');
+//   });
+//
+//   $('#filter').submit(function(){
+//     var filter = $('#filter');
+//     $.ajax({
+//       url:filter.attr('action'),
+//       data:filter.serialize(),
+//       type:filter.attr('method'),
+//       beforeSend:function(xhr){
+//         filter.find('button').text('Processing...');
+//       },
+//       success:function(data){
+//         filter.find('button').text('Apply filter');
+//         $('#response').html(data);
+//       }
+//     });
+//     return false;
+//   });
+//
+// });
 </script>
 
-<section class="resourcesGrid" id="response">
+<section class="resourceSection resourceSection-cards" id="response">
 
-		<?php while ( $query->have_posts() ): $query->the_post(); ?>
+		<?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
 			<?php get_template_part('parts/resource','card'); ?>
 		<?php endwhile; ?>
-
-
-    <div class="pagination">
-      <ul class="pagination pull-right">
-       <li><?php echo get_next_posts_link( 'Next Page', $products->max_num_pages ); ?></li>
-       <li><?php echo get_previous_posts_link( 'Previous Page' ); ?></li>
-      </ul>
-    </div>
-
     <?php wp_reset_postdata(); ?>
 
+</section>
+
+<section class="resourceSection resourceSection-pagination">
+  <?php
+  $big = 999999999;
+  echo paginate_links( array(
+      'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+      'format' => '?paged=%#%',
+      'current' => max( 1, get_query_var('paged') ),
+      'total' => $the_query->max_num_pages
+  ) );
+  ?>
 </section>
 
 <?php get_footer(); ?>
