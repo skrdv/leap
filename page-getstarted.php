@@ -1,6 +1,7 @@
 <?php // Template Name: Get Started ?>
 <?php get_header(); ?>
 
+<?php $color = get_field('page_color'); ?>
 
 <div class="content-wrapper">
 <section class="heroBanner" style="background-image: url(<?php $bg = get_field('page_banner'); echo $bg[sizes][large]; ?>);">	
@@ -8,7 +9,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h1 class="heroBanner-title"><?php the_field('page_title'); ?></h1>
+					<h1 class="heroBanner-title is-<?php echo $color; ?>"><?php the_field('page_title'); ?></h1>
 				</div><!-- column -->
 			</div><!-- row -->
 		</div><!-- container -->
