@@ -1,39 +1,43 @@
 <?php
 
-global $query;
-
 // Resources post type filter
 function leap_filter_function(){
 
-	// Default params
 	$args = array(
     'post_type' => array('resource'),
+		'posts_per_page' => '10',
 		'orderby' => 'date',
-		'order'	=> $_POST['date']
+		'order'	=> $_POST['date'],
+		'meta_query' => $meta_query,
 	);
 
-	// Category conditions
-	if( isset($_POST['resource_category']) ) {
-		$args['meta_query'] = array(
-      'relation'		=> 'AND',
-		 	array(
-				'key'		=> 'resource_category',
-				'value'  => $_POST['resource_category'],
-				'compare'	=> 'LIKE'
-			)
-		);
-  }
 
-	// WP_Query and templates
-	$the_query = new WP_Query( $args );
+	$catArray = $_POST['resource_category'];
+	foreach($catArray as $key => $value) {
+		$testArray[$key] = array(
+		 'key'		=> 'resource_category',
+		 'value'  => $value,
+		 'compare'	=> 'LIKE'
+	 );
+	}
 
-	if( $the_query->have_posts() ) :
-		while( $the_query->have_posts() ): $the_query->the_post();
+	$args['meta_query'] = array(
+		'relation'		=> 'OR',
+		$testArray[0],
+		$testArray[1],
+		$testArray[3],
+		$testArray[4],
+	);
+
+	$query = new WP_Query( $args );
+
+	if( $query->have_posts() ) :
+		while( $query->have_posts() ): $query->the_post();
 			get_template_part('parts/resource','card');
 		endwhile;
 		wp_reset_postdata();
 	else :
-		echo 'Resources not found';
+		get_template_part('parts/resource','none');
 	endif;
 
 	die();
