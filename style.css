@@ -384,9 +384,6 @@ nav .form-control {
 	height: 43px;
 }
 
-.navbar-collapse {
-	padding-top: 20px;
-}
 
 /*===================================*/
 
@@ -488,7 +485,7 @@ nav .form-control {
 .pageSection-3 .pageSection-title{
 	color: #23313B;
 	font-weight: 700;
-	
+
 }
 
 .pageSection-3 .pageSection-title:after{
@@ -745,7 +742,7 @@ nav .form-control {
 
 .sectionCard-photo {
 	height: 160px;
-	background: #C4C4C4;	
+	background: #C4C4C4;
 }
 
 .sectionCard-content {
@@ -764,7 +761,7 @@ nav .form-control {
 	line-height: 28px;
 	font-size: 16px;
 	color: #23313B;
-}	
+}
 
 
 
@@ -814,7 +811,7 @@ nav .form-control {
 	text-align: center;
 	position: relative;
 	padding: 0.1px 0;
-}	
+}
 
 .blockCompany-founder-photo {
 	height: 160px;
@@ -823,7 +820,7 @@ nav .form-control {
 	right: 100%;
 	background-position: center;
 	background-size: cover;
-}	
+}
 
 .blockCompany-founder-name {
 	font-weight: bold;
@@ -835,7 +832,7 @@ nav .form-control {
 	background-position: center;
 	background-size: cover;
 	margin: 0 0 32px 0;
-}	
+}
 
 .blockCompany-button {
 	display: block;
@@ -934,7 +931,7 @@ nav .form-control {
 .pageSection-14 .pageSection-title:after{
 	display: none;
 }
-	
+
 .blockFacts {
 	border: 8px solid #FFFFFF;
 	display: flex;
@@ -994,7 +991,7 @@ nav .form-control {
 }
 
 .pageSection-15 .leap-stripe{
-	right: 0;	
+	right: 0;
 }
 
 .pageSection-15 .pageSection-title{
@@ -1034,7 +1031,7 @@ nav .form-control {
 	background-position: center;
 	background-size: cover;
 }
-	
+
 /*=========================================*/
 
 .pageSection-16 {
@@ -1193,23 +1190,23 @@ background: transparent !important;
 	font-size: 45px;
 	font-weight: bold;
 	color: #FFFFFF;
-	text-shadow: 0px 4px 100px rgba(0, 0, 0, 0.5), 1px 1px 0px rgba(0, 0, 0, 0.15);		
+	text-shadow: 0px 4px 100px rgba(0, 0, 0, 0.5), 1px 1px 0px rgba(0, 0, 0, 0.15);
 }
 
 .heroBanner-title.is-led {
-	border-top: 4px solid #84BE41;	
+	border-top: 4px solid #84BE41;
 }
 
 .heroBanner-title.is-demonstrated {
-	border-top: 4px solid #FF6C0C;	
+	border-top: 4px solid #FF6C0C;
 }
 
 .heroBanner-title.is-connected {
-	border-top: 4px solid #00B3E6;	
+	border-top: 4px solid #00B3E6;
 }
 
 .heroBanner-title.is-focused {
-	border-top: 4px solid #B34FC5;	
+	border-top: 4px solid #B34FC5;
 }
 
 
@@ -1219,7 +1216,7 @@ background: transparent !important;
 	line-height: 68px;
 	font-size: 45px;
 	color: #FFFFFF;
-	text-shadow: 0px 4px 100px rgba(0, 0, 0, 0.5), 1px 1px 0px rgba(0, 0, 0, 0.15);		
+	text-shadow: 0px 4px 100px rgba(0, 0, 0, 0.5), 1px 1px 0px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -1228,19 +1225,19 @@ background: transparent !important;
 }
 
 .pageSection-color.is-led {
-	background-color: #84BE41;	
+	background-color: #84BE41;
 }
 
 .pageSection-color.is-demonstrated {
-	background-color: #FF6C0C;	
+	background-color: #FF6C0C;
 }
 
 .pageSection-color.is-connected {
-	background-color: #00B3E6;	
+	background-color: #00B3E6;
 }
 
 .pageSection-color.is-focused {
-	background-color: #B34FC5;	
+	background-color: #B34FC5;
 }
 
 /*=================================================================================================*/
@@ -1324,7 +1321,7 @@ background: transparent !important;
 
 .getstartedCard-title {
 	font-weight: bold;
-}	
+}
 
 .getstartedCard-link {
 	line-height: 32px;
@@ -1334,8 +1331,8 @@ background: transparent !important;
 	color: #23313B;
 	font-weight: bold;
 	margin-bottom: 10px;
-}	
-	
+}
+
 
 /*================ Results Block ====================*/
 
@@ -1347,7 +1344,7 @@ background: transparent !important;
 	display: inline-block;
 	position: relative;
 	padding: 0 80px;
-	font-size: 260px; 
+	font-size: 260px;
 	line-height: 1;
 	color: #23313B;
 	font-weight: bold;
@@ -1377,7 +1374,7 @@ background: transparent !important;
 }
 
 .resultsBlock-number sup{
-	font-size: 160px; 
+	font-size: 160px;
 }
 
 .resultsBlock-title {
