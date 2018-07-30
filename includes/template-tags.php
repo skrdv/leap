@@ -92,7 +92,7 @@ function _tk_comment( $comment, $args, $depth ) {
 									<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', '_tk' ), get_comment_date(), get_comment_time() ); ?>
 								</time>
 							</a>
-							<?php edit_comment_link( __( '<span style="margin-left: 5px;" class="glyphicon glyphicon-edit"></span> Edit', '_tk' ), '<span class="edit-link">', '</span>' ); ?>
+							<?php edit_comment_link( __( '<span style="margin-left: 5px;" class="edit"></span> Edit', '_tk' ), '<span class="edit-link">', '</span>' ); ?>
 						</div>
 					</div>
 
@@ -260,7 +260,7 @@ add_action( 'save_post',     '_tk_category_transient_flusher' );
 // _tk Bootstrap pagination function
 // original: http://fellowtuts.com/wordpress/bootstrap-3-pagination-in-wordpress/
 /**
- * 
+ *
  * @global int $paged
  * @global type $wp_query
  * @param int $pages
@@ -336,7 +336,7 @@ function _tk_pagination() {
 /**
  * _tk_link_pages()
  * Creates bootstraped pagination for paginated posts
- * 
+ *
  */
 function _tk_link_pages() {
     global $numpages, $page, $post;
@@ -356,7 +356,7 @@ function _tk_link_pages() {
             <?php if ($page == 1): ?>
                 <li class="disabled"><span>&lsaquo;<span class="hidden-xs aria-hidden"> <?php _e('Previous', '_tk'); ?></span></span></li>
             <?php else: ?>
-                <li><?php echo _tk_link_page($page - 1, 'Previous'); ?>&lsaquo;<span class="hidden-xs"> <?php _e('Previous', '_tk'); ?></span></a></li>                        
+                <li><?php echo _tk_link_page($page - 1, 'Previous'); ?>&lsaquo;<span class="hidden-xs"> <?php _e('Previous', '_tk'); ?></span></a></li>
             <?php endif; ?>
 
             <?php $start_page = min(max($page - 2, 1), max($numpages - 4, 1)); ?>
@@ -397,9 +397,9 @@ function _tk_link_pages() {
 
 /**
  * _tk_link_page
- * 
+ *
  * Customized _wp_link_page from wp-includes/post_template.php
- * 
+ *
  * @global WP_Rewrite $wp_rewrite
  * @global int $page
  * @global int $numpages

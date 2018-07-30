@@ -27,4 +27,21 @@
       return false;
     });
 
+    function showComments() {
+      var btn = $('#comments-toggle'),
+          section = $('#comments-section');
+
+          btn.click(function(e){
+            e.preventDefault();
+            console.log('click');
+            if (section.hasClass('is-active')) {
+                section.removeClass('is-active');
+            } else {
+              section.addClass('is-active');
+            }
+          });
+    }
+
+showComments();
+
 })(jQuery);

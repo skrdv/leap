@@ -5,6 +5,9 @@
 ?>
 
 <?php
+$poster   = get_the_post_thumbnail_url($post->ID, 'poster');
+
+
 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
 $args = array(
@@ -28,7 +31,7 @@ wp_reset_postdata();
 
 <?php get_header(); ?>
 
-<section class="resourceSection resourceSection-hero" style="background-image: url('<?php echo get_the_post_thumbnail_url($post->ID); ?>');">
+<section class="resourceSection resourceSection-hero" style="background-image: url('<?php echo $poster; ?>');">
   <div class="container">
     <div class="card">
       <h1 class="card-title"><?php the_title(); ?></h1>
@@ -53,7 +56,6 @@ wp_reset_postdata();
               <input type="checkbox" name="resource_category[]" value="<?php echo $key; ?>" id="resource-category-<?php echo $key; ?>" />
               <div class="btn-group btn-group-<?php echo $key; ?>">
                 <label for="resource-category-<?php echo $key; ?>" class="btn btn-<?php echo $key; ?>">
-									<!-- <span class="fa fa-check"> -->
 									<span>
 										<img src="<?php echo THEME_URI.'/includes/icons/icon-ok.svg'; ?>" alt="">
 									</span>

@@ -11,6 +11,8 @@
   $video        = get_field('resource_video');
   $videoWP      = apply_filters('the_content', $video);
   $image        = get_the_post_thumbnail_url($post->ID);
+  $comments     = get_comments_number($post->ID);
+  $favorites    = get_favorites_count($post->ID);
 ?>
 
 <div class="resourceCard is-<?php echo $category; ?>">
@@ -21,7 +23,7 @@
         <div class="card-meta">Learner <?php echo $category; ?></div>
         <div class="card-title"><?php the_title(); ?> <?php edit_post_link('*'); ?></div>
         <div class="card-desc"><?php echo $description; ?></div>
-        <a class="card-btn" href="<?php echo $permalink; ?>">Check It Out</a>
+        <a class="btn btn-secondary" href="<?php echo $permalink; ?>">Check It Out</a>
       </div>
     </div>
 
@@ -36,11 +38,12 @@
         <?php endif; ?>
         <div class="card-footer <?php if( $video OR $image ){ } else { echo 'is-fullheight'; } ?> ">
           <div class="item">
-            <?php if(function_exists('wp_ulike')) wp_ulike('get'); ?>
+            <i class="fa fa-thumbs-up"></i>
+            <span><?php echo $favorites; ?> Upvotes</span>
           </div>
           <div class="item">
             <i class="fa fa-comment"></i>
-             <span>2 Comments</span>
+             <span><?php echo $comments; ?> Comments</span>
           </div>
         </div>
       </div>
