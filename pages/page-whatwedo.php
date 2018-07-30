@@ -14,6 +14,8 @@ $secTitle  = get_field('section_title');
 
 <?php get_header(); ?>
 
+<div class="content-wrapper">
+
 <section class="heroBanner" style="background-image: url(<?php echo $poster[sizes][large]; ?>);">
 	<div class="heroBanner-shadow">
 		<div class="container">
@@ -95,4 +97,6 @@ $secTitle  = get_field('section_title');
 	</section>
 <?php endif; ?>
 
+</div><!-- content-wrapper -->	
+	
 <?php get_footer(); ?>

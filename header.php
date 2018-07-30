@@ -63,9 +63,7 @@ $account_org        = get_field('account_organisation', 'user_'. $user_id);
 					'depth'           => 2,
 					'container'       => false,
 					'theme_location' 	=> 'main',
-					'menu_class' 			=> 'nav navbar-nav navbar-main',
-					'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
-					'walker' 					=> new wp_bootstrap_navwalker()
+					'menu_class' 			=> 'nav navbar-nav navbar-main'
 				)
 			); ?>
 			<ul id="menu-account" class="nav navbar-nav navbar-account">
@@ -87,9 +85,7 @@ $account_org        = get_field('account_organisation', 'user_'. $user_id);
 					'depth'           => 2,
 					'container'       => false,
 					'theme_location' 	=> 'more',
-					'menu_class' 			=> 'nav navbar-nav navbar-more',
-					'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
-					'walker' 					=> new wp_bootstrap_navwalker()
+					'menu_class' 			=> 'nav navbar-nav navbar-more'
 				)
 			); ?>
 		</nav>
