@@ -3,53 +3,96 @@
 
 // Buttons
 .btn {
+  // width: 100%;
   padding: 14px 32px;
-  font-size: 18px;
   line-height: 32px;
   font-weight: bold;
-  color: $text;
   border-radius: 0;
   border: 2px solid transparent;
+  &.is-full {
+    width: 100%;
+  }
   &-primary {
+    font-size: 24px;
     color: $white;
     border-color: $primary;
     background-color: $primary;
+    &:hover,
+    &:focus,
+    &.is-hover {
+      border-color: $text;
+      background-color: $text;
+    }
   }
   &-secondary {
+    font-size: 18px;
+    color: $text;
     border-color: $secondary;
     background-color: $secondary;
+    &:hover,
+    &:focus,
+    &.is-hover {
+      border-color: $text;
+      background-color: $white;
+    }
+  }
+  &-default {
+    color: $text;
+    border-color: $gray;
+    background-color: $white;
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:hover,
+    &:active:focus {
+      // color: $text;
+      // border-color: $text;
+      background-color: $white;
+    }
   }
   &-connected {
+    color: $white;
     border-color: $connected;
     background-color: $connected;
   }
   &-focused {
+    color: $white;
     border-color: $focused;
     background-color: $focused;
   }
   &-led {
+    color: $white;
     border-color: $led;
     background-color: $led;
   }
   &-demonstrated {
+    color: $white;
     border-color: $demonstrated;
     background-color: $demonstrated;
   }
 }
 
-.btn-default.active,
-.btn-default:active,
-.btn-default.active:hover,
-.btn-default.active:focus,
-.open > .dropdown-toggle.btn-default {
-  color: $text;
-  background-color: $white;
-  border-color: $white;
-}
+// .open > .dropdown-toggle.btn-default {
+//   color: $text;
+//   background-color: $white;
+//   border-color: $white;
+// }
 
 
-// Buttons Group
+
+// Checkboxes
 .btn-group {
+  .btn:first-child {
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    margin: 0;
+  }
+  .btn:last-child {
+    width: 288px;
+    text-align: left;
+    font-size: 18px;
+  }
   &-connected {
     .btn-default {
       border-color: $connected !important;
@@ -71,11 +114,35 @@
     }
   }
 
-  .fa {
-    color: $white;
-  }
-
 }
+
+.form-group input[type="checkbox"] {
+    display: none;
+    & + .btn-group > label span {
+        width: 64px;
+    }
+    & + .btn-group > label img {
+        margin-top: 5px;
+        margin-left: 2px;
+    }
+    & + .btn-group > label span:first-child {
+       display: none;
+    }
+    & + .btn-group > label span:last-child {
+       display: inline-block;
+    }
+    &:checked {
+      &  + .btn-group > label span:first-child {
+         display: inline-block;
+      }
+      & + .btn-group > label span:last-child {
+         display: none;
+      }
+    }
+}
+
+
+
 
 
 // Forms
@@ -97,6 +164,10 @@
   // box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+
+
+
+
 select.form-control {
   font-size: 18px;
   color: $text;
@@ -113,45 +184,28 @@ select.form-control {
 // }
 
 
-.form-group input[type="checkbox"] {
-    display: none;
-}
-.form-group input[type="checkbox"] + .btn-group > label span {
-    width: 20px;
-}
-.form-group input[type="checkbox"] + .btn-group > label span:first-child {
-    display: none;
-}
-.form-group input[type="checkbox"] + .btn-group > label span:last-child {
-    display: inline-block;
-}
-.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
-    display: inline-block;
-}
-.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
-    display: none;
-}
 
 
 
-.form-group input[type="radio"] {
-    display: none;
-}
-.form-group input[type="radio"] + .btn-group > label span {
-    width: 20px;
-}
-.form-group input[type="radio"] + .btn-group > label span:first-child {
-    display: none;
-}
-.form-group input[type="radio"] + .btn-group > label span:last-child {
-    display: inline-block;
-}
-.form-group input[type="radio"]:checked + .btn-group > label span:first-child {
-    display: inline-block;
-}
-.form-group input[type="radio"]:checked + .btn-group > label span:last-child {
-    display: none;
-}
+
+// .form-group input[type="radio"] {
+//     display: none;
+// }
+// .form-group input[type="radio"] + .btn-group > label span {
+//     width: 20px;
+// }
+// .form-group input[type="radio"] + .btn-group > label span:first-child {
+//     display: none;
+// }
+// .form-group input[type="radio"] + .btn-group > label span:last-child {
+//     display: inline-block;
+// }
+// .form-group input[type="radio"]:checked + .btn-group > label span:first-child {
+//     display: inline-block;
+// }
+// .form-group input[type="radio"]:checked + .btn-group > label span:last-child {
+//     display: none;
+// }
 
 
 

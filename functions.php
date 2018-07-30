@@ -8,9 +8,9 @@
 
 
 // Set theme constants
+ // define( 'THEME_PATH', get_template_directory() );
  define( 'THEME_PATH', get_template_directory() );
- define( 'THEME_DIR_PATH', get_template_directory() );
- define( 'THEME_DIR_URI', get_template_directory_uri() );
+ define( 'THEME_URI', get_template_directory_uri() );
  define( 'THEME_CSS', get_template_directory_uri().'/includes/css/' );
  define( 'THEME_JS', get_template_directory_uri().'/includes/js/' );
 
@@ -39,7 +39,7 @@ if ( ! function_exists('_tk_setup') ) :
       'caption'
     ));
 
-  	load_theme_textdomain( '_tk', THEME_DIR_PATH . '/languages' );
+  	load_theme_textdomain( '_tk', THEME_PATH . '/languages' );
 
   	register_nav_menus( array(
   		'main'      => __( 'Main', '_tk' ),

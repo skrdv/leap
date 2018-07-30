@@ -133,3 +133,58 @@
   }
 
 }
+
+
+
+
+
+.componentsSection {
+
+  &-title {
+    margin-top: 120px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  &-subtitle {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+  &-cols {
+    display: flex;
+  }
+
+  &-col {
+    width: 50%;
+  }
+
+  // Buttons
+  &-buttons {
+    .btn {
+      margin-bottom: 32px;
+    }
+  }
+
+  // Inputs
+  &-buttons {
+
+  }
+
+  // Colors
+  &-buttons {
+
+  }
+
+  // Typography
+  &-buttons {
+
+  }
+
+  // Components
+  &-buttons {
+
+  }
+
+}

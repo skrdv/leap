@@ -763,6 +763,17 @@ select.form-control {
   font-weight: bold;
   text-decoration: underline;
 }
+.componentsSection-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+.componentsSection-subtitle {
+  font-size: 24px;
+  font-weight: normal;
+}
+.componentsSection-col {
+  font-size: 28px;
+}
 .accountSection-hero {
   position: relative;
   height: 600px;

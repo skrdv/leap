@@ -53,9 +53,13 @@ wp_reset_postdata();
               <input type="checkbox" name="resource_category[]" value="<?php echo $key; ?>" id="resource-category-<?php echo $key; ?>" />
               <div class="btn-group btn-group-<?php echo $key; ?>">
                 <label for="resource-category-<?php echo $key; ?>" class="btn btn-<?php echo $key; ?>">
-                  <span class="fa fa-check"></span><span> </span>
+									<!-- <span class="fa fa-check"> -->
+									<span>
+										<img src="<?php echo THEME_URI.'/includes/icons/icon-ok.svg'; ?>" alt="">
+									</span>
+									<span> </span>
                 </label>
-                <label for="resource-category-<?php echo $key; ?>" class="btn btn-default active"><?php echo $value; ?></label>
+                <label for="resource-category-<?php echo $key; ?>" class="btn btn-default"><?php echo $value; ?></label>
               </div>
             </div>
           <?php } ?>
