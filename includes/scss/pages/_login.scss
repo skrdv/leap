@@ -1,0 +1,234 @@
+// Login Page
+
+
+#login {
+  position: relative;
+
+
+}
+
+#login-form {
+  position: relative;
+}
+
+
+
+
+
+
+
+.login {
+  width: 544px;
+  margin: 0;
+  padding: 0;
+  background: $white;
+
+  &-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &-header {
+    display: block;
+    padding: 30px 50px 40px 50px;
+    background: $white;
+  }
+  &-logo-link,
+  &-logo-image {
+    display: block;
+    height: 96px;
+    width: 228px;
+  }
+  &-username {
+    margin-bottom: 40px;
+  }
+  &-password {
+    margin-bottom: 80px;
+  }
+  &-submit {
+    margin-bottom: 0;
+  }
+  &-content {
+    padding: 30px 50px 50px 50px;
+    background-color: $primary;
+    p {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+    label {
+      display: block;
+      width: 100%;
+      color: $white;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    input {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding-left: 24px;
+      padding-right: 38px;
+      line-height: 60px;
+      font-size: 18px;
+      font-weight: bold;
+      color: $text;
+      background: $white ;
+      border: 2px solid $grey;
+    }
+    .button {
+      width: 448px;
+      height: 64px;
+      float: none;
+      padding: 0;
+      margin-bottom: 0;
+      background: $secondary;
+      border-color: $secondary;
+    }
+    .wp-success {
+      position: absolute;
+      left: 0;
+      bottom: -40px;
+      width: 100%;
+      height: 20px;
+      color: $white;
+      font-size: 18px;
+      font-weight: normal;
+      z-index: 9999;
+    }
+
+  }
+  &-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $white;
+    font-size: 12px;
+    text-align: right;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration-line: underline;
+  }
+  &-register {
+    position: absolute;
+    left: 0;
+    bottom: 100px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    a {
+      color: $white;
+    }
+  }
+
+
+}
+  // &-formm {
+  //   position: relative;
+  //   width: 544px;
+  //   margin: 0;
+  //   padding: 0;
+  //   background: $white;
+  // }
+
+  // &-header {
+  //   display: block;
+  //   padding: 30px 50px 40px 50px;
+  //   background: $white;
+  // }
+  //
+  // &-logo-link,
+  // &-logo-image {
+  //   display: block;
+  //   height: 96px;
+  //   width: 228px;
+  // }
+  //
+  // &-username {
+  //   margin-bottom: 40px;
+  // }
+  //
+  // &-password {
+  //   margin-bottom: 80px;
+  // }
+  //
+  // &-content {
+  //   padding: 30px 50px 50px 50px;
+  //   background-color: $primary;
+  //   p {
+  //     position: relative;
+  //     display: block;
+  //     width: 100%;
+  //     margin-bottom: 40px;
+  //   }
+  //   label {
+  //     display: block;
+  //     width: 100%;
+  //     color: $white;
+  //     font-size: 18px;
+  //     margin-bottom: 20px;
+  //   }
+  //   input {
+  //     display: block;
+  //     width: 100%;
+  //     margin: 0;
+  //     padding-left: 24px;
+  //     padding-right: 38px;
+  //     line-height: 60px;
+  //     font-size: 18px;
+  //     font-weight: bold;
+  //     color: $text;
+  //     background: $white ;
+  //     border: 2px solid $grey;
+  //   }
+  //
+  //   .btn {
+  //     width: 448px;
+  //     height: 64px;
+  //     float: none;
+  //     padding: 0;
+  //     margin-bottom: 0;
+  //     background: $secondary;
+  //     border-color: $secondary;
+  //   }
+  // }
+  //
+  // &-link {
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   color: $white;
+  //   font-size: 12px;
+  //   text-align: right;
+  //   font-weight: bold;
+  //   letter-spacing: 0.15em;
+  //   text-transform: uppercase;
+  //   text-decoration-line: underline;
+  // }
+  //
+  // &-register {
+  //   margin-bottom: 15px !important;
+  //   font-size: 12px;
+  //   font-weight: bold;
+  //   text-align: center;
+  //   letter-spacing: 0.15em;
+  //   text-transform: uppercase;
+  //   text-decoration-line: underline;
+  //   a { color: $white; }
+  // }
+  //
+  // &-password {
+  //   margin-bottom: 80px;
+  // }
+  //
+  // &-submit {
+  //   margin-bottom: 0;
+  // }

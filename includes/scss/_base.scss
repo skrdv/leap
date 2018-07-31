@@ -16,7 +16,9 @@ $white: #FFFFFF;
 
 
 // Base
-html {}
+html, body {
+  height: 100%;
+}
 
 body {
   font-family: 'Avenir Next', sans-serif;
