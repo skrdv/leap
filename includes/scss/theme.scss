@@ -4,12 +4,13 @@
 @import 'base';
 @import 'layout';
 @import 'elements';
+@import 'components';
 
 // Pages
-@import 'pages';
-@import 'account';
-@import 'resources';
-@import 'components';
+@import 'pages/_account';
+@import 'pages/_login';
+@import 'pages/_pages';
+@import 'pages/_resources';
 
 // Other
 @import 'admin';
