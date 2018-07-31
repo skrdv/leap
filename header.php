@@ -41,53 +41,53 @@ $account_org        = get_field('account_organisation', 'user_'. $user_id);
 </head>
 <body <?php body_class('is-fixed'); ?>>
 <?php do_action( 'before' ); ?>
-<header class="siteHeader navbar navbar-expand-xl navbar-fixed-top">
-	<div class="container">
-		<div class="navbar-header">
-			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
-				<div class="icon-group">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</div>
-				<span class="icon-text"><?php _e('Menu','_tk') ?> </span>
-			</button>
-			<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<img class="site-logo" src="<?php echo get_template_directory_uri(); ?>/images/leap-logo.svg">
-			</a>
-		</div>
-		<nav class="collapse navbar-collapse" id="navbar-collapse">
 
-			<?php wp_nav_menu(
-				array(
-					'depth'           => 2,
-					'container'       => false,
-					'theme_location' 	=> 'main',
-					'menu_class' 			=> 'nav navbar-nav navbar-main'
-				)
-			); ?>
-			<ul id="menu-account" class="nav navbar-nav navbar-account">
-				<?php if ($user->caps['account'] === true OR $user->caps['administrator']): ?>
-					<li id="menu-item-0" class="menu-item">
-						<a href="/account/">
-							<div class="userpic" style="background-image: url(<?php echo $account_pic[sizes][userpic]; ?>);"></div>
-							<div class="username"><?php echo $user_login; ?></div>
-						</a>
-					</li>
-				<?php else: ?>
-					<li id="menu-item-0" class="menu-item">
-						<a href="/account/">Log In</a>
-					</li>
-				<?php endif; ?>
-			</ul>
-			<?php wp_nav_menu(
-				array(
-					'depth'           => 2,
-					'container'       => false,
-					'theme_location' 	=> 'more',
-					'menu_class' 			=> 'nav navbar-nav navbar-more'
-				)
-			); ?>
-		</nav>
-	</div>
-</header>
+	<header class="siteHeader navbar navbar-expand-xl navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+					<div class="icon-group">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</div>
+					<span class="icon-text"><?php _e('Menu','_tk') ?> </span>
+				</button>
+				<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					<img class="site-logo" src="<?php echo get_template_directory_uri(); ?>/images/leap-logo.svg">
+				</a>
+			</div>
+			<nav class="collapse navbar-collapse" id="navbar-collapse">
+				<?php wp_nav_menu(
+					array(
+						'depth'           => 2,
+						'container'       => false,
+						'theme_location' 	=> 'main',
+						'menu_class' 			=> 'nav navbar-nav navbar-main'
+					)
+				); ?>
+				<ul id="menu-account" class="nav navbar-nav navbar-account">
+					<?php if ($user->caps['account'] === true OR $user->caps['administrator']): ?>
+						<li id="menu-item-0" class="menu-item">
+							<a href="/account/">
+								<div class="userpic" style="background-image: url(<?php echo $account_pic[sizes][userpic]; ?>);"></div>
+								<div class="username"><?php echo $user_login; ?></div>
+							</a>
+						</li>
+					<?php else: ?>
+						<li id="menu-item-0" class="menu-item">
+							<a href="/login/">Log In</a>
+						</li>
+					<?php endif; ?>
+				</ul>
+				<?php wp_nav_menu(
+					array(
+						'depth'           => 2,
+						'container'       => false,
+						'theme_location' 	=> 'more',
+						'menu_class' 			=> 'nav navbar-nav navbar-more'
+					)
+				); ?>
+			</nav>
+		</div>
+	</header>
