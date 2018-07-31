@@ -51,7 +51,6 @@
             <input type="checkbox" name="name-two" value="connected" id="checkbox-checked" checked="checked">
             <div class="btn-group btn-group-connected">
               <label for="checkbox-checked" class="btn btn-connected">
-                <!-- <span class="fa fa-check"></span> -->
                 <span>
                   <img src="<?php echo THEME_URI.'/includes/icons/icon-ok.svg'; ?>" alt="">
                 </span>
@@ -61,7 +60,7 @@
             </div>
           </div>
           <div class="componentsSection-subtitle">input focused</div>
-          <input class="form-control" type="text" name="" value="Your Email">
+          <input class="form-control is-focused" type="text" name="" value="Your Email">
       </div>
     </div>
   </div>
@@ -119,9 +118,102 @@
   </div>
 </section>
 
-<section class="componentsSection componentsSection-colors">
+<section class="componentsSection componentsSection-components">
   <div class="container">
     <div class="componentsSection-title">Site Components</div>
+
+    <div class="componentsSection-subtitle">Card with media</div>
+    <div class="componentsSection-subtitle">Card: Blue with CTA</div>
+    <div class="componentsSection-subtitle">Card: Photo with CTA</div>
+
+
+    <div class="componentsSection-subtitle">List Item: Video</div>
+    <div class="resourceCard is-focused">
+      <div class="container">
+        <div class="resourceCard-content">
+          <div class="card">
+            <div class="card-meta">Learner focused</div>
+            <div class="card-title">Spotlight: Flex Fridays <a target="_blank" class="post-edit-link" href="http://leap.precision-frontiers.com/wp-admin/post.php?post=24&amp;action=edit">*</a></div>
+            <div class="card-desc">Get the step-by-step details on how Mr. Steve McWade, teacher at Lovett Elementary School, uses Flex Friday as an opportunity for students to experience learning based on their interests.</div>
+            <a class="btn btn-secondary" href="http://leap.precision-frontiers.com/resource/spotlight-flex-fridays/">Check It Out</a>
+          </div>
+        </div>
+        <div class="resourceCard-media">
+          <div class="card">
+            <div class="card-bgcolor"></div>
+            <div class="card-footer is-fullheight ">
+              <div class="item">
+                <i class="fa fa-thumbs-up"></i>
+                <span><span data-favorites-post-count-id="24" data-siteid="">1</span> Upvotes</span>
+              </div>
+              <div class="item">
+                <i class="fa fa-comment"></i>
+                 <span>0 Comments</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="componentsSection-subtitle">List Item: Photo</div>
+    <div class="resourceCard is-connected">
+      <div class="container">
+        <div class="resourceCard-content">
+          <div class="card">
+            <div class="card-meta">Learner connected</div>
+            <div class="card-title">Spotlight: Flex Fridays <a target="_blank" class="post-edit-link" href="http://leap.precision-frontiers.com/wp-admin/post.php?post=24&amp;action=edit">*</a></div>
+            <div class="card-desc">Get the step-by-step details on how Mr. Steve McWade, teacher at Lovett Elementary School, uses Flex Friday as an opportunity for students to experience learning based on their interests.</div>
+            <a class="btn btn-secondary" href="http://leap.precision-frontiers.com/resource/spotlight-flex-fridays/">Check It Out</a>
+          </div>
+        </div>
+        <div class="resourceCard-media">
+          <div class="card">
+            <div class="card-bgcolor"></div>
+            <div class="card-footer is-fullheight ">
+              <div class="item">
+                <i class="fa fa-thumbs-up"></i>
+                <span><span data-favorites-post-count-id="24" data-siteid="">1</span> Upvotes</span>
+              </div>
+              <div class="item">
+                <i class="fa fa-comment"></i>
+                 <span>0 Comments</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="componentsSection-subtitle">List Item: No Photo or Video</div>
+    <div class="resourceCard is-connected">
+      <div class="container">
+        <div class="resourceCard-content">
+          <div class="card">
+            <div class="card-meta">Learner connected</div>
+            <div class="card-title">Spotlight: Flex Fridays <a target="_blank" class="post-edit-link" href="http://leap.precision-frontiers.com/wp-admin/post.php?post=24&amp;action=edit">*</a></div>
+            <div class="card-desc">Get the step-by-step details on how Mr. Steve McWade, teacher at Lovett Elementary School, uses Flex Friday as an opportunity for students to experience learning based on their interests.</div>
+            <a class="btn btn-secondary" href="http://leap.precision-frontiers.com/resource/spotlight-flex-fridays/">Check It Out</a>
+          </div>
+        </div>
+        <div class="resourceCard-media">
+          <div class="card">
+            <div class="card-bgcolor"></div>
+            <div class="card-footer is-fullheight ">
+              <div class="item">
+                <i class="fa fa-thumbs-up"></i>
+                <span><span data-favorites-post-count-id="24" data-siteid="">1</span> Upvotes</span>
+              </div>
+              <div class="item">
+                <i class="fa fa-comment"></i>
+                 <span>0 Comments</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
   </div>
 </section>

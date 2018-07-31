@@ -4,11 +4,13 @@
 // Buttons
 .btn {
   // width: 100%;
+  max-width: 544px;
   padding: 14px 32px;
   line-height: 32px;
   font-weight: bold;
   border-radius: 0;
   border: 2px solid transparent;
+  transition: .3s;
   &.is-full {
     width: 100%;
   }
@@ -72,11 +74,55 @@
   }
 }
 
-// .open > .dropdown-toggle.btn-default {
-//   color: $text;
-//   background-color: $white;
-//   border-color: $white;
-// }
+
+
+
+
+// Forms elements
+.form-control {
+  max-width: 544px;
+  height: 64px;
+  line-height: 64px;
+  margin-bottom: 15px;
+  background-color: transparent;
+  border: 2px solid $grey;
+  border-radius: 0px;
+  font-family: 'Avenir Next';
+  line-height: 42px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+
+
+
+input.form-control {
+  font-size: 28px;
+  color: $text;
+  background-color: $white ;
+  border: 2px solid $grey;
+  box-shadow: none;
+  &:hover,
+  &:focus,
+  &.is-focused {
+    border: 2px solid $primary;
+  }
+}
+
+
+select.form-control {
+  font-size: 18px;
+  color: $text;
+  background-color: $white;
+  border: 2px solid $grey;
+  box-shadow: none;
+
+}
+
+
 
 
 
@@ -141,71 +187,6 @@
     }
 }
 
-
-
-
-
-// Forms
-.form-control {
-  margin-bottom: 15px;
-}
-.form-control {
-  height: 64px;
-  line-height: 64px;
-  background-color: transparent;
-  border: 2px solid $grey;
-  border-radius: 0px;
-  font-family: 'Avenir Next';
-  line-height: 42px;
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
-  color: #fff;
-  // box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-
-
-
-
-select.form-control {
-  font-size: 18px;
-  color: $text;
-  background-color: $white ;
-  border: 2px solid #E4E4E4;
-  box-shadow: none;
-}
-
-// .form-control.btn-primary {
-//   font-size: 24px;
-//   border-color: #00B3E6;
-//   background-color: #00B3E6;
-//   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
-// }
-
-
-
-
-
-
-// .form-group input[type="radio"] {
-//     display: none;
-// }
-// .form-group input[type="radio"] + .btn-group > label span {
-//     width: 20px;
-// }
-// .form-group input[type="radio"] + .btn-group > label span:first-child {
-//     display: none;
-// }
-// .form-group input[type="radio"] + .btn-group > label span:last-child {
-//     display: inline-block;
-// }
-// .form-group input[type="radio"]:checked + .btn-group > label span:first-child {
-//     display: inline-block;
-// }
-// .form-group input[type="radio"]:checked + .btn-group > label span:last-child {
-//     display: none;
-// }
 
 
 

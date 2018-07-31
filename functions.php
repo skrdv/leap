@@ -88,7 +88,7 @@ function _tk_scripts() {
 	wp_enqueue_style( 'bootstrap-wp', THEME_CSS.'bootstrap-wp.css' );
   wp_enqueue_style( 'fontawesome', THEME_CSS.'font-awesome.min.css' );
   wp_enqueue_style( 'leap-theme', THEME_CSS.'theme.css' );
-  wp_enqueue_style( 'leap-custom', THEME_CSS.'/custom.css' );
+  wp_enqueue_style( 'leap-custom', THEME_CSS.'debug.css' );
 	wp_enqueue_style( 'leap-styles', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'bootstrap', THEME_JS . 'bootstrap.min.js', array('jquery') );
