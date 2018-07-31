@@ -5,23 +5,30 @@
 ?>
 
 <?php
+global $wp_query;
+
+$desc 		= get_field('filter_description');
+$title1 	= get_field('filter_title_1');
+$title2 	= get_field('filter_title_2');
+$title3 	= get_field('filter_title_3');
+$collab		= get_field('collaborate_text');
 $poster   = get_the_post_thumbnail_url($post->ID, 'poster');
 
 
 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-
 $args = array(
-	'post_type'      => array('resource'),
-	'posts_per_page' => '10',
-  'orderby'        => 'date',
-	'order'          => 'DESC',
+	'post_type'      	=> array('resource'),
+	'posts_per_page' 	=> '5',
+	'paged' 					=> $paged,
+  'orderby'        	=> 'date',
+	'order'          	=> 'DESC',
 );
 
-$query = new WP_Query( $args );
+$wp_query = new WP_Query( $args );
 
-if ( $query->have_posts() ) {
-	while ( $query->have_posts() ) {
-		$query->the_post();
+if ( $wp_query->have_posts() ) {
+	while ( $wp_query->have_posts() ) {
+		$wp_query->the_post();
     $categories = get_field_object('resource_category');
 	}
 }
@@ -34,7 +41,9 @@ wp_reset_postdata();
 <section class="resourceSection resourceSection-hero" style="background-image: url('<?php echo $poster; ?>');">
   <div class="container">
     <div class="card">
-      <h1 class="card-title"><?php the_title(); ?></h1>
+      <h1 class="card-title">
+				<?php the_title(); ?>
+			</h1>
     </div>
   </div>
 	<div class="bg-overlay"></div>
@@ -43,13 +52,13 @@ wp_reset_postdata();
 <section class="resourceSection resourceSection-filter" id="resources-filters">
   <div class="container">
     <div class="filter-text">
-      <?php the_field('filter_description'); ?>
+      <?php echo $desc; ?>
     </div>
     <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
       <div class="flex-grid">
         <div class="flex-col-33">
           <div class="filter-title">
-            <?php the_field('filter_title_1'); ?>
+            <?php echo $title1; ?>
           </div>
           <?php foreach ($categories['choices'] as $key => $value) { ?>
             <div class="form-group">
@@ -68,7 +77,7 @@ wp_reset_postdata();
         </div>
         <div class="flex-col-33">
           <div class="filter-title">
-            <?php the_field('filter_title_2'); ?>
+            <?php echo $title2; ?>
           </div>
           <select class="form-control filter-select" disabled>
 			      <option selected="">All Grade Levels</option>
@@ -86,11 +95,11 @@ wp_reset_postdata();
         </div>
         <div class="flex-col-33">
           <div class="filter-title">
-            <?php the_field('filter_title_3'); ?>
+            <?php echo $title3; ?>
           </div>
           <div class="box is-primary">
   					<div class="box-title">
-              <?php the_field('collaborate_text'); ?>
+							<?php echo $collab; ?>
             </div>
   					<div class="box-line"></div>
   					<a class="btn btn-secondary" href="/share-a-resource-or-story/">Share a Resource</a>
@@ -103,25 +112,47 @@ wp_reset_postdata();
   </div>
 </section>
 
-<section class="resourceSection resourceSection-cards" id="response">
+<?php if( $wp_query->have_posts() ): ?>
+	<section class="resourceSection resourceSection-cards" id="response">
+	<?php while ( $wp_query->have_posts() ): ?>
+		<?php $wp_query->the_post(); ?>
+		<?php get_template_part('parts/resource','card'); ?>
+	<?php endwhile; ?>
+	</section>
+	<?php wp_reset_postdata(); ?>
+	<?php previous_posts_link(); ?>
+	<?php next_posts_link(); ?>
+<?php endif; ?>
 
-		<?php while ( $query->have_posts() ): $query->the_post(); ?>
-			<?php get_template_part('parts/resource','card'); ?>
-		<?php endwhile; ?>
-    <?php wp_reset_postdata(); ?>
+<script type="text/javascript">
+(function($){
 
-</section>
+	// Submit form on input change
+	$('form input').change(function() {
+		$(this).closest('form').submit();
+	});
 
-<section class="resourceSection resourceSection-pagination">
-  <?php
-  // $big = 999999999;
-  // echo paginate_links( array(
-  //     'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-  //     'format' => '?paged=%#%',
-  //     'current' => max( 1, get_query_var('paged') ),
-  //     'total' => $query->max_num_pages
-  // ) );
-  ?>
-</section>
+	// Submit form on select change
+	$('form select').change(function() {
+		$(this).closest('form').submit();
+	});
+
+	// AJAX Filter Form Submit
+	$('#filter').submit(function(){
+		var filter = $('#filter');
+		$.ajax({
+			url:filter.attr('action'),
+			data:filter.serialize(),
+			type:filter.attr('method'),
+			beforeSend:function(xhr){},
+			success:function(data){
+				$('#response').html(data);
+			}
+		});
+		return false;
+	});
+	
+})(jQuery);
+</script>
 
 <?php get_footer(); ?>

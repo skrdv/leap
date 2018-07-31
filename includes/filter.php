@@ -3,14 +3,17 @@
 // Resources post type filter
 function leap_filter_function(){
 
+	global $wp_query;
+
+	$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 	$args = array(
     'post_type' => array('resource'),
-		'posts_per_page' => '10',
+		'posts_per_page' => '5',
+		'paged' => $paged,
 		'orderby' => 'date',
 		'order'	=> $_POST['date'],
 		'meta_query' => $meta_query,
 	);
-
 
 	$catArray = $_POST['resource_category'];
 	foreach($catArray as $key => $value) {
@@ -29,13 +32,22 @@ function leap_filter_function(){
 		$testArray[4],
 	);
 
-	$query = new WP_Query( $args );
+	$wp_query = new WP_Query( $args );
 
-	if( $query->have_posts() ) :
-		while( $query->have_posts() ): $query->the_post();
+	if( $wp_query->have_posts() ) :
+		while( $wp_query->have_posts() ):
+			$wp_query->the_post();
 			get_template_part('parts/resource','card');
 		endwhile;
+
+
+
+
+
+
 		wp_reset_postdata();
+		previous_posts_link( 'Newer posts &raquo;' );
+    next_posts_link('Older &raquo;');
 	else :
 		get_template_part('parts/resource','none');
 	endif;
