@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page Resources
+ * Template Name: Resources List
  */
 ?>
 
@@ -151,7 +151,7 @@ wp_reset_postdata();
 		});
 		return false;
 	});
-	
+
 })(jQuery);
 </script>
 

@@ -1,0 +1,63 @@
+
+
+
+.button-group {
+  display: flex;
+
+  .button {
+    &:first-child {
+      width: 64px;
+      height: 64px;
+      padding: 0;
+      margin: 0;
+    }
+    &:last-child {
+      width: 288px;
+      margin: 0;
+      padding-left: 32px;
+      padding-right: 64px;
+      text-align: left;
+      font-size: 18px;
+      line-height: 64px;
+    }
+  }
+
+  &-connected {
+    .button-default {
+      border-color: $connected !important;
+    }
+  }
+  &-focused {
+    .button-default {
+      border-color: $focused !important;
+    }
+  }
+  &-led {
+    .button-default {
+      border-color: $led !important;
+    }
+  }
+  &-demonstrated {
+    .button-default {
+      border-color: $demonstrated !important;
+    }
+  }
+
+}
+
+.form-group input[type="checkbox"] {
+    display: none;
+    & + .button-group > label span {
+        width: 64px;
+    }
+    & + .button-group > label span {
+      &:first-child {display: none;}
+      &:last-child {display: inline-block;}
+    }
+    &:checked {
+      &  + .button-group > label span {
+        &:first-child {display: inline-block;}
+        &:last-child {display: none;}
+      }
+    }
+}

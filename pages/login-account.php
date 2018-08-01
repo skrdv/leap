@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Account Login
+ * Template Name: Login Account
  */
  ?>
 
@@ -9,8 +9,6 @@ $logo = THEME_URI.'/includes/images/logo.svg';
 $bgimage = get_the_post_thumbnail_url($post->ID, 'poster');
 
 $args = array(
-  // 'id_username' => 'user',
-  // 'id_password' => 'pass',
   'redirect'        => '/account/',
   'form_id'         => 'login-form',
   'label_username'  => __( 'Email' ),
@@ -33,6 +31,20 @@ $args = array(
 <body <?php body_class('login-page'); ?> style="background-image: url('<?php echo $bgimage; ?>');">
 
 <?php if ( !is_user_logged_in() ): ?>
+
+  <div class="login" id="login">
+    <div class="login-header">
+      <a class="login-logo-link" href="<?php home_url(); ?>">
+        <img class="login-logo-image" src="<?php echo $logo; ?>" alt="">
+      </a>
+    </div>
+    <div class="login-content">
+      <?php wp_login_form( $args ); ?>
+      <p class="login-register">
+        <?php wp_register('', ''); ?>
+      </p>
+    </div>
+  </div>
 
   <?php /*
     <form class="login login-formm" id="login-formm" action="ajaxlogin"  method="post">
@@ -64,41 +76,9 @@ $args = array(
     </form>
     */ ?>
 
-    <div class="login" id="login">
-      <div class="login-header">
-        <a class="login-logo-link" href="<?php home_url(); ?>">
-          <img class="login-logo-image" src="<?php echo $logo; ?>" alt="">
-        </a>
-      </div>
-      <div class="login-content">
-        <?php wp_login_form( $args ); ?>
-        <p class="login-register">
-          <?php wp_register('', ''); ?>
-        </p>
-      </div>
-    </div>
-
-
-
 <?php else: ?>
 
   <?php wp_redirect("/account/"); ?>
-
-  <?php /*
-  <div class="login" id="login">
-    <div class="login-header">
-      <a class="login-logo-link" href="<?php home_url(); ?>">
-        <img class="login-logo-image" src="<?php echo $logo; ?>" alt="">
-      </a>
-    </div>
-    <div class="login-content">
-      <?php wp_login_form( $args ); ?>
-      <p class="login-register">
-        <?php wp_register('', ''); ?>
-      </p>
-    </div>
-  </div>
-  */ ?>
 
 <?php endif; ?>
 

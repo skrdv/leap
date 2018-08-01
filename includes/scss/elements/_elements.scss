@@ -1,0 +1,138 @@
+
+
+
+
+
+
+
+
+
+// Forms elements
+.form-control {
+  max-width: 544px;
+  height: 64px;
+  line-height: 64px;
+  margin-bottom: 15px;
+  background-color: transparent;
+  border: 2px solid $grey;
+  border-radius: 0px;
+  font-family: 'Avenir Next';
+  line-height: 42px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+
+
+
+input.form-control {
+  font-size: 28px;
+  color: $text;
+  background-color: $white ;
+  border: 2px solid $grey;
+  box-shadow: none;
+  &:hover,
+  &:focus,
+  &.is-focused {
+    border: 2px solid $primary;
+  }
+}
+
+
+select.form-control {
+  font-size: 18px;
+  color: $text;
+  background-color: $white;
+  border: 2px solid $grey;
+  box-shadow: none;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// Boxes
+.box {
+  padding: 42px 48px;
+  .box-title {
+    font-weight: bold;
+    line-height: 32px;
+    font-size: 20px;
+    color: $white;
+  }
+  .box-line {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 64px;
+    height: 8px;
+    background: $white;
+  }
+  &.is {
+    &-primary {
+      background: $primary;
+    }
+    &-dark {
+      background: $text;
+    }
+  }
+}
+
+
+.items {
+  display: flex;
+
+  .item {
+    width: 96px;
+    &-title {
+      font-size: 11px;
+      font-weight: bold;
+    }
+    &-color {
+      width: 64px;
+      height: 64px;
+      margin-right: 32px;
+      margin-bottom: 10px;
+      &.is-primary {
+        background: $primary;
+      }
+      &.is-secondary {
+        background: $secondary;
+      }
+      &.is-demonstrated {
+        background: $demonstrated;
+      }
+      &.is-connected {
+        background: $connected;
+      }
+      &.is-focused {
+        background: $focused;
+      }
+      &.is-led {
+        background: $led;
+      }
+      &.is-text {
+        background: $text;
+      }
+      &.is-gray {
+        background: $gray;
+      }
+      &.is-grey {
+        background: $grey;
+      }
+      &.is-white {
+        background: $white;
+      }
+    }
+  }
+}

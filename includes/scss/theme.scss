@@ -1,17 +1,31 @@
 
-// Common
-@import 'fonts';
-@import 'base';
-@import 'layout';
-@import 'elements';
-@import 'components';
+// Base
+@import 'base/_fonts';
+@import 'base/_base';
+
+// Grid
+@import 'grid/_grid';
+@import 'grid/_queries';
+
+// Layout
+@import 'layout/_layout';
+@import 'layout/_section';
+
+// Elements
+@import 'elements/_elements';
+@import 'elements/_buttons';
+@import 'elements/_form';
+
+// Components
+@import 'components/_components';
 
 // Pages
 @import 'pages/_account';
 @import 'pages/_login';
 @import 'pages/_pages';
 @import 'pages/_resources';
+@import 'pages/_components';
 
-// Other
+// Admin
 @import 'admin';
 @import 'debug';
