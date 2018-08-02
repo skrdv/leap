@@ -1,4 +1,6 @@
 .git
+.gitignore
 .ftpconfig
 *.log
 .README.md
+php_errorlog
