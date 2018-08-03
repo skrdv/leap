@@ -5,7 +5,6 @@
 ?>
 
 <?php
-
 // User Data
 $current_user 			= wp_get_current_user();
 $user_id            = get_current_user_id();
@@ -19,13 +18,11 @@ $user_status        = $user->user_status;
 $user_nicename      = $user->user_nicename;
 $display_name       = $user->display_name;
 
-// User ACF Fiels
+// User ACF
 $account_name       = get_field('account_fullname', 'user_'. $user_id);
 $account_pic        = get_field('account_userpic', 'user_'. $user_id);
 $account_bg         = get_field('account_userbg', 'user_'. $user_id);
 $account_org        = get_field('account_organisation', 'user_'. $user_id);
-
-
 ?>
 
 <!DOCTYPE html>

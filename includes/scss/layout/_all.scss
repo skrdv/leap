@@ -1,12 +1,12 @@
 
 
 // Admin Bar
-body.admin-bar {
-  margin-top: 72px;
-  .navbar-fixed-top {
-    top: 32px;
-  }
-}
+// body.admin-bar {
+//   margin-top: 72px;
+//   .navbar-fixed-top {
+//     top: 32px;
+//   }
+// }
 
 
 
@@ -354,8 +354,8 @@ body.admin-bar {
   background: #23313B;
 
   &-title {
-    margin-top: 90px;
-    margin-bottom: 50px;
+    padding-top: 90px;
+    padding-bottom: 50px;
     font-family: 'Avenir Next';
     line-height: 20px;
     font-size: 28px;

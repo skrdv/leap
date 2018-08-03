@@ -20,7 +20,6 @@ add_filter( 'edit_post_link', function( $link, $post_id, $text ) {
 
 
 
-
 // Update Admin Logo
 function my_login_logo() { ?>
     <style type="text/css">
@@ -31,7 +30,7 @@ function my_login_logo() { ?>
 					background-size: 228px 96px;
 					background-repeat: no-repeat;
 					background-position: left center;
-					background-image: url(<?php echo THEME_URI.'/includes/images/logo.svg'; ?>);
+					background-image: url(<?php echo THEME_URI.'/includes/img/logo.svg'; ?>);
 			}
     </style>
 <?php }
@@ -42,7 +41,7 @@ add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
 
 
-
+// Init AJAX Login
 function ajax_login_init(){
 
     wp_register_script('ajax-login-script', get_template_directory_uri() . '/ajax-login-script.js', array('jquery') );
@@ -65,6 +64,9 @@ if (!is_user_logged_in()) {
 }
 
 
+
+
+// AJAX Login Function
 function ajax_login(){
 
     // First check the nonce, if it fails the function will break
@@ -84,4 +86,22 @@ function ajax_login(){
     }
 
     die();
+}
+
+
+
+
+
+
+
+// Add custom class to navbar menu items
+add_filter( 'nav_menu_link_attributes', 'add_menu_items_atts', 10, 3 );
+function add_menu_items_atts( $atts, $item, $args ) {
+  if( $args->theme_location == 'main' ) {
+    $atts['class'] = 'navbar-item';
+  }
+  if( $args->theme_location == 'more' ) {
+    $atts['class'] = 'navbar-item';
+  }
+  return $atts;
 }
