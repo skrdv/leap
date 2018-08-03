@@ -1,15 +1,15 @@
 
-<section class="pageSection pageSection-15">
+<section class="pageSection columns2 border">
 	<div class="leap-stripe"></div>
 	<div class="container">
 		<div class="row flex">
 			<div class="col-sm-5">
-				<h2 class="pageSection-title"><?php the_field('section6_title'); ?></h2>
-				<div class="pageSection-text"><?php the_field('section6_text'); ?></div>	
-				<a class="pageSection-button" href="<?php the_field('section6_link'); ?>"><?php the_field('section6_button'); ?></a>
+				<h3 class="columns2-title"><?php the_field('2columns_title'); ?></h3>
+				<div class="columns2-text"><?php the_field('2columns_text'); ?></div>	
+				<a class="btn btn-primary" href="<?php the_field('2columns_link'); ?>"><?php the_field('2columns_button'); ?></a>
 			</div><!-- column -->
-			<div class="col-sm-6 col-sm-offset-1">
-				<div class="pageSection-photo"  style="background-image: url(<?php $image = get_field('section6_photo'); echo $image[sizes][large]; ?>);"></div>
+			<div class="col-sm-5 col-sm-offset-2">
+				<div class="columns2-photo"  style="background-image: url(<?php $image = get_field('2columns_photo'); echo $image[sizes][block]; ?>);"></div>
 			</div><!-- column -->			
 		</div><!-- row -->
 	</div><!-- container -->

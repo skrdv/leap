@@ -17,19 +17,28 @@ $size = 'full';
 	.mainBanner-title {
 		position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 8rem;
     margin: 0;
 		width: 100%;
-    height: 120px;
-    line-height: 120px;
-		text-align: left;
+    line-height: 6rem;
+		text-align: center;
 	}
 
-	.mainBanner-title .container{
-		border-top: 4px solid #00B3E6;
+	.mainBanner-title .container {
+		max-width: 82rem;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
-	.gallery-item {
+	.mainBanner .gradient {
+		background: radial-gradient(613.18px at 50% 25.85%,
+								rgba(35, 49, 59, 0) 0%,
+								rgba(35, 49, 59, 0.4) 100%);
+		opacity: 0.9;
+		transform: matrix(-1, 0, 0, 1, 0, 0);
+	}
+
+	.mainBanner .gallery-item {
 		width: 100%;
 		height: 100%;
 		background-size: cover;
@@ -39,16 +48,16 @@ $size = 'full';
 		opacity: 0;
 	}
 
-	.gallery-item.is-active {
+	.mainBanner .gallery-item.is-active {
 		display: block !important;
 		opacity: 1;
 	}
 
-	.gallery-item.is-hidden {
+	.mainBanner .gallery-item.is-hidden {
 		display: none !important;
 	}
 
-	.gallery-item.is-animated {
+	.mainBanner .gallery-item.is-animated {
 	  width: 100%;
 	  margin: 0;
 	  -webkit-animation: slide 15s ease-out infinite;
@@ -70,11 +79,15 @@ $size = 'full';
             </div>
         <?php endforeach; ?>
     </div>
+		<div class="gradient is-overlay"></div>
 		<h1 class="mainBanner-title">
 			<div class="container">
-					<?php the_title(); ?>
+				<?php the_field('page_title'); ?>
 			</div>
 		</h1>
+		<a class="mainBanner-scroll">
+			Scroll<br><img src="<?php echo get_template_directory_uri(); ?>/images/scroll-icon.svg">
+		</a>
 	</section>
 <?php endif; ?>
 

@@ -16,9 +16,9 @@
               <h3 class="pageBlock-title"><?php echo $title; ?></h3>
       				<div class="pageBlock-text"><p><?php echo $content; ?></p></div>
             </div>
-            <?php if($image): ?>
+            <h1><?php if($image): ?></h1>
             <div class="pageBlock-image">
-              <img src="<?php echo $image[sizes][block]; ?>" alt="<?php echo $title; ?>">
+              <img src="<?php echo $image[sizes][medium]; ?>" alt="<?php echo $title; ?>">
             </div>
             <?php endif; ?>
             <div class="pageBlock-footer center">

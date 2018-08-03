@@ -427,6 +427,12 @@ nav .form-control {
 	color: #23313B;
 }
 
+
+
+.pageSection-title.center{
+	text-align: center
+}
+
 .pageSection-quote {
 	line-height: 60px;
 	font-size: 36px;
@@ -444,23 +450,36 @@ nav .form-control {
 	width: 64px;
 	height: 8px;
 	background: #23313B;
-	margin: 30px 0;
+	margin: 40px 0;
 }
 
-.pageSection-title.centered {
-	text-align: center;
+.center .pageSection-title:after {
+	margin: 40px auto;
 }
 
-.pageSection-title.centered:after {
-	margin: 30px auto;
-}
+
 
 .pageSection-text {
-	font-family: Avenir Next;
 	line-height: 36px;
 	font-size: 28px;
 	color: #FFFFFF;
 }
+
+
+.pageSection-color .pageSection-text {
+	line-height: 60px;
+	font-size: 36px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.pageSection-color {
+	padding: 83px 0 104px 0;
+}
+
+
+
+
 
 .pageSection {
 	position: relative;
@@ -606,7 +625,7 @@ nav .form-control {
 
 
 .getstartedCard {
-	margin-bottom: 30px;
+	margin: 20px 0 90px 0;
 }
 
 
@@ -766,12 +785,12 @@ nav .form-control {
 	margin: 40px auto;
 }
 
-.pageSection-12 .pageSection-subtitle{
+.pageSection-subtitle{
 	line-height: 60px;
 	font-size: 24px;
 	text-align: center;
 	color: #23313B;
-	margin: 0;
+	margin: -16px 0 0 0;
 	padding: 0 10vw;
 }
 
@@ -795,7 +814,10 @@ nav .form-control {
 
 .sectionCard-photo {
 	height: 160px;
-	background: #C4C4C4;
+	background-color: #C4C4C4;
+	background-size: cover;
+	margin: 0 0 30px 0;
+	
 }
 
 .sectionCard-content {
@@ -808,6 +830,7 @@ nav .form-control {
 	font-size: 24px;
 	color: #23313B;
 	font-weight: bold;
+	margin: 7px 0;
 }
 
 .sectionCard-text {
@@ -835,6 +858,11 @@ nav .form-control {
 .sectionCard-button:hover {
 	background: #fff;
 	border: 2px solid #23313B;
+}
+
+.sectionCard-button a{
+	color: #23313B;
+	text-decoration: none;
 }
 
 
@@ -882,7 +910,7 @@ nav .form-control {
 
 .blockCompany-team {
 	height: 256px;
-	background-position: center;
+	background-position: top center;
 	background-size: cover;
 	margin: 0 0 32px 0;
 }
@@ -1124,6 +1152,11 @@ nav .form-control {
 
 /*==== getSlider --------------- */
 
+.pageSection-llf {
+	padding: 80px 0 80px 0;
+
+}
+
 .getSlider {
 	width: 544px;
 	margin: 0px auto;
@@ -1246,6 +1279,10 @@ background: transparent !important;
 	text-shadow: 0px 4px 100px rgba(0, 0, 0, 0.5), 1px 1px 0px rgba(0, 0, 0, 0.15);
 }
 
+.heroBanner-title span{
+	font-weight: normal;
+}
+
 .heroBanner-title.is-led {
 	border-top: 4px solid #84BE41;
 }
@@ -1297,7 +1334,27 @@ background: transparent !important;
 
 
 .readyCard {
+	margin: 40px 0;
+}
 
+.strategy .readyCard-back {
+	background: #23313B;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 99;
+	display: none;
+	opacity: 0;
+	transform: rotateY(180deg);
+	flex-direction: column;
+	padding: 48px;	
+} 
+
+.readyCard:hover  .readyCard-back{
+	display: flex;
+	opacity: 1;
 }
 
 .readyCard-inner {
@@ -1308,6 +1365,13 @@ background: transparent !important;
 	flex-direction: column;
 	padding: 48px;
 }
+
+.readyCard:hover .readyCard-inner {
+	transform: rotateY(180deg);
+	transform-style: flat;
+	transition: all 0.6s ease;
+} 
+
 
 .readyCard-title {
 	font-family: Avenir Next;
@@ -1458,6 +1522,7 @@ background: transparent !important;
 
 .pageSection-21 .pageSection-title{
 	font-weight: bold;
+	text-align: left;
 }
 
 .pageSection-21 .pageSection-title:after {
@@ -1465,7 +1530,7 @@ background: transparent !important;
 }
 
 .pageSection-21  .column-image {
-	margin-top: 10px;
+	margin-top: 52px;
 }
 
 
@@ -1548,6 +1613,7 @@ font-size: 16px;
 }
 
 .pageSection-25 .pageSection-title{
+	text-align: left;
 	font-weight: bold;
 }
 
@@ -1562,10 +1628,56 @@ font-size: 16px;
 	padding: 0 0 80px 0;
 }
 
+.pageSection-pre {
+	line-height: 20px;
+	font-size: 13px;
+	text-align: center;
+	color: #23313B;
+	margin: 20px 0;
+	font-weight: bold;
+}
 
+.pageSection-post a{
+	display: inline-block;
+	line-height: 28px;
+	font-size: 16px;
+	text-align: center;
+	color: #23313B;
+	margin: 20px 0;
+	font-weight: bold;	
+}
 
 
 /*===================================== Section Double ================== */
+
+.pageSection-double {
+	background-color: #2E89CB;
+	padding: 80px 0 353px 0;
+}
+
+.pageSection-double .pageSection-text {
+	font-size: 36px;
+	line-height: 60px;
+	color: #FFFFFF;
+	font-weight: 700;
+}
+
+.pageSection-double strong{
+	color: #23313B;
+}
+
+
+.pageSection-double-photo {
+	margin: -271px 0 0 0;
+	padding: 0;
+}
+
+
+.pageSection-photo {
+	height: 544px;
+	background-size: cover;
+	margin-bottom: -20px;
+}
 
 .pageSection-big {
 	line-height: 60px;
@@ -1573,12 +1685,9 @@ font-size: 16px;
 	text-align: center;
 	color: #23313B;
 	font-weight: bold;
-	margin: 40px 0;
+	margin: 100px 0 80px 0;
 }	
 
-.pageSection-double .pageSection-big {
-	margin: 140px 0 0 0;
-}
 
 /*===================================== Section Repeater  ================== */
 
@@ -1595,4 +1704,173 @@ font-size: 16px;
 	font-size: 16px;
 	text-align: center;
 	color: #FFFFFF;	
+}
+
+
+/*==================================== Section Fact ===========================*/
+
+.sectionFact {
+	text-align: center;
+}
+
+.pageSection-fact {
+	text-align: center;
+}
+
+.sectionFact-number {
+	display: inline-block;
+	position: relative;
+	padding: 0 80px;
+	font-size: 260px;
+	line-height: 1;
+	color: #23313B;
+	font-weight: bold;
+	letter-spacing: -15px;
+	text-align: center;
+}
+
+.sectionFact-number:before {
+	display: block;
+	position: absolute;
+	left: -64px;
+	top: 50%;
+	content: '';
+	width: 64px;
+	height: 8px;
+}
+
+
+
+.sectionFact-number:after {
+	display: block;
+	position: absolute;
+	right: -64px;
+	top: 50%;
+	content: '';
+	width: 64px;
+	height: 8px;
+}
+
+.is-led .sectionFact-number:before,  .is-led .sectionFact-number:after {
+	background: #84BE41;
+}  
+
+.is-demonstrated .sectionFact-number:before,  .is-demonstrated .sectionFact-number:after {
+	background: #FF6C0C;
+}  
+
+.is-focused .sectionFact-number:before,  .is-focused .sectionFact-number:after {
+	background: #B34FC5;
+}  
+
+.is-connected .sectionFact-number:before,  .is-connected .sectionFact-number:after {
+	background: #00B3E6;
+}  
+
+
+
+
+.sectionFact-number sup{
+	font-size: 160px;
+}
+
+.sectionFact-caption {
+	line-height: 48px;
+	font-size: 36px;
+	color: #23313B;
+	font-weight: bold;
+}
+
+.sectionFact-text {
+	line-height: 20px;
+	font-size: 13px;
+	text-align: center;
+	font-weight: bold;
+	margin: 20px 0 0 0;
+}
+
+
+/*=========== 2 Columns ================ */
+
+.pageSection.columns2 {
+	padding: 120px 0 85px 0;
+}
+
+.columns2-title {
+    margin: 0;
+    color: #23313b;
+    font-size: 36px;
+    font-weight: bold;
+	text-align: left;
+}
+
+.columns2-title:after {
+	content: '';
+	display: block;
+	width: 64px;
+	height: 8px;
+	background: #f5c400;
+	margin: 30px 0;
+}
+
+.columns2-text {
+    color: #23313b;
+    font-size: 24px;
+    line-height: 40px;
+	margin-bottom: 52px;
+}
+
+.columns2-photo {
+	height: 100%;
+	background-size: cover;
+}
+
+
+
+.pageSection.border {
+	border-bottom: 1px solid #e6e6e6;
+}
+
+
+
+.pageBlock-title span {
+	color: #00b3e6;
+}
+
+
+/* ======================= Slider Full ===================*/
+
+.carouselFull {
+	position: relative;
+	z-index: 10;
+}
+
+
+.carouselFull-item {
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+.carouselFull-item-inner {	
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 56px 0;
+	height: 982px;
+}
+
+.carouselFull-controls{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,0);
+}
+
+.carouselFull-caption {
+	line-height: 48px;
+	font-size: 36px;
+	font-weight: 700;
+	text-align: center;
+	color: #fff;
 }

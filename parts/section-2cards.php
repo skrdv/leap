@@ -1,8 +1,8 @@
-<section class="pageSection pageSection-7">
+<section class="pageSection center">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h2 class="pageSection-title centered"><?php the_field('2cards-title'); ?></h2>
+				<h2 class="pageSection-title"><?php the_field('2cards-title'); ?></h2>
 			</div><!-- column -->
 		</div><!-- row -->	
 		
@@ -12,7 +12,7 @@
 				<div class="getstartedCard-inner">
 					<div class="getstartedCard-photo" style="background-image: url(<?php $bg = get_sub_field('photo'); echo $bg[sizes][medium]; ?>);"></div>
 					<div class="getstartedCard-content">
-						<div style="font-size: 16px; line-height: 28px;"><?php the_sub_field('text'); ?></div>
+						<div style="font-size: 16px; line-height: 28px; font-weight: bold;"><?php the_sub_field('text'); ?></div>
 						<a href="<?php the_sub_field('link'); ?>" class="getstartedCard-link"><?php the_sub_field('button'); ?></a>
 					</div>	
 				</div>

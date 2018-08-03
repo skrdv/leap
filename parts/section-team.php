@@ -1,4 +1,4 @@
-<section class="pageSection pageSection-13">
+<section class="pageSection pageSection-team <?php if (!is_front_page()) { echo 'border'; } ?>">
 	<div class="container">	
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-3">
@@ -16,11 +16,13 @@
 				<div class="blockCompany">
 					<div class="blockCompany-founder">
 						<div class="blockCompany-founder-photo" style="background-image:url(<?php echo  $founder; ?>);"></div>
-						<h3 class="blockCompany-founder-name"><?php the_field('founder_name',$page_id); ?></h3>
+						<h3 class="blockCompany-founder-name"><?php the_field('founder_title',$page_id); ?></h3>
 						<h4 class="blockCompany-founder-position"><?php the_field('founder_text',$page_id); ?></h4>
 					</div>
 					<div class="blockCompany-team"  style="background-image:url(<?php echo  $team; ?>);"></div>
-					<a class="blockCompany-button" href="<?php the_field('team_link',$page_id); ?>"><?php the_field('team_button',$page_id); ?></a>
+					<?php if ( get_field('team_button',$page_id)): ?>
+						<a class="blockCompany-button" href="<?php the_field('team_link',$page_id); ?>"><?php the_field('team_button',$page_id); ?></a>
+					<?php endif; ?>
 				</div><!-- blockCompany -->	
 			</div>		
 		</div><!-- row -->

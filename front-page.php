@@ -3,7 +3,7 @@
 <div class="content-wrapper">
 
 <?php get_template_part('parts/main','banner'); ?>
-
+	
 <?php get_template_part('parts/double','section'); ?>
 				
 <?php get_template_part('parts/main','4cards'); ?>

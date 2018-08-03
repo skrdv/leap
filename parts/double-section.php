@@ -1,4 +1,4 @@
-<section class="pageSection pageSection-double pageSection-10" style="background: <?php the_field('double_bg'); ?>;">
+<section class="pageSection pageSection-double" style="background: <?php the_field('double_bg'); ?>;">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -10,8 +10,8 @@
 	</div><!-- container -->
 </section><!-- pageSection -->
 
-<section class="pageSection pageSection-11" >
-	<div class="leap-stripe leap-stripe-11"></div>	
+<section class="pageSection pageSection-double-photo" >
+	<div class="leap-stripe"></div>	
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -23,7 +23,10 @@
 	</div><!-- container -->
 </section><!-- pageSection -->
 
-<section class="pageSection pageSection-12" >
+
+<?php if (( get_field('double_title') ) or ( get_field('double_text2') )): ?>
+
+<section class="pageSection center <?php if (get_field('double_text2')) { echo 'border'; } ?>">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -37,3 +40,5 @@
 		</div><!-- row  -->
 	</div><!-- container -->
 </section>	
+
+<?php endif; ?>
