@@ -63,14 +63,14 @@ wp_reset_postdata();
           <?php foreach ($categories['choices'] as $key => $value) { ?>
             <div class="form-group">
               <input type="checkbox" name="resource_category[]" value="<?php echo $key; ?>" id="resource-category-<?php echo $key; ?>" />
-              <div class="btn-group btn-group-<?php echo $key; ?>">
-                <label for="resource-category-<?php echo $key; ?>" class="btn btn-<?php echo $key; ?>">
+              <div class="button-group button-group-<?php echo $key; ?>">
+                <label for="resource-category-<?php echo $key; ?>" class="button button-<?php echo $key; ?>">
 									<span>
 										<img src="<?php echo THEME_URI.'/includes/icons/icon-ok.svg'; ?>" alt="">
 									</span>
 									<span> </span>
                 </label>
-                <label for="resource-category-<?php echo $key; ?>" class="btn btn-default"><?php echo $value; ?></label>
+                <label for="resource-category-<?php echo $key; ?>" class="button button-default"><?php echo $value; ?></label>
               </div>
             </div>
           <?php } ?>
@@ -102,11 +102,11 @@ wp_reset_postdata();
 							<?php echo $collab; ?>
             </div>
   					<div class="box-line"></div>
-  					<a class="btn btn-secondary" href="/share-a-resource-or-story/">Share a Resource</a>
+  					<a class="button button-secondary" href="/share-a-resource-or-story/">Share a Resource</a>
   				</div>
         </div>
       </div>
-      <button class="btn btn-primary is-off">Apply</button>
+      <button class="button button-primary is-off">Apply</button>
       <input type="hidden" name="action" value="myfilter">
     </form>
   </div>

@@ -1,0 +1,57 @@
+
+
+
+// Helpers
+.is-center {
+  text-align: center;
+}
+
+.is-off {
+  display: none !important;
+}
+
+.is-white {
+  color: $white;
+}
+
+.bg-primary {
+  background: $primary;
+}
+
+.bg-secondary {
+  background: $secondary;
+}
+
+.bg-connected {
+  background: $connected;
+}
+
+.bg-focused {
+  background: $focused;
+}
+
+.bg-led {
+  background: $led;
+}
+
+.bg-demonstrated {
+  background: $demonstrated;
+}
+
+
+// Typography
+.is-font-light {
+  font-weight: $weight-light !important;
+}
+
+.is-font-normal {
+  font-weight: $weight-normal !important;
+}
+
+.is-font-semibold {
+  font-weight: $weight-semibold !important;
+}
+
+.is-font-bold {
+  font-weight: $weight-bold !important;
+}

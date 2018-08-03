@@ -78,6 +78,10 @@
     width: 50%;
     margin-bottom: 80px;
   }
+  &-image img {
+    width: 100%;
+	height: auto;
+  }
   &-footer {
     width: 100%;
     .btn {
@@ -93,11 +97,11 @@
   }
   &-left {
     flex-direction: row-reverse;
-    .pageBlock-image {text-align: left;}
+    .pageBlock-image {text-align: left; padding-right: 128px;}
   }
   &-right {
     flex-direction: row;
-    .pageBlock-image {text-align: right;}
+    .pageBlock-image {text-align: right; padding-left: 128px;}
   }
 
 }

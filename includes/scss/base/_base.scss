@@ -1,95 +1,23 @@
 
-// Colors
-$primary: #00B3E6;
-$secondary: #F5C400;
-$connected: #00B3E6;
-$focused: #B34FC5;
-$led: #84BE41;
-$demonstrated: #FF6C0C;
-$text: #23313B;
-$grey: #E4E4E4;
-$gray: #77777A;
-$white: #FFFFFF;
 
-
-
-// Base
-html, body {
-  height: 100%;
-}
+// html, body {
+//   height: 100%;
+// }
 
 body {
-  font-family: 'Avenir Next', sans-serif;
+  font-family: $family-primary;
   background-color: $white;
   color: $text;
 }
 
-
-
-// Helpers
-.is-center {
-  text-align: center;
+html {
+  font-size: 62.5%;
 }
 
-.is-off {
-  display: none !important;
-}
+body.admin-bar {
 
-.is-white {
-  color: $white;
-}
-
-.bg-primary {
-  background: $primary;
-}
-
-.bg-secondary {
-  background: $secondary;
-}
-
-.bg-connected {
-  background: $connected;
-}
-
-.bg-focused {
-  background: $focused;
-}
-
-.bg-led {
-  background: $led;
-}
-
-.bg-demonstrated {
-  background: $demonstrated;
-}
-
-
-
-
-
-
-/* Page */
-.page-template-default .page {
-  padding-top: 72px;
-}
-
-/* Single */
-.page-template-default .single {
-  // padding-top: 72px;
-}
-
-
-
-
-
-
-
-// Flex Grid
-.flex {
-  &-grid {
-    display: flex;
+  .navbar-fixed-top {
+    top: 32px;
   }
-  &-col-33 {
-    width: 33%;
-  }
+
 }

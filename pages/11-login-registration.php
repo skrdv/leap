@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Login Account
+ * Template Name: 11. Login and Registration
  */
  ?>
 
