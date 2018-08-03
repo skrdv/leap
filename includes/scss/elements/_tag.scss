@@ -1,0 +1,57 @@
+.tag:not(body) {
+  height: 3.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+  border-radius: 0;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 3.2rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: $white;
+  background-color: $grey;
+
+  // Colors
+  &.is-secondary {
+    background-color: $secondary;
+  }
+  &.is-demonstrated {
+    background-color: $demonstrated;
+  }
+  &.is-connected {
+    background-color: $connected;
+  }
+  &.is-focused {
+    background-color: $focused;
+  }
+  &.is-led {
+    background-color: $led;
+  }
+  &.is-text {
+    background-color: $text;
+  }
+  &.is-gray {
+    background-color: $gray;
+  }
+  &.is-grey {
+    background-color: $grey;
+  }
+
+  // Sizes
+  &.is-medium {
+    font-size: $size-normal;
+  }
+
+  &.is-large {
+    font-size: $size-medium;
+  }
+
+  &.is-rounded {
+    border-radius: $radius-rounded;
+  }
+}

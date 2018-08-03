@@ -1,0 +1,308 @@
+
+
+.content {
+
+  // Inline
+  li + li {
+    margin-top: 0.25em;
+  }
+
+  // Block
+  p,
+  dl,
+  ol,
+  ul,
+  blockquote,
+  pre,
+  table,
+  video {
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $text;
+    font-weight: bold;
+    line-height: 1.125;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+    line-height: 7.8rem;
+    margin-bottom: 3rem;
+
+    &:not(:first-child) {
+      margin-top: 6rem;
+    }
+  }
+
+  h2 {
+    font-size: 4.5rem;
+    line-height: 7.8rem;
+    margin-bottom: 3rem;
+
+    &:not(:first-child) {
+      margin-top: 6rem;
+    }
+  }
+
+  h3 {
+    font-size: 2.8rem;
+    line-height: 4.2rem;
+    margin-bottom: 3rem;
+
+    &:not(:first-child) {
+      margin-top: 6rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  h5 {
+    font-size: 2.4rem;
+    line-height: 4.4rem;
+    margin-bottom: 2rem;
+    margin-left: 9rem;
+    display: inline-block;
+    border-bottom: 1px solid rgba($black, 0.1);
+  }
+
+  h6 {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    font-weight: bold;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba($black, 0.1);
+  }
+
+  p {
+    font-size: 2.4rem;
+    line-height: 4.4rem;
+  }
+
+  p a {
+    color: $text;
+    text-decoration: underline;
+  }
+
+  blockquote {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    background-color: transparent;
+    border-left: 4px solid $primary;
+    padding-left: 9.2rem;
+  }
+
+  ol {
+    list-style: decimal outside;
+    margin-left: 3rem;
+    margin-top: 3rem;
+  }
+
+  ul {
+    list-style: disc outside;
+    margin-left: 9rem;
+    margin-top: 0rem;
+    margin-bottom: 3rem;
+
+    li {
+      font-size: 2.4rem;
+      line-height: 4.4rem;
+    }
+
+    ul {
+      list-style-type: circle;
+      margin-top: 1.5rem;
+
+      ul {
+        list-style-type: square;
+      }
+    }
+  }
+
+  dd {
+    margin-left: 3rem;
+  }
+
+  figure {
+    margin-left: 2em;
+    margin-right: 2em;
+    text-align: center;
+
+    &:not(:first-child) {
+      margin-top: 2em;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2em;
+    }
+
+    img {
+      display: inline-block;
+    }
+
+    figcaption {
+      font-style: italic;
+    }
+  }
+
+  small {
+    display: block;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+
+  small strong {
+    line-height: 2.8rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+  pre {
+    @include overflow-touch;
+
+    overflow-x: auto;
+    padding: $content-pre-padding;
+    white-space: pre;
+    word-wrap: normal;
+  }
+
+  sup,
+  sub {
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: normal;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  table {
+    width: 100%;
+
+    td,
+    th {
+      border: $content-table-cell-border;
+      border-width: $content-table-cell-border-width;
+      padding: $content-table-cell-padding;
+      vertical-align: top;
+    }
+
+    th {
+      color: $content-table-cell-heading-color;
+      text-align: left;
+    }
+
+    thead {
+      td,
+      th {
+        border-width: $content-table-head-cell-border-width;
+        color: $content-table-head-cell-color;
+      }
+    }
+
+    tfoot {
+      td,
+      th {
+        border-width: $content-table-foot-cell-border-width;
+        color: $content-table-foot-cell-color;
+      }
+    }
+
+    tbody {
+      tr {
+        &:last-child {
+          td,
+          th {
+            border-bottom-width: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .wp-video,
+  .wp-video .mejs-container {
+    width: 100% !important;
+  }
+
+  .mejs-overlay-button {
+    width: 16rem !important;
+    height: 16rem !important;
+    border-radius: 8rem !important;
+    background: $primary url('../icons/icon-play.svg') no-repeat !important;
+    background-position: 35px center !important;
+    background-size: 104px 88px !important;
+  }
+
+}
+
+
+.is-h1 {
+  font-size: 4.5rem;
+  line-height: 7.8rem;
+  font-weight: bold;
+}
+
+.title,
+.is-title {
+  font-size: 3.6rem;
+  line-height: 6rem;
+  font-weight: bold;
+}
+
+.subtitle,
+.is-subhead {
+  line-height: normal;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.is-bold {
+  font-weight: bold;
+}
+
+.is-medium {
+  font-weight: medium;
+}
+
+.is-lead .is-bold {
+  line-height: 4.0rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+.is-lead .is-medium {
+  line-height: 4.0rem;
+  font-size: 2.4rem;
+  font-weight: medium;
+}
+
+.is-cta {
+  font-size: 2.4rem;
+  line-height: 4.2rem;
+  font-weight: bold;
+}
+
+.is-sub {
+  font-size: 1.3rem !important;
+  font-weight: bold;
+  line-height: normal;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.is-caption {
+  line-height: 2.0rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}

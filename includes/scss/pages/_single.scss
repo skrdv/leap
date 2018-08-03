@@ -1,0 +1,56 @@
+
+
+.section-single {
+
+  & > .container & > .content {
+    margin-bottom: 9rem;
+  }
+
+}
+
+
+.group-cta {
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+  border-top: 1px solid rgba($black, 0.1);
+  border-bottom: 1px solid rgba($black, 0.1);
+
+  .content {
+    max-width: 44rem;
+    padding-top: 4.6rem;
+    padding-bottom: 4.6rem;
+    @include mobile {
+      max-width: 100%;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    p {
+      font-size: 1.6rem;
+      line-height: 2.8rem;
+      margin-bottom: 3.2rem;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .card {
+    float: right;
+    @include mobile {
+      float: none;
+      margin: 0 auto;
+    }
+  }
+
+}
+
+
+
+.group-authors {
+  margin-top: 3rem;
+
+  .columns {
+    border-top: 1px solid rgba($black, 0.1);
+  }
+
+}

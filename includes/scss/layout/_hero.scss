@@ -1,0 +1,140 @@
+
+.hero {
+  position: relative;
+  height: 827px;
+}
+
+// Hero with image
+.hero-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .hero-foot {
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+      border-top: 4px solid transparent;
+    }
+  }
+
+  .tag {
+    float: right;
+  }
+
+  .tag.edit-link {
+    position: absolute;
+    left: 0;
+    top: -3.6rem;
+    a {color: $white;}
+  }
+
+  .title {
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+    color: $white;
+    font-size: 4.5rem;
+    line-height: 6.8rem;
+  }
+
+  .gradient {
+    background: radial-gradient(613.18px at 50% 25.85%,
+                rgba(35, 49, 59, 0) 0%,
+                rgba(35, 49, 59, 0.4) 100%);
+    mix-blend-mode: multiply;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    opacity: 0.6;
+  }
+
+  // Colors
+  &.is-demonstrated {
+    .container {
+      border-color: $demonstrated;
+    }
+    .tag {
+      background-color: $demonstrated;
+    }
+  }
+  &.is-connected {
+    .container {
+      border-color: $connected;
+    }
+    .tag {
+      background-color: $connected;
+    }
+  }
+  &.is-focused {
+    .container {
+      border-color: $focused;
+    }
+    .tag {
+      background-color: $focused;
+    }
+  }
+  &.is-led {
+    .container {
+      border-color: $led;
+    }
+    .tag {
+      background-color: $led;
+    }
+  }
+
+}
+
+
+
+// Hero with color
+.hero-color {
+  padding: 8rem 16rem 16rem 16rem;
+
+  .content {
+    color: $white;
+    font-size: 3.6rem;
+    line-height: 6rem;
+    strong {
+      color: $text;
+    }
+  }
+
+  &.is-demonstrated {
+    background-color: $demonstrated;
+  }
+  &.is-connected {
+    background-color: $focused;
+  }
+  &.is-focused {
+    background-color: $focused;
+  }
+  &.is-led {
+    background-color: $led;
+  }
+
+}
+
+
+// .overlay {
+//   width: 100%;
+//   height: 600px;
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   background: radial-gradient(444.87px at 50% 25.85%, rgba(35, 49, 59, 0) 0%, rgba(35, 49, 59, 0.4) 100%);
+//   mix-blend-mode: multiply;
+//   opacity: 0.6;
+//   transform: matrix(-1, 0, 0, 1, 0, 0);
+// }
+
+
+// .hero-foot {
+//   .container {
+//     border-top: 4px solid transparent;
+//   }
+//   .title {
+//     color: $white;
+//     margin: 2rem 0;
+//     line-height: 4rem;
+//     font-size: 2.5rem;
+//
+//   }
+// }

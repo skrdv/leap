@@ -1,0 +1,172 @@
+body#tinymce.wp-editor {
+
+  // Inline
+  li + li {
+    margin-top: 0.25em;
+  }
+
+  // Block
+  p,
+  dl,
+  ol,
+  ul,
+  blockquote,
+  pre,
+  table,
+  video {
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $text;
+    font-weight: bold;
+    line-height: 1.125;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+    line-height: 7.8rem;
+    margin-bottom: 3rem;
+
+    &:not(:first-child) {
+      margin-top: 6rem;
+    }
+  }
+
+  h2 {
+    font-size: 4.5rem;
+    line-height: 7.8rem;
+    margin-bottom: 3rem;
+
+    &:not(:first-child) {
+      margin-top: 6rem;
+    }
+  }
+
+  h3 {
+    font-size: 2.8rem;
+    line-height: 4.2rem;
+    margin-bottom: 3rem;
+
+    &:not(:first-child) {
+      margin-top: 6rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  h5 {
+    font-size: 2.4rem;
+    line-height: 4.4rem;
+    margin-bottom: 2rem;
+    margin-left: 9rem;
+    display: inline-block;
+    border-bottom: 1px solid rgba($black, 0.1);
+  }
+
+  h6 {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    font-weight: bold;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 6rem;
+    border-bottom: 1px solid rgba($black, 0.1);
+  }
+
+  p {
+    font-size: 2.4rem;
+    line-height: 4.4rem;
+  }
+
+  p a {
+    color: $text;
+    text-decoration: underline;
+  }
+
+  blockquote {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    background-color: transparent;
+    border-left: 4px solid $primary;
+    padding-left: 9.2rem;
+  }
+
+  ol {
+    list-style: decimal outside;
+    margin-left: 3rem;
+    margin-top: 3rem;
+  }
+
+  ul {
+    list-style: disc outside;
+    margin-left: 9rem;
+    margin-top: 0rem;
+    margin-bottom: 3rem;
+
+    li {
+      font-size: 2.4rem;
+      line-height: 4.4rem;
+    }
+
+    ul {
+      list-style-type: circle;
+      margin-top: 1.5rem;
+
+      ul {
+        list-style-type: square;
+      }
+    }
+  }
+
+  dd {
+    margin-left: 3rem;
+  }
+
+  figure {
+    margin-left: 2em;
+    margin-right: 2em;
+    text-align: center;
+
+    &:not(:first-child) {
+      margin-top: 2em;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2em;
+    }
+
+    img {
+      display: inline-block;
+    }
+
+    figcaption {
+      font-style: italic;
+    }
+  }
+
+  small {
+    display: block;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+
+  small strong {
+    line-height: 2.8rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+
+}
