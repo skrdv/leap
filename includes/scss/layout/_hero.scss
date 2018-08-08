@@ -2,7 +2,39 @@
 .hero {
   position: relative;
   height: 827px;
+
+  .content {
+    text-align: center;
+  }
+
+  .navbar {
+    margin-left: 20px;
+    margin-right: 20px;
+    border-top: 1px solid rgba($white, 0.2);
+
+    .navbar-brand {
+      display: none;
+    }
+
+    .navbar-item {
+      color: $white;
+      text-decoration: none;
+      &:hover,
+      &:focus,
+      &.is-active {
+        color: $white;
+        border-color: rgba($white, 0.5);
+      }
+    }
+
+    .navbar-divider {
+      margin: 15px 0;
+      background: rgba($white, 0.2);
+    }
+  }
 }
+
+
 
 // Hero with image
 .hero-image {

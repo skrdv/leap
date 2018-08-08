@@ -1,104 +1,443 @@
 
 
-body {
-  padding-top: 7.2rem;
-}
 
 .admin-bar {
   .navbar.is-fixed-top {
-    top: 3.2rem;
-    z-index: 90;
+    top: 32px;
   }
 }
 
 .navbar {
   height: auto;
   padding: 0;
-  & > .container {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 2rem;
+  border-radius: 0;
+  transition: all 0.3s;
+  background-color: transparent;
+
+  @include desktop {
+    border-top: 1px solid rgba($white, 0.2);
   }
-  &.has-shadow {
-    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.05),
-                0px 0px 4px rgba(0, 0, 0, 0.25);
+  @include touch {
+    flex-flow: column;
   }
 }
 
+
+// Navbar Header
 .navbar-brand {
-  display: flex;
+  float: none;
   min-height: 7.2rem;
-  width: auto;
-  height: auto;
-  margin: 0 !important;
-  padding: 0;
-  .navbar-item {
-    padding: 0;
-    border: none;
-    img {
-      width: 114px;
-      height: 48px;
-      max-height: 100%;
+  align-items: center;
+
+  @include desktop {
+    display: none;
+  }
+
+  @include touch {
+    width: 100%;
+    .navbar-divider {
+      display: none;
     }
+  }
+
+  .navbar-item {
+    display: none;
+    padding: 0 3.2rem;
+    img {max-height: 4.2rem;}
+  }
+
+  .navbar-account {
+    float: right;
+    margin-left: 0;
+    margin-right: auto;
+    display: flex;
+    line-height: 72px;
   }
 }
 
 .navbar-burger {
-  margin-left: 0;
-}
-
-a.navbar-item {
-  padding: 0 0.6rem;
-  font-weight: bold;
-  line-height: 3.2rem;
+  position: relative;
+  width: 80px;
+  height: 72px;
+  line-height: 72px;
+  margin-right: auto;
+  margin-left: 20px;
+  color: $white;
+  text-decoration: none;
+  background-color: transparent;
   &:hover,
-  &:focus,
-  &.is-active {
+  &:focus {
+    color: $white;
+    text-decoration: none;
     background-color: transparent;
   }
-}
-
-.navbar-menu,
-.navbar-start,
-.navbar-end {
-  align-items: center;
+  strong {
+    padding-left: 24px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+  }
+  span {
+    width: 18px;
+    height: 2px;
+    left: 0;
+  }
 }
 
 .navbar-divider {
-  width: 1px;
-  height: 4.2rem;
-  background: $grey;
+  background: rgba($white, 0.2);
+  @include desktop {
+    width: 1px;
+    height: 4.2rem;
+    margin: 15px 0;
+  }
+  @include touch {
+    display: block;
+    width: 72px;
+    height: 1px;
+    margin: 4rem auto;
+    background: rgba($gray, 0.2);
+  }
 }
 
+
+
+// Navbar Link
+a.navbar-item,
+.navbar-link {
+  font-weight: bold;
+  text-decoration: none;
+  background-color: transparent;
+  transition: all 0.3s;
+  color: $white;
+  &::after {
+    display: none;
+    border-color: $white;
+    margin-top: -0.375em;
+    right: 1.125em;
+  }
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    margin-top: 18px;
+    background: transparent;
+    transition: all 0.3s;
+  }
+  &:hover,
+  &:focus {
+    color: $white;
+    text-decoration: none;
+    background-color: transparent;
+    &::before {
+      background: rgba($white, 0.5);
+    }
+  }
+
+  // &.has-dropdown {
+  //   & > .navbar-link {
+  //     background-color: transparent !important;
+  //   }
+  // }
+
+}
+
+.navbar-item.has-dropdown {
+    &:hover,
+    &.is-active {
+      .navbar-link {
+        background-color: transparent;
+      }
+    }
+  }
+
+// Navbar Menus
+.navbar-menu {
+
+  @include desktop {
+
+  }
+
+  @include touch {
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: $white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  a.navbar-item,
+  .navbar-link {
+    // height: 4.8rem;
+    padding-right: 0.75rem;
+    font-size: 1.6rem;
+    letter-spacing: 0.02em;
+    @include desktop {
+      color: $white;
+      &:hover,
+      &:focus,
+      &.is-active {
+        color: $white;
+        background-color: transparent;
+      }
+    }
+    @include touch {
+      align-items: center;
+      margin: 0 3.2rem;
+      color: $primary;
+      &:hover,
+      &:focus,
+      &.is-active {
+        color: $primary;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+
+
 .navbar-start {
-  margin: 0 3.2rem;
-  & > .navbar-item {
+
+  a.navbar-item,
+  .navbar-link {
+
+    align-items: center;
     margin: 0 3.2rem;
     font-size: 1.6rem;
     letter-spacing: 0.02em;
-    border-bottom: 4px solid transparent;
-    color: $primary;
-    &:hover,
-    &:focus,
-    &.is-active {
-      color: $primary;
-      border-color: rgba($primary , 0.5);
-    }
   }
 }
 
 .navbar-end {
-  margin: 0 4rem;
-  & > .navbar-item {
-    margin: 0 2rem;
-    font-size: 1.2rem;
+
+
+  @include desktop {
+    max-width: 300px;
+    overflow: hidden;
+
+    .navbar-item {
+      color: $white;
+      margin: 0 2rem;
+      text-transform: uppercase;
+      &:hover,
+      &:focus,
+      &.is-active {
+        color: $white;
+        background-color: transparent;
+      }
+    }
+  }
+
+
+}
+
+
+
+// Navbar Dropdown
+.navbar-dropdown {
+
+  &.is-boxed {
+    // opacity: 1;
+    border-radius: 0;
+
+    @include touch {
+      display: none;
+      background-color: $white;
+      box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    @include desktop {
+      left: 50%;
+      width: 256px;
+      margin-top: 0px;
+      margin-left: -128px;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      background-color: $white;
+      text-align: center;
+    }
+  }
+
+}
+
+.navbar-dropdown a.navbar-item,
+.navbar-dropdown .navbar-link {
+  justify-content: center;
+  padding: 0.5rem 1rem !important;
+  font-size: 1.4rem !important;
+  line-height: 2rem !important;
+  color: $primary !important;
+
+  @include desktop {
+    display: inline-block;
+    height: 4.8rem;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    margin-top: 24px;
+    background: transparent;
+    transition: all 0.3s;
+  }
+  &:hover,
+  &:focus,
+  &.is-active {
+    &::before {
+      background: $primary;
+    }
+  }
+}
+
+
+
+
+// Navbar Account
+.navbar-account {
+  display: flex;
+
+  .username {
+    display: inline-block;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.3rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: $gray;
-    &:hover,
-    &:focus,
-    &.is-active {
+    text-decoration: none;
+    color: $white;
+  }
+  .userpic {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    margin: 15px;
+    border-radius: 21px;
+    background-size: cover;
+  }
+}
+
+
+// Navbar Fixed Top
+.navbar.is-fixed-top {
+
+  .navbar-burger {
+    color: $primary;
+
+  }
+
+  .navbar-divider {
+    background: $grey;
+  }
+
+  .navbar-brand {
+    @include touch {
+      background-color: $white;
+      box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.05), 0px 0px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .navbar-item {
+      @include touch {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        margin-left: -55px;
+        height: 72px;
+      }
+    }
+  }
+
+  .navbar-account {
+    .username {
       color: $text;
     }
   }
+
+  .navbar-menu {
+    background-color: $white;
+    @include desktop {
+      box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.05), 0px 0px 4px rgba(0, 0, 0, 0.25);
+    }
+    @include touch {
+      box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  // .navbar-item {
+  //   justify-content: center;
+  // }
+
+  .navbar-link::after {
+    border-color: $primary;
+  }
+
+  .navbar-dropdown {
+    @include desktop {
+      left: 50%;
+      width: 256px;
+      // padding: 1.2rem 0;
+      margin-top: 4px;
+      margin-left: -128px;
+      background-color: $white;
+      box-shadow: inset 0px 2px 8px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .navbar-dropdown .navbar-item {
+    display: inline-block;
+    // height: 4.8rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem !important;
+    @include desktop {
+      height: 4.8rem;
+      padding-left: 1.5rem;
+    }
+    @include touch {
+      padding-left: 1.5rem;
+    }
+  }
+
+  .navbar-start {
+    .navbar-item,
+    .navbar-link {
+      @include desktop {
+        color: $primary;
+        text-decoration: none;
+        &:hover,
+        &:focus,
+        &.is-active {
+          color: $primary;
+          border-color: rgba($primary, 0.5);
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .navbar-end {
+    .navbar-item,
+    .navbar-link {
+      @include desktop {
+        color: $gray;
+        text-decoration: none;
+        &:hover,
+        &:focus,
+        &.is-active {
+          color: $gray;
+          border-color: rgba($gray, 0.5);
+        }
+      }
+    }
+  }
+
 }

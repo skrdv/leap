@@ -3,12 +3,13 @@
 
 .button {
   padding: 0 4rem;
-  // min-width: 54rem;
+  // min-width: 352px;;
   font-weight: bold;
   border-width: 2px;
   border-radius: 0;
   height: 6rem;
   line-height: 6rem;
+  text-align: center;
 
   &.is-primary {
     font-size: 2.4rem;
@@ -31,7 +32,7 @@
     font-size: 1.8rem;
     background-color: $secondary;
     border-color: transparent;
-    color: $white;
+    color: $text;
     &:hover,
     &:focus,
     &:active,

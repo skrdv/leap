@@ -15,25 +15,31 @@
 // Layout
 @import 'layout/_all';
 @import 'layout/_hero';
+@import 'layout/_header';
 @import 'layout/_section';
+@import 'layout/_column';
+@import 'layout/_footer';
 
 // Elements
 @import 'elements/_all';
 @import 'elements/_button';
 @import 'elements/_content';
-@import 'elements/_divider';
 @import 'elements/_form';
 @import 'elements/_tag';
+@import 'elements/_title';
 
 // Components
-@import 'components/_components';
 @import 'components/_navbar';
+@import 'components/_menu';
 @import 'components/_card';
 
 // Utilities
+@import 'utilities/_controls';
 @import 'utilities/_checkradio';
+@import 'utilities/_divider';
 
 // Pages
+@import 'pages/_atoms';
 @import 'pages/_login';
 @import 'pages/_pages';
 @import 'pages/_single';

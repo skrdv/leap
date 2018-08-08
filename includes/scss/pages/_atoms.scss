@@ -1,0 +1,36 @@
+
+
+.section-typography {
+
+  .column {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    border-right: 1px solid $grey;
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  .title {
+    margin: 0 !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .title span,
+  .content span {
+    float: right;
+    opacity: 0.5;
+    font-size: 1.4rem !important;
+    font-weight: bold !important;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .content > *,
+  .content > * > * {
+    display: block;
+    margin: 0 !important;
+    line-height: 7.2rem !important;
+  }
+
+}

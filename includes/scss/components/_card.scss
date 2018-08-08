@@ -1,5 +1,78 @@
 
+.card {
+  background-color: transparent;
+  box-shadow: none;
 
+  &-header {
+    box-shadow: none;
+  }
+
+  &-content {
+    padding: 0;
+  }
+
+  &-footer {
+    border: none;
+  }
+}
+
+
+
+// Card with Media
+.card-media {
+  display: flex;
+  width: 544px;
+  height: 255px;
+  background: $primary;
+  box-shadow: 4px 4px 0px rgba(0, 179, 230, 0.25);
+
+  .card-video {
+    width: 50%;
+  }
+
+  .card-image {
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .card-content {
+    width: 50%;
+    padding: 4rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    & > div {
+      color: $white;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+
+    & > a {
+      position: absolute;
+      bottom: 3rem;
+      color: $text;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      font-weight: bold;
+      text-decoration: underline;
+      &:hover,
+      &:focus,
+      &.is-hovered {
+        color: $secondary;
+      }
+
+    }
+
+  }
+}
 
 
 // Card: Post Author
@@ -41,8 +114,8 @@
 
 
 
-// Card: Blue with CTA
-.card-cta {
+// Card: Blue box with CTA
+.card.cta-box {
   max-width: 352px;
   background: $primary;
   box-shadow: 4px 4px 0px rgba(0, 179, 230, 0.25);
@@ -76,6 +149,315 @@
 
   .button {
     width: 100%;
+    font-size: 1.8rem;
+    background-color: $secondary;
+    border-color: transparent;
+    color: $white;
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-hovered,
+    &.is-focused,
+    &.is-active {
+      background-color: $white;
+      border-color: $text;
+      color: $text;
+    }
+  }
+
+}
+
+
+
+// Card: Photo with CTA
+.card.cta-photo {
+  width: 256px;
+
+  .card-image {
+
+  }
+
+  .card-content {
+    padding: 3rem 0 5rem 0;
+
+    .title {
+      font-size: 2.4rem;
+      line-height: 4.2rem;
+      font-weight: bold;
+    }
+
+    .content {
+      font-size: 1.6rem;
+      line-height: 2.8rem;
+      font-weight: 500;
+    }
+
+  }
+
+  .card-footer {
+
+    .button {
+      width: 100%;
+      font-size: 1.8rem;
+      background-color: $secondary;
+      border-color: transparent;
+      // color: $white;
+      &:hover,
+      &:focus,
+      &:active,
+      &.is-hovered,
+      &.is-focused,
+      &.is-active {
+        background-color: $white;
+        border-color: $text;
+        color: $text;
+      }
+    }
+
+  }
+
+}
+
+
+
+// Card: BIO with CTA
+.card.cta-bio {
+  width: 352px;
+
+  .card-image {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .card-content {
+    padding: 4rem 0 8rem 0;
+
+    .title {
+      font-size: 2.4rem;
+      line-height: 4.2rem;
+      font-weight: bold;
+    }
+
+    .content {
+      font-size: 1.6rem;
+      line-height: 2.8rem;
+      font-weight: 500;
+    }
+
+  }
+
+  .card-footer {
+
+    .button {
+      width: 100%;
+      font-size: 1.8rem;
+      background-color: $secondary;
+      border-color: transparent;
+      color: $text;
+      &:hover,
+      &:focus,
+      &:active,
+      &.is-hovered,
+      &.is-focused,
+      &.is-active {
+        background-color: $white;
+        border-color: $text;
+        color: $text;
+      }
+    }
+
+  }
+
+}
+
+
+
+// Card: List Item
+.card.list-item {
+  margin-bottom: 60px;
+  padding-bottom: 60px;
+  padding-top: 60px;
+  border-top: 1px solid $grey;
+  &:last-child {
+    border-bottom: 1px solid $grey;
+  }
+
+  .container {
+    display: flex;
+    @include mobile {
+      flex-flow: column-reverse;
+    }
+  }
+
+  .card-content {
+    display: flex;
+    flex-flow: column;
+    @include tablet {
+      width: 50%;
+      height: 356px;
+      padding-right: 3.3rem;
+    }
+  }
+
+  .card-meta {
+    margin-bottom: 3rem;
+    color: inherit;
+    .title.is {
+      &-demonstrated {color: $demonstrated;}
+      &-connected {color: $connected;}
+      &-focused {color: $focused;}
+      &-led {color: $led;}
+    }
+  }
+
+  .card-text {
+    flex: 1 1 auto;
+    margin-bottom: 3rem;
+  }
+
+  .card-action {
+    .button {
+      width: 100%;
+    }
+  }
+
+  .card-footer {
+    position: relative;
+    padding: 3.2rem 0;
+    overflow: hidden;
+    @include tablet {
+      width: 50%;
+    }
+    &.no-photo {
+      background-color: $primary;
+    }
+    &.has-photo {
+      @include mobile {
+        height: 356px;
+        margin-bottom: 3rem;
+      }
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      align-items: flex-end;
+      padding: 0;
+      .card-footer-item {
+        height: 9.8rem;
+        padding: 3.2rem 0 0 0;
+        opacity: 0.9;
+        background: linear-gradient(180deg, rgba(35, 49, 59, 0) 0%, $text 100%);
+      }
+    }
+    &.has-video {
+      @include mobile {
+        height: 356px;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  .card-footer-item {
+    flex-flow: column;
+    .title {
+      margin-top: 1rem;
+      color: $white;
+    }
+    .icon {
+      display: block;
+      color: $white;
+      font-size: 1.8rem;
+    }
+  }
+
+  .card-video {
+
+    .mejs-container * {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mejs-container video {
+      height: 100% !important;
+      width: auto !important;
+      max-width: 120% !important;
+    }
+
+    .mejs-overlay-button {
+      width: 8rem !important;
+      height: 8rem !important;
+      border-radius: 4rem !important;
+      background: $primary url('../icons/icon-play.svg') no-repeat !important;
+      background-position: 18px center !important;
+      background-size: 52px 44px !important;
+    }
+  }
+
+  .post-edit-link {
+    color: $text;
+    text-decoration: none !important;
+  }
+
+}
+
+
+
+// Card: Step Section
+.card-step {
+  padding: 6rem 0 4rem 0;
+  margin-bottom: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+  .container {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .card-header {
+    width: 20%;
+    padding-top: 4.3rem;
+    @include mobile {
+      width: 100%;
+      padding-top: 0;
+    }
+  }
+
+  .card-content {
+    width: 80%;
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  .card-footer {
+    padding-left: 20%;
+    @include mobile {
+      padding-left: 0;
+    }
+  }
+
+  .card-meta {
+    margin-bottom: 2rem;
+    .title {
+      &.is-demonstrated {color: $demonstrated;}
+      &.is-connected {color: $connected;}
+      &.is-focused {color: $focused;}
+      &.is-led {color: $led;}
+    }
+  }
+
+  .card-text {
+    margin-bottom: 2rem;
+  }
+
+  .card-footer-icon {
+    width: 24rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 }

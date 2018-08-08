@@ -6,8 +6,12 @@
   text-align: center;
 }
 
-.is-off {
-  display: none !important;
+.is-hidden {
+  display: none !important; 
+}
+
+.is-544 {
+  max-width: 544px;
 }
 
 .is-white {

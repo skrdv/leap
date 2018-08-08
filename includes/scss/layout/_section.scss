@@ -1,17 +1,16 @@
 
 
 .section {
-  padding: 60px 0;
+  padding: 6rem 0;
 
-  .title {
-    font-size: 28px;
-    font-weight: bold;
+  @include touch {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
-  .subtitle {
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: normal;
+  @include mobile {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
 }

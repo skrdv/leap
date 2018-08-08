@@ -1,0 +1,196 @@
+
+
+.site-footer {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background-color: $text;
+
+  .container {
+    @include touch {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  .column.is-narrow {
+    @include desktop {
+      width: 352px;
+      padding-left: 3.2rem;
+    }
+    @include touch {
+      width: 100%;
+    }
+    .button {
+      width: 100%;
+    }
+  }
+
+  .wpcf7 {
+    margin-bottom: 6rem;
+  }
+
+  .navbar-item {
+    text-decoration: underline;
+    &::before {
+      display: none;
+    }
+  }
+
+  .navbar-dropdown {
+    display: none;
+  }
+
+}
+
+.site-footer-title {
+  color: $white;
+  text-align: center;
+}
+
+.site-footer-social {
+  display: flex;
+
+  @include desktop {
+    justify-content: flex-end;
+  }
+  @include touch {
+    justify-content: center;
+  }
+
+  .icon {
+    width: 64px;
+    height: 64px;
+    font-size: 5rem;
+    color: $white;
+    border: 4px solid $white;
+    margin-right: 18px;
+    text-decoration: none;
+    transition: 0.3s;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover,
+    &:focus {
+      background-color: $primary;
+    }
+  }
+
+}
+
+.site-footer-logo {
+  margin-top: 80px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.site-footer-copy {
+  text-align: center;
+  .title,
+  .subtitle {
+    color: $white;
+  }
+
+  .title {
+    text-decoration: underline;
+  }
+
+}
+
+
+
+
+
+
+// Old bootsrap styles
+.siteFooter {
+  padding-bottom: 110px;
+  color: $white;
+  background-color: $text;
+
+  &-title {
+    padding-top: 90px;
+    padding-bottom: 50px;
+    font-family: 'Avenir Next';
+    line-height: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    span {
+      display: block;
+      width: 64px;
+      height: 8px;
+      margin: 40px auto 0 auto;
+      background: #fff;
+    }
+  }
+
+  &-subtitle {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-family: 'Avenir Next';
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  &-social {
+    margin-bottom: 60px;
+    text-align: center;
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding-left: 0;
+      a {
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+        margin: 0 16px;
+        border: 4px solid #FFFFFF;
+        box-sizing: border-box;
+        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+        &:hover,
+        &:focus {
+          background-color: #00B3E6;
+        }
+        .fa {
+          color: #fff;
+          font-size: 40px;
+          line-height: 58px;
+        }
+      }
+    }
+  }
+
+  &-copy {
+    margin-top: 90px;
+    margin-bottom: 30px;
+    font-family: 'Avenir Next';
+    line-height: normal;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  &-link {
+    display: block;
+    font-family: 'Avenir Next';
+    line-height: normal;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: normal;
+    letter-spacing: 0.15em;
+    color: #fff;
+    text-decoration: underline;
+    &:hover {
+      background-color: transparent;
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+
+  .wpcf7 {
+    margin-top: 25px;
+  }
+
+}

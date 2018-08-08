@@ -1,5 +1,16 @@
 (function($){
 
+  // Navbar scroll sticky
+  function navbarScroll() {
+    var height = $(window).scrollTop();
+    if(height  > 200) {
+        $(".navbar").addClass('is-fixed-top');
+    } else{
+        $(".navbar").removeClass('is-fixed-top');
+    }
+  }
+
+  // Show comments section
   function showComments() {
     var btn = $('#comments-toggle'),
         section = $('#comments-section');
@@ -15,7 +26,8 @@
     });
   }
 
-  function homaGallery() {
+  // Animate home hero background
+  function homeGallery() {
     var gallery = $('.mainBanner .gallery'),
         item = gallery.find('.gallery-item'),
         first = item.first();
@@ -30,7 +42,7 @@
 
       next.removeClass('is-hidden');
       next.addClass('is-active');
-      
+
       active.removeClass('is-active');
       active.addClass('is-hidden');
 
@@ -46,19 +58,37 @@
   $(document).ready(function() {
 
     // Check for click events on the navbar burger icon
-    $(".navbar-burger").click(function() {
-        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-        $(".navbar-burger").toggleClass("is-active");
-        $(".navbar-menu").toggleClass("is-active");
-    });
+    // $(".navbar-burger").click(function() {
+    //     // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    //     $(".navbar-burger").toggleClass("is-active");
+    //     $(".navbar-menu").toggleClass("is-active");
+    // });
 
-    homaGallery();
+    // Mobile menu toggle
+    if ($('.navbar-burger').length) {
+        $('.navbar-burger').on("click", function(){
+
+            var menu_id = $(this).attr('data-target');
+            $(this).toggleClass('is-active');
+            $("#"+menu_id).toggleClass('is-active');
+            $('.navbar.is-light').toggleClass('is-dark-mobile')
+        });
+    }
+
+
+
+
+    navbarScroll();
+
+    homeGallery();
 
     showComments();
 
   });
 
-
+  $(window).scroll(function() {
+    navbarScroll();
+  });
 
 
 

@@ -1,6 +1,29 @@
 
+.input,
+.textarea {
 
 
+
+  &.is-outline {
+    color: $white;
+    border-color: $white;
+    background-color: transparent;
+  }
+
+  &.is-center {
+    text-align: center;
+  }
+
+}
+
+.input {
+  min-width: 352px;
+  font-weight: bold;
+}
+
+
+
+// Old bootstrap styles
 .button-group {
   display: flex;
 
