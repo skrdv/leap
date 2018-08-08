@@ -1,109 +1,46 @@
 <?php // Template Name: 1. Homepage ?>
+
 <?php get_header(); ?>
 
+<div class="content-wrapper">
 
+<?php get_template_part('parts/main','banner'); ?>
+	
+<?php get_template_part('parts/double','section'); ?>
 
-<section class="mainBanner" style="background-image: url(<?php the_field('main_banner_image'); ?>);">	
-	<div class="mainBanner-cloack">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<h1 class="mainBanner-title"><?php the_field('main_banner_title'); ?></h1>
-				</div><!-- column -->
-			</div><!-- row -->
-		</div><!-- container -->
-	</div>	<!-- main-banner-cloack -->
-</section><!-- mainBanner -->	
+<div class="diagonal-bg">
+	<?php get_template_part('parts/double','section-2'); ?>	
 
-<section class="pageSection pageSection-10">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-10 col-sm-offset-1">
-				<div class="pageSection-text">
-				<p><strong>LEAP is a catalyst for learning innovation.</strong>We’re fiercely committed to improving the learning experience—that’s why we work with educators, researchers and other innovators to bring a holistic, on the ground approach to unlocking the unlimited potential of every learner to have a productive, fulfilling and meaningful life, bringing their talents to the world.</p>
-				</div>
-			</div><!-- column -->
-		</div><!-- row -->
-	</div><!-- container -->
-</section><!-- pageSection -->
+	<?php get_template_part('parts/main','4cards'); ?>
 
-<section class="pageSection pageSection-11" >
+	<?php get_template_part('parts/main','text'); ?>
+
+	<?php get_template_part('parts/section','team'); ?>
+</div>	
+
+<?php get_template_part('parts/main','facts'); ?>
+
+<div class="diagonal-bg">	
+<?php get_template_part('parts/section','2columns'); ?>
+
+<?php get_template_part('parts/section','tt'); ?>
+	
+<section class="pageSection pageSection-16 pageSection-12" >
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<div class="pageSection-photo" style="background-image: url(<?php the_field('page_banner_2'); ?>);">
-				</div>	
-			</div><!-- column -->
-		</div><!-- row -->
+				<h2 class="pageSection-title"><?php the_field('section7_title'); ?></h2>
+				<h3 class="pageSection-subtitle"><?php the_field('section7_subtitle'); ?></h3>
+				<img style="margin: 100px 0 0 0" src="<?php echo get_template_directory_uri(); ?>/images/form-placeholder.png">
+			</div><!-- col-sm -->
+		</div><!-- row  -->
 	</div><!-- container -->
 </section><!-- pageSection -->
+</div> 
 
-<section class="pageSection pageSection-12" >
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-8 col-sm-offset-1">
-				<h2 class="pageSection-title">Crafting Ideal Learning Experiences</h2>
-				<div class="pageSection-text">
-				<p>We’re defining, refining, distributing and measuring the most effective programs, tools and resources to support and empower educators with a mission to transform every teacher, every classroom and every student. Everywhere.</p>
-				</div>
-			</div><!-- column -->
-		</div><!-- row -->
-	</div><!-- container -->
-</section><!-- pageSection -->
-
-<section class="pageSection pageSection-13"  style="background-image: url(<?php the_field('page_banner_3'); ?>);">
-	<div class="container">
-		<div class="row flex">
-			<?php $counter = 1; ?>
-			<?php while ( $counter < 7): ?>
-			<div class="col-sm-4 mainCard">
-				<?php if (( $counter != 2) and ($counter !=3)): ?>
-				<div class="mainCard-inner">
-					<h3 class="mainCard-title">Get the LEAP Learning Framework</h3>
-					<div class="mainCard-text">Get the LEAP Learning Framework, including definitions and strategies for putting personalized learning into practice today.</div>
-					<button class="mainCard-button">Download the Framework</button>
-				</div>	
-			<?php endif; ?>
-			</div><!-- column -->
-	
-			<?php $counter++; ?>
-			<?php endwhile; ?>
-		</div><!-- row -->
-	</div><!-- container -->
-</section><!-- pageSection -->
-
-
-<section class="pageSection pageSection-14">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4 col-sm-offset-1">
-				<div class="pageSection-small">
-					<p><strong>Right</strong><br>A student at Talcott works on an individual assignment.</p>
-				</div>
-			</div><!-- column -->
-			<div class="col-sm-7">
-				<div class="pageSection-square"  style="background-image: url(<?php the_field('page_banner_4'); ?>);"></div>
-			</div><!-- column -->			
-		</div><!-- row -->
-	</div><!-- container -->
-</section><!-- pageSection -->
-
-<section class="pageSection pageSection-15">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-7">
-				<div class="pageSection-square"  style="background-image: url(<?php the_field('page_banner_5'); ?>);"></div>
-			</div><!-- column -->	
-			<div class="col-sm-4">
-				<div class="pageSection-small">
-					<p><strong>Right</strong><br>A student at Talcott works on an individual assignment.</p>
-				</div>
-			</div><!-- column -->	
-		</div><!-- row -->
-	</div><!-- container -->
-</section><!-- pageSection -->
-
-
+</div><!-- wrapper -->
 
 <?php get_footer(); ?>
+
+
 

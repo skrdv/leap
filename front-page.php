@@ -1,3 +1,7 @@
+
+<?php get_template_part('pages/1-homepage'); ?>
+
+<?php /*
 <?php get_header(); ?>
 
 <div class="content-wrapper">
@@ -5,15 +9,20 @@
 <?php get_template_part('parts/main','banner'); ?>
 	
 <?php get_template_part('parts/double','section'); ?>
-				
-<?php get_template_part('parts/main','4cards'); ?>
-	
-<?php get_template_part('parts/main','text'); ?>
-		
-<?php get_template_part('parts/section','team'); ?>
+
+<div class="diagonal-bg">
+	<?php get_template_part('parts/double','section-2'); ?>	
+
+	<?php get_template_part('parts/main','4cards'); ?>
+
+	<?php get_template_part('parts/main','text'); ?>
+
+	<?php get_template_part('parts/section','team'); ?>
+</div>	
 
 <?php get_template_part('parts/main','facts'); ?>
 
+<div class="diagonal-bg">	
 <?php get_template_part('parts/section','2columns'); ?>
 
 
@@ -28,9 +37,11 @@
 		</div><!-- row  -->
 	</div><!-- container -->
 </section><!-- pageSection -->
- 
+</div> 
 
 </div><!-- wrapper -->
 
 <?php get_footer(); ?>
+
+*/ ?>
 

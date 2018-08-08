@@ -1,5 +1,15 @@
 <section class="pageSection pageSection-team <?php if (!is_front_page()) { echo 'border'; } ?>">
 	<div class="container">	
+		<?php if (get_field('founder_quote')): ?>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="blockCompany-quote">
+					<?php the_field('founder_quote'); ?>
+				</div><!-- quote -->	
+			</div><!-- col-sm -->	
+		</div><!-- row -->	
+		<?php endif; ?>
+		
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-3">
 				<?php if ((get_field('team_from_page')) AND (get_field('team_copy'))): ?>

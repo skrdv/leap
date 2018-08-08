@@ -141,6 +141,7 @@ require THEME_DIR . '/includes/jetpack.php';
 
  // Load custom WordPress nav walker.
 require THEME_DIR . '/includes/bootstrap-wp-navwalker.php';
+require THEME_DIR . '/includes/bulma-navwalker.php';
 
 
 
@@ -217,8 +218,8 @@ function perons_post_type() {
 	$labels = array(
 		'name'                  => _x( 'Persons', 'Post Type General Name', 'text_domain' ),
 		'singular_name'         => _x( 'Person', 'Post Type Singular Name', 'text_domain' ),
-		'menu_name'             => __( 'Persons', 'text_domain' ),
-		'name_admin_bar'        => __( 'Persons', 'text_domain' ),
+		'menu_name'             => __( 'LEAP Team', 'text_domain' ),
+		'name_admin_bar'        => __( 'LEAP Team Person', 'text_domain' ),
 		'archives'              => __( 'Person Archives', 'text_domain' ),
 		'attributes'            => __( 'Person Attributes', 'text_domain' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
@@ -265,3 +266,90 @@ function perons_post_type() {
 
 }
 add_action( 'init', 'perons_post_type', 0 );
+
+
+// Register Custom Post Type
+function careers_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Careers', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Career', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'             => __( 'Careers', 'text_domain' ),
+		'name_admin_bar'        => __( 'Careers', 'text_domain' ),
+		'archives'              => __( 'Career Archives', 'text_domain' ),
+		'attributes'            => __( 'Career Attributes', 'text_domain' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
+		'all_items'             => __( 'All Careers', 'text_domain' ),
+		'add_new_item'          => __( 'Add New Career', 'text_domain' ),
+		'add_new'               => __( 'Add New', 'text_domain' ),
+		'new_item'              => __( 'New Career', 'text_domain' ),
+		'edit_item'             => __( 'Edit Career', 'text_domain' ),
+		'update_item'           => __( 'Update Career', 'text_domain' ),
+		'view_item'             => __( 'View Career', 'text_domain' ),
+		'view_items'            => __( 'View Careers', 'text_domain' ),
+		'search_items'          => __( 'Search Career', 'text_domain' ),
+		'not_found'             => __( 'Not found', 'text_domain' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
+		'featured_image'        => __( 'Featured Image', 'text_domain' ),
+		'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
+		'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
+		'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
+		'insert_into_item'      => __( 'Insert into item', 'text_domain' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
+		'items_list'            => __( 'Careers list', 'text_domain' ),
+		'items_list_navigation' => __( 'Items list navigation', 'text_domain' ),
+		'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
+	);
+	$args = array(
+		'label'                 => __( 'Career', 'text_domain' ),
+		'description'           => __( 'Post Type Description', 'text_domain' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'Career', $args );
+
+}
+add_action( 'init', 'careers_post_type', 0 );
+
+
+
+// Add Shortcode
+function cta_shortcode( $atts ) {
+
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'num' => '1',
+			'id' => '',
+		),
+		$atts
+	);
+
+	if ($atts['id'] != '') { $id  = $atts['id']; } else { $id = $post->ID;}
+
+	while (have_rows('post-ctas', $id)): the_row();
+	    if ( $atts['num'] == get_row_index() ):
+
+	  		$result = '<div class="group-cta"><div class="columns"><div class="column"><div class="content">' . get_sub_field('description') . '</div><!-- content --></div><!-- coluns -->';
+  			$result = $result .	'<div class="column is-narrow"><div class="card card-cta"><div class="card-content"><div class="title">' . get_sub_field('title') . '</div>';
+  			$result = $result . '<a class="button button-secondary" href="' . get_sub_field('link')  . '">' . get_sub_field('button')  . '</a></div><!-- card-content --></div><!-- card-cta --></div><!-- column --></div><!-- columns -->	</div><!-- group-cta -->';
+
+	    endif;
+	endwhile;
+
+	return $result  ;
+
+}
+add_shortcode( 'cta', 'cta_shortcode' );

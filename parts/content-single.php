@@ -38,24 +38,28 @@ $category = 'connected';
 		<div class="content">
 			<?php the_content(); ?>
 
+			<?php /*
   		<div class="group-cta">
   			<div class="columns">
   				<div class="column">
   					<div class="content">
   						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at erat in diam dignissim mollis consectetur sit amet lectus. Vivamus vel sagittis erat, sed venenatis ex. Mauris dapibus nisl eget feugiat ornare.</p>
   						<p>Etiam tempor urna malesuada lectus elementum efficitur. Vivamus vel libero non purus accumsan sagittis. Donec est eros, pellentesque sed aliquam sed, suscipit in urna.</p>
-  					</div>
-  				</div>
+  					</div><!-- content -->
+  				</div><!-- coluns -->
   				<div class="column is-narrow">
   					<div class="card card-cta">
   						<div class="card-content">
   							<div class="title">LEAP InnovatED Summit August 28, 2018</div>
   							<a class="button button-secondary" href="#">Register Now</a>
-  						</div>
-  					</div>
-  				</div>
-  			</div>
-  		</div>
+  						</div><!-- card-content -->
+  					</div><!-- card-cta -->
+  				</div><!-- column -->
+  			</div><!-- columns -->
+  		</div><!-- group-cta -->
+		*/ ?>
+		
+		<?php  /*
 
   		<div class="group-authors">
   			<div class="title is-sub">Written By</div>
@@ -84,6 +88,7 @@ $category = 'connected';
   				</div>
   			</div>
   		</div>
+		*/ ?>
 
     </div>
 	</div>

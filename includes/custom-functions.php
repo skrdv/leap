@@ -7,6 +7,7 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'block', 448, 398 );
 	add_image_size( 'card', 272, 255 );
 	add_image_size( 'userpic', 42, 42 );
+	add_image_size( 'card-list-item', 544, 356 );
 }
 
 
@@ -39,6 +40,18 @@ add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
 
 
+// Add custom class to navbar menu items
+// add_filter( 'nav_menu_link_attributes', 'add_menu_items_atts', 10, 3 );
+// function add_menu_items_atts( $atts, $item, $args ) {
+//   if( $args->theme_location == 'main' ) {
+//     $atts['class'] = 'navbar-item';
+//   }
+//   if( $args->theme_location == 'more' ) {
+//     $atts['class'] = 'navbar-item';
+//   }
+//   return $atts;
+// }
+
 
 
 // Init AJAX Login
@@ -48,7 +61,6 @@ function ajax_login_init(){
     wp_enqueue_script('ajax-login-script');
 
     wp_localize_script( 'ajax-login-script', 'ajax_login_object', array(
-        // 'ajaxurl' => home_url().'/wp-admin/admin-ajax.php',
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
         'redirecturl' => home_url(),
         'loadingmessage' => __('Sending user info, please wait...')
@@ -62,7 +74,6 @@ function ajax_login_init(){
 if (!is_user_logged_in()) {
     add_action('init', 'ajax_login_init');
 }
-
 
 
 
@@ -86,22 +97,4 @@ function ajax_login(){
     }
 
     die();
-}
-
-
-
-
-
-
-
-// Add custom class to navbar menu items
-add_filter( 'nav_menu_link_attributes', 'add_menu_items_atts', 10, 3 );
-function add_menu_items_atts( $atts, $item, $args ) {
-  if( $args->theme_location == 'main' ) {
-    $atts['class'] = 'navbar-item';
-  }
-  if( $args->theme_location == 'more' ) {
-    $atts['class'] = 'navbar-item';
-  }
-  return $atts;
 }

@@ -402,7 +402,6 @@ nav .form-control {
 
 .getstartedBanner-title {
 	padding: 40px 20px;
-	font-family: Avenir Next;
 	line-height: 90px;
 	font-size: 54px;
 	font-weight: 700;
@@ -421,7 +420,7 @@ nav .form-control {
 }
 
 .pageSection-title {
-	font-family: Avenir Next;
+	font-family: 'IBM Plex Sans', sans-serif;
 	line-height: 48px;
 	font-size: 36px;
 	color: #23313B;
@@ -483,6 +482,11 @@ nav .form-control {
 
 .pageSection {
 	position: relative;
+	padding-bottom: 60px;
+}
+
+.pageSection.nopadding {
+	padding-bottom: 0;
 }
 
 
@@ -611,7 +615,6 @@ nav .form-control {
 
 	padding: 0 80px;
 
-	font-family: Avenir Next;
 	line-height: 40px;
 	font-size: 36px;
 	text-align: center;
@@ -846,7 +849,6 @@ nav .form-control {
 	background: #F5C400;
 	padding: 12px 20px;
 	border-radius: 0;
-	font-family: Avenir Next;
 	line-height: 20px;
 	font-size: 17px;
 	text-align: center;
@@ -885,6 +887,16 @@ nav .form-control {
 
 .blockCompany {
 	margin: 60px 0;
+}
+
+.blockCompany-quote {
+	font-style: normal;
+	font-weight: bold;
+	line-height: 60px;
+	font-size: 36px;
+	text-align: center;
+	letter-spacing: -1px;
+	margin: 90px 0 30px 0;
 }
 
 .blockCompany-founder {
@@ -943,7 +955,6 @@ nav .form-control {
 }
 
 .mainCard-title {
-	font-family: Avenir Next;
 	line-height: 32px;
 	font-size: 20px;
 	color: #fff;
@@ -960,7 +971,6 @@ nav .form-control {
 
 .mainCard-text {
 	flex-grow: 1;
-	font-family: Avenir Next;
 	line-height: 28px;
 	font-size: 18px;
 	color: #fff;
@@ -971,7 +981,6 @@ nav .form-control {
 	background: #F5C400;
 	padding: 12px 20px;
 	border-radius: 0;
-	font-family: Avenir Next;
 	line-height: 20px;
 	font-size: 17px;
 	text-align: center;
@@ -1052,7 +1061,6 @@ nav .form-control {
 }
 
 .pageSection-small {
-	font-family: Avenir Next;
 	line-height: 32px;
 	font-size: 18px;
 	margin-top: 240px;
@@ -1374,7 +1382,6 @@ background: transparent !important;
 
 
 .readyCard-title {
-	font-family: Avenir Next;
 	line-height: 32px;
 	font-size: 20px;
 	color: #fff;
@@ -1392,7 +1399,6 @@ background: transparent !important;
 
 .readyCard-text {
 	flex-grow: 1;
-	font-family: Avenir Next;
 	line-height: 28px;
 	font-size: 18px;
 	color: #fff;
@@ -1404,7 +1410,6 @@ background: transparent !important;
 	background: #F5C400;
 	padding: 12px 20px;
 	border-radius: 0;
-	font-family: Avenir Next;
 	line-height: 20px;
 	font-size: 17px;
 	text-align: center;
@@ -1652,7 +1657,7 @@ font-size: 16px;
 
 .pageSection-double {
 	background-color: #2E89CB;
-	padding: 80px 0 353px 0;
+	padding: 80px 0 0px 0;
 }
 
 .pageSection-double .pageSection-text {
@@ -1667,16 +1672,11 @@ font-size: 16px;
 }
 
 
-.pageSection-double-photo {
-	margin: -271px 0 0 0;
-	padding: 0;
-}
-
-
 .pageSection-photo {
 	height: 544px;
 	background-size: cover;
-	margin-bottom: -20px;
+	margin: 80px 0 -271px 0;
+	padding: 0;
 }
 
 .pageSection-big {
@@ -1686,7 +1686,11 @@ font-size: 16px;
 	color: #23313B;
 	font-weight: bold;
 	margin: 100px 0 80px 0;
-}	
+}
+
+.pageSection-empty {
+	height: 260px;
+}
 
 
 /*===================================== Section Repeater  ================== */
@@ -1796,6 +1800,10 @@ font-size: 16px;
 	padding: 120px 0 85px 0;
 }
 
+.columns2  .row.flex {
+	flex-wrap: nowrap;
+} 
+
 .columns2-title {
     margin: 0;
     color: #23313b;
@@ -1873,4 +1881,14 @@ font-size: 16px;
 	font-weight: 700;
 	text-align: center;
 	color: #fff;
+}
+
+
+
+/*=================================== New Background =========================== */
+
+.diagonal-bg {
+	background-image: url(images/stripe-bg.svg);
+	background-position: top right;
+	background-repeat: no-repeat;
 }

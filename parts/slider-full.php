@@ -1,4 +1,4 @@
-<section class="pageSection" >
+<section class="pageSection nopadding" >
 	<div id="carousel-full" class="carousel slide carouselFull" data-ride="carousel">
 		  <div class="carousel-inner" role="listbox">
 			  <?php while (have_rows('slider_full')): the_row(); ?>

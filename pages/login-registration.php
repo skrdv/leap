@@ -1,11 +1,11 @@
 <?php
 /**
- * Template Name: Login Account
+ * Template Name: Login and Registration
  */
  ?>
 
 <?php
-$logo = THEME_URI.'/includes/img/logo.svg';
+$logo = THEME_URI.'/includes/img/leap_innovations.svg';
 $bgimage = get_the_post_thumbnail_url($post->ID, 'poster');
 
 $args = array(

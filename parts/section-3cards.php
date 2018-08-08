@@ -1,5 +1,4 @@
 <section class="pageSection center border">		
-	<div class="leap-stripe"></div>	
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
