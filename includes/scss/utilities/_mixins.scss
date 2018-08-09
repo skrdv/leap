@@ -1,0 +1,9 @@
+
+
+
+// Hover, Focus, Active 
+@mixin active () {
+  &:hover,
+  &:focus,
+  &:active { @content }
+}

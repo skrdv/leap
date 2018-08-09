@@ -1,11 +1,15 @@
 
 
 
-// Vars
-@import 'base/_variables';
-
 // Bulma
+@import 'base/_variables';
 @import '../resources/bulma/bulma.scss';
+
+// Utilities
+@import 'utilities/_mixins';
+@import 'utilities/_controls';
+@import 'utilities/_checkradio';
+@import 'utilities/_divider';
 
 // Base
 @import 'base/_fonts';
@@ -32,11 +36,6 @@
 @import 'components/_navbar';
 @import 'components/_menu';
 @import 'components/_card';
-
-// Utilities
-@import 'utilities/_controls';
-@import 'utilities/_checkradio';
-@import 'utilities/_divider';
 
 // Pages
 @import 'pages/_atoms';
